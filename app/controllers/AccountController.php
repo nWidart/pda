@@ -49,9 +49,7 @@ class AccountController extends BaseController {
     {
         $firstName = Input::get('firstName');
         $lastName = Input::get('lastName');
-        $battletag = Input::get('battletag');
 
-        $input = Input::all();
         $validator = new Services\Validators\User;
         if ( $validator->passes() )
         {
@@ -63,14 +61,11 @@ class AccountController extends BaseController {
                 // Update the user details
                 $user->first_name = $firstName;
                 $user->last_name = $lastName;
-                $user->battletag = $battletag;
 
                 // Update the user
                 if ($user->save())
                 {
-                    $data = [
-                        'success' => 'Profile updated.',
-                    ];
+                    $data = [ 'success' => 'Profile updated.' ];
                     return Response::json( $data );
                 }
                 else
@@ -80,7 +75,8 @@ class AccountController extends BaseController {
             }
             catch (Cartalyst\Sentry\Users\UserExistsException $e)
             {
-                return 'User with this login already exists.';
+                $data = [ 'error' => 'User with this login already exists.' ];
+                return Response::json( $data );
             }
             catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
             {
@@ -92,6 +88,57 @@ class AccountController extends BaseController {
             $errors = $validator->getErrors();
             $errorFirstName = ($errors->has('firstName')) ? $errors->get('firstName') : null;
             $errorLastName = ($errors->has('lastName')) ? $errors->get('lastName') : null;
+            $data = [
+                'error' => 'Something went wrong',
+                'errors' => $errors->all(),
+            ];
+            return Response::json( $data );
+        }
+    }
+
+    public function postUpdateUserBtagInfo()
+    {
+        $battletag = Input::get('battletag');
+        $server = Input::get('server');
+        ChromePhp::log($server);
+
+        $validator = new Services\Validators\Battlenet;
+
+        if ( $validator->passes() )
+        {
+            try
+            {
+                // Find the user using the user id
+                $user = Sentry::getUserProvider()->findById( Sentry::getUser()->id );
+
+                // Update the user details
+                $user->battletag = $battletag;
+                $user->server = $server;
+
+                // Update the user
+                if ($user->save())
+                {
+                    $data = [ 'success' => 'Profile updated.' ];
+                    return Response::json( $data );
+                }
+                else
+                {
+
+                }
+            }
+            catch (Cartalyst\Sentry\Users\UserExistsException $e)
+            {
+                $data = [ 'error' => 'User with this login already exists.' ];
+                return Response::json( $data );
+            }
+            catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
+            {
+                return 'User was not found.';
+            }
+        }
+        else
+        {
+            $errors = $validator->getErrors();
             $errorBattletag = ($errors->has('battletag')) ? $errors->get('battletag') : null;
             $data = [
                 'error' => 'Something went wrong',
@@ -99,9 +146,6 @@ class AccountController extends BaseController {
             ];
             return Response::json( $data );
         }
-
-        // $data = [ 'firstName' => $firstName, 'lastName' => $lastName, 'battletag' => $battletag ];
-        // return Response::json( $data );
     }
 
     /**

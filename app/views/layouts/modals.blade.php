@@ -56,11 +56,39 @@
                 <div class="tab-content">
                     <div class="tab-pane active" id="profile">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="#profileInfo" data-toggle="tab">Info</a></li>
+                            <li class="active"><a href="#profileBattleNet" data-toggle="tab">Battle.net</a></li>
+                            <li><a href="#profileInfo" data-toggle="tab">Info</a></li>
                             <li><a href="#profileSecurity" data-toggle="tab">Security</a></li>
                         </ul>
                         <div class="tab-content">
-                            <div class="tab-pane active" id="profileInfo">
+                            <div class="tab-pane active" id="profileBattleNet">
+                                {{ Form::open( ['url' => '/dashboard/update-user-btag-info', 'method' => 'put', 'class' => 'form-horizontal updateBtagInfo'] ) }}
+                                {{ Form::hidden('userID', Sentry::getUser()->id) }}
+                                {{ Form::token() }}
+                                <div class="control-group">
+                                {{ Form::label('battletag', 'Battletag', ['class' => 'control-label' ])}}
+                                    <div class="controls">
+                                        <?php $battletag = (isset($user)) ? $user->battletag : ''; ?>
+                                        {{ Form::text('battletag', $battletag, array('placeholder' => 'Battletag')) }}
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                {{ Form::label('server', 'Server', ['class' => 'control-label' ])}}
+                                    <div class="controls">
+                                        <?php $server = (isset($user)) ? $user->server : 'eu'; ?>
+                                        {{ Form::select('server', ['eu' => 'EU', 'us' => 'US', 'tw' => 'TW', 'kr' => 'KR', 'cn' => 'CN' ], $server) }}
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                  {{ Form::submit('Cancel', ['class' => 'btn', 'data-dismiss' => 'modal']) }}
+                                  {{ Form::submit('Update Battle.net information', ['class' => 'btn btn-primary']) }}
+                                </div>
+                                {{ Form::close() }}
+                            </div>
+                            <!-- end #profileBattleNet -->
+
+                            <div class="tab-pane fade" id="profileInfo">
                                 {{ Form::open( ['url' => '/dashboard/update-user-info', 'method' => 'put', 'class' => 'form-horizontal updateProfileInfo'] ) }}
                                 {{ Form::hidden('userID', Sentry::getUser()->id) }}
                                 {{ Form::token() }}
@@ -78,22 +106,18 @@
                                       {{ Form::text('lastName', $lastName, array('placeholder' => 'Last Name')) }}
                                     </div>
                                   </div>
-                                  <div class="control-group">
-                                    {{ Form::label('battletag', 'Battletag', ['class' => 'control-label' ])}}
-                                    <div class="controls">
-                                      <?php $battletag = (isset($user)) ? $user->battletag : ''; ?>
-                                      {{ Form::text('battletag', $battletag, array('placeholder' => 'Battletag')) }}
-                                    </div>
-                                  </div>
                                   <div class="modal-footer">
                                     {{ Form::submit('Cancel', ['class' => 'btn', 'data-dismiss' => 'modal']) }}
                                     {{ Form::submit('Update profile', ['class' => 'btn btn-primary']) }}
                                   </div>
                                 </form>
                             </div>
+                            <!-- end #profileInfo -->
+
                             <div class="tab-pane fade" id="profileSecurity">
                                 profileSecurity
                             </div>
+                            <!-- end #profileSecurity -->
 
                         </div>
                     </div>

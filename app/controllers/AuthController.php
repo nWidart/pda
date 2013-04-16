@@ -95,6 +95,7 @@ class AuthController extends BaseController {
 
                 // Try to authenticate the user
                 $user = Sentry::authenticate($credentials, false);
+                ChromePhp::log($user);
                 // User logged in
                 // Redirect to the profile page
                 return Redirect::to('dashboard')->with('success', 'Successfully logged in.');

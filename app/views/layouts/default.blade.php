@@ -116,8 +116,8 @@
     <script src="{{{ asset('assets/js/alertify.min.js') }}}"></script>
     <script src="{{{ asset('assets/js/main.js') }}}"></script>
     <script type="text/javascript">
-      $('.alert').on('click', function() {
-        $('.alert').fadeOut();
+      $('.alert-warning').on('click', function() {
+        $('.alert-warning').fadeOut();
       });
     </script>
     @section('scripts')
