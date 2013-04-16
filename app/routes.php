@@ -1,17 +1,27 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
-
-Route::get('/', function()
+/**
+ * The home page
+ *
+ */
+Route::get('/', [ 'as' => 'home', function()
 {
-	return View::make('hello');
-});
+	return View::make('home');
+}]);
+
+/**
+ * Registring the RESTful Auth Controller
+ *
+ */
+Route::controller('auth', 'AuthController');
+
+/**
+ * Registring the RESTful Diablo Controller
+ *
+ */
+Route::controller('diablo', 'DiabloController');
+
+/**
+ * Registring the RESTful Account Controller
+ *
+ */
+Route::controller('dashboard', 'AccountController');

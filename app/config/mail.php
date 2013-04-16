@@ -40,7 +40,7 @@ return array(
 	| stay compatible with the Postmark e-mail application by default.
 	|
 	*/
-
+	// 587 for gmail
 	'port' => 2525,
 
 	/*
@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => null, 'name' => null),
+	'from' => array('address' => 'i.need@nicolaswidart.com', 'name' => 'Nicolas Widart'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => null,
+	'username' => '9fdda09d-d1b0-4031-8cde-0a01c0f7c530',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,6 +93,6 @@ return array(
 	|
 	*/
 
-	'password' => null,
+	'password' => '9fdda09d-d1b0-4031-8cde-0a01c0f7c530',
 
 );

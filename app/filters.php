@@ -35,7 +35,7 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (Auth::guest()) return Redirect::route('login');
+	if ( !Sentry::check() ) return Redirect::action('AuthController@getLogin');
 });
 
 
@@ -43,7 +43,39 @@ Route::filter('guest', function()
 {
 	if (Auth::check()) return Redirect::to('/');
 });
+/**
+ * Admin Auth Filter
+ * Check if user is logged in
+ */
+Route::filter('adminAuth', function()
+{
+    if ( Sentry::check() )
+    {
+        try
+        {
+            // Find the user using the user id
+            $user = Sentry::getUserProvider()->findById( Sentry::getUser()->id );
 
+            // Find the Administrator group
+            $admin = Sentry::getGroupProvider()->findByName('Admin');
+
+            // Check if the user is in the administrator group
+            if ( !$user->inGroup($admin) )
+            {
+                return Redirect::to('login');
+            }
+
+        }
+        catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
+        {
+            echo 'User was not found.';
+        }
+        catch (Cartalyst\Sentry\Groups\GroupNotFoundException $e)
+        {
+            echo 'Group was not found.';
+        }
+    }
+});
 /*
 |--------------------------------------------------------------------------
 | CSRF Protection Filter
@@ -55,10 +87,10 @@ Route::filter('guest', function()
 |
 */
 
-Route::filter('csrf', function()
-{
-	if (Session::getToken() != Input::get('_token'))
-	{
-		throw new Illuminate\Session\TokenMismatchException;
-	}
-});
+// Route::filter('csrf', function()
+// {
+// 	if (Session::getToken() != Input::get('_token'))
+// 	{
+// 		throw new Illuminate\Session\TokenMismatchException;
+// 	}
+// });

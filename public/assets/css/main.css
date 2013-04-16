@@ -1,0 +1,15 @@
+.modalList {
+    list-style:none;
+}
+.modalList li {
+    float:left;
+    margin: 0 10px;
+}
+.modal-header {
+    padding: 28px 15px;
+}
+
+.battleNet,
+.settings {
+    display: none;
+}
