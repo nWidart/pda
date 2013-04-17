@@ -46,7 +46,7 @@
   <div class="modal-header">
     <ul class="modalList">
         <li><a href="#profile" class="jsProfile" data-toggle="tab">Proile</a></li>
-        <li><a href="#battleNet" data-toggle="tab">Battle.net</a></li>
+        <li><a href="#battleNet" data-toggle="tab">Import Heroes</a></li>
         <li><a href="#settings" data-toggle="tab">Settings</a></li>
     </ul>
   </div>

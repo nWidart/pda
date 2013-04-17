@@ -18,6 +18,7 @@ class AccountController extends BaseController {
      */
     public function getIndex()
     {
+
         // Look for characters for logged in user
         $user = User::find( (int)Sentry::getUser()->id )->characters->first();
         if ( $user )
@@ -37,9 +38,11 @@ class AccountController extends BaseController {
             else
                 $options = [];
 
+            $user = Sentry::getUser();
             $data = [
-                'notice' => 'You havent imported any characters yet. <a class="" data-toggle="modal" href="#modalImportProfile" >Do it now!</a>',
+                'notice' => "You havent imported any characters yet. <a data-toggle='modal' href='#modal' >Do it now!</a>",
                 'options' => $options,
+                'user' => $user,
             ];
             return View::make('user.index', $data);
         }
@@ -86,8 +89,8 @@ class AccountController extends BaseController {
         else
         {
             $errors = $validator->getErrors();
-            $errorFirstName = ($errors->has('firstName')) ? $errors->get('firstName') : null;
-            $errorLastName = ($errors->has('lastName')) ? $errors->get('lastName') : null;
+            // $errorFirstName = ($errors->has('firstName')) ? $errors->get('firstName') : null;
+            // $errorLastName = ($errors->has('lastName')) ? $errors->get('lastName') : null;
             $data = [
                 'error' => 'Something went wrong',
                 'errors' => $errors->all(),

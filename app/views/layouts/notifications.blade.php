@@ -8,10 +8,6 @@
 @endif
 
 @if ($message = Session::get('success'))
-<!-- <div class="alert alert-success alert-block">
-	<button type="button" class="close" data-dismiss="alert">&times;</button>
-	{{{ $message }}}
-</div> -->
 <script type="text/javascript">
 	$(document).ready( function() {
 		alertify.success( "<?php echo $message; ?>" );
@@ -65,10 +61,7 @@
 	{{ $notice }}
 	<script type="text/javascript">
 		$(document).ready( function() {
-			alertSuccess( "<?php echo $message; ?>" );
-			setTimeout(function() {
-			      $('.alert').fadeOut();
-			}, 1000);
+			alertify.log( "<?php echo $notice; ?>", "", 0 );
 		});
 	</script>
 

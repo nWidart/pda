@@ -53,20 +53,20 @@ $(document).ready(function() {
         $modal.modal('loading');
         var firstName = $('input[name="firstName"]').val(),
             lastName = $('input[name="lastName"]').val(),
-            battletag = $('input#battletag').val(),
             data = {
                 'firstName' : firstName,
-                'lastName' : lastName,
-                'battletag' : battletag
+                'lastName' : lastName
             },
             posting = $.post( "/dashboard/update-user-info", data );
         posting.done( function(data) {
+
             $modal.modal('loading');
             if (data.success)
                 alertify.success( data.success );
             else
             {
                 alertify.error( data.error );
+                console.log(data.errors);
                 var html = '<div class="alert alert-error fade-in">';
                 html += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
                 html += '<ul>';
@@ -77,6 +77,9 @@ $(document).ready(function() {
                 html += '</div>';
                 $modal.find('.modal-body').prepend(html);
             }
+        });
+        posting.fail( function(data) {
+            console.log('fail');
         });
     });
 
