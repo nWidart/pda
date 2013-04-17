@@ -103,7 +103,6 @@ class AccountController extends BaseController {
     {
         $battletag = Input::get('battletag');
         $server = Input::get('server');
-        ChromePhp::log($server);
 
         $validator = new Services\Validators\Battlenet;
 

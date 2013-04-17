@@ -46,7 +46,7 @@
   <div class="modal-header">
     <ul class="modalList">
         <li><a href="#profile" class="jsProfile" data-toggle="tab">Proile</a></li>
-        <li><a href="#battleNet" data-toggle="tab">Import Heroes</a></li>
+        <li><a href="#importHeroes" data-toggle="tab">Import Heroes</a></li>
         <li><a href="#settings" data-toggle="tab">Settings</a></li>
     </ul>
   </div>
@@ -81,7 +81,7 @@
                                 </div>
 
                                 <div class="modal-footer">
-                                  {{ Form::submit('Cancel', ['class' => 'btn', 'data-dismiss' => 'modal']) }}
+                                  <a href="/dashboard" class="btn">Cancel</a>
                                   {{ Form::submit('Update Battle.net information', ['class' => 'btn btn-primary']) }}
                                 </div>
                                 {{ Form::close() }}
@@ -107,7 +107,7 @@
                                     </div>
                                   </div>
                                   <div class="modal-footer">
-                                    {{ Form::submit('Cancel', ['class' => 'btn', 'data-dismiss' => 'modal']) }}
+                                    <a href="/dashboard" class="btn">Cancel</a>
                                     {{ Form::submit('Update profile', ['class' => 'btn btn-primary']) }}
                                   </div>
                                 </form>
@@ -121,7 +121,8 @@
 
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="battleNet">
+                    <div class="tab-pane fade" id="importHeroes">
+                        <?php if ( !empty( $user->battletag ) && !empty( $user->server) ): ?>
                         <form class="d3form_p2" action="/diablo/import" method="post">
                             @if ( isset( $options ) )
                                 <select multiple="multiple" class="d3characters" name="d3characters[]">
@@ -132,10 +133,15 @@
                             @endif
                             <br>
                             <div class="modal-footer">
-                              {{ Form::submit('Cancel', ['class' => 'btn', 'data-dismiss' => 'modal']) }}
+                              <a href="/dashboard" class="btn">Cancel</a>
                               {{ Form::submit('Import', ['class' => 'btn btn-primary']);}}
                             </div>
                         </form>
+                        <?php else: ?>
+                            <p>
+                                You havent set your Battletag & server yet. <a href="#profile" class="jsProfile" data-toggle="tab">Set your battletag & server.</a>
+                            </p>
+                        <?php endif; ?>
                     </div>
                     <div class="tab-pane fade" id="settings">
 

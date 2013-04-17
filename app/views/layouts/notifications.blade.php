@@ -11,9 +11,6 @@
 <script type="text/javascript">
 	$(document).ready( function() {
 		alertify.success( "<?php echo $message; ?>" );
-		setTimeout(function() {
-		      $('.alert').fadeOut();
-		}, 1000);
 	});
 </script>
 @endif
