@@ -1,48 +1,4 @@
-<div class="modal hide" id="modalImportProfile">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal">x</button>
-    <h3>Import your Battle.net profile</h3>
-  </div>
-  <div class="modal-body">
-    <div class="row-fluid">
-        <form class="d3form form-inline" action="/diablo/get-heroes" method="post">
-            {{ Form::text('battletag', null, array('class' => 'span6 battletag', 'placeholder' => 'Type your Battletag...'));}}
-            {{ Form::submit('Look for characters', ['class' => 'btn ajaxBtn']);}}
-        </form>
-        <div class="appending"></div>
-    </div>
-  </div>
-  <div class="modal-footer">
-    Hafuu#2176
-  </div>
-</div>
-
-<div class="modal hide" id="modalImportProfileLoggedIn">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal">x</button>
-    <h3>Import your Battle.net profile</h3>
-  </div>
-  <div class="modal-body">
-    <div class="row-fluid">
-        <form class="d3form_p2" action="/diablo/import" method="post">
-            @if ( isset( $options ) )
-                <select multiple="multiple" class="d3characters" name="d3characters[]">
-                    @foreach($options as $option)
-                        {{ $option }}
-                    @endforeach
-                </select>
-            @endif
-            {{ Form::submit('Import', ['class' => 'btn']);}}
-        </form>
-        <div class="appending"></div>
-    </div>
-  </div>
-  <div class="modal-footer">
-    Hafuu#2176
-  </div>
-</div>
-
-<div class="modal hide" id="modal">
+<div class="modal hide fade in" id="modal">
   <div class="modal-header">
     <ul class="modalList">
         <li><a href="#profile" class="jsProfile" data-toggle="tab">Proile</a></li>
@@ -124,12 +80,17 @@
                     <div class="tab-pane fade" id="importHeroes">
                         <?php if ( !empty( $user->battletag ) && !empty( $user->server) ): ?>
                         <form class="d3form_p2" action="/diablo/import" method="post">
-                            @if ( isset( $options ) )
+                            @if ( !empty( $options ) )
                                 <select multiple="multiple" class="d3characters" name="d3characters[]">
                                     @foreach($options as $option)
                                         {{ $option }}
                                     @endforeach
                                 </select>
+                            @else
+                                <p class="text-error">No characters were found for: <strong><?php echo $user->battletag; ?></strong> on server: <strong><?php echo strtoupper( $user->server ); ?></strong></p>
+                                <p>
+                                    <a href="#profile" class="jsProfile" data-toggle="tab">Add/modify your Battletag and server info.</a>
+                                </p>
                             @endif
                             <br>
                             <div class="modal-footer">

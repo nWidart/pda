@@ -24,7 +24,7 @@ class AccountController extends BaseController {
         if ( $user )
         {
             $characters = User::find( (int)Sentry::getUser()->id )->characters;
-            $options = $this->_getHeroes();
+            $options = ( $this->_getHeroes() ) ? $this->_getHeroes() : '';
             $user = Sentry::getUser();
             $data = [ 'characters' => $characters, 'options' => $options, 'user' => $user ];
             return View::make('user.index', $data);
@@ -157,12 +157,15 @@ class AccountController extends BaseController {
      */
     private function _getHeroes()
     {
-        if ( isset( Sentry::getUser()->battletag ) )
+        if ( isset( Sentry::getUser()->battletag ) && isset( Sentry::getUser()->server ) )
+        {
             $battletag = Sentry::getUser()->battletag;
+            $server = Sentry::getUser()->server;
+        }
         else
             return false;
         // Instantiate a new d3 instance
-        $Diablo3 = new Diablo3( $battletag, 'eu', 'en_US' );
+        $Diablo3 = new Diablo3( $battletag, $server, 'en_US' );
 
         // Get the info about that battle tag
         $career = $Diablo3->getCareer();
@@ -170,24 +173,32 @@ class AccountController extends BaseController {
         // The array containing the <option> html
         $options = [];
 
-        foreach ( $career['heroes'] as $key ) {
-            $name = $key['name'];
-            $id = $key['id'];
-            if ( !isset( $d3data[ $id ] ) ) {
-                $d3data[$id] = [];
+        if ( isset($career['heroes']))
+        {
+            foreach ( $career['heroes'] as $key ) {
+                $name = $key['name'];
+                $id = $key['id'];
+                if ( !isset( $d3data[ $id ] ) ) {
+                    $d3data[$id] = [];
+                }
+
+                // Make a array for the validator
+                $input = [ 'character' => $id ];
+
+                // Check if character already is in database if it is add a disabled attribute
+                $validator = new Services\Validators\Character($input);
+                if ( $validator->passes() )
+                    $options[] = '<option value="' . $id . '">' . $name . '</option>';
+                else
+                    $options[] = '<option value="' . $id . '"disabled="disabled">' . $name . '</option>';
             }
-
-            // Make a array for the validator
-            $input = [ 'character' => $id ];
-
-            // Check if character already is in database if it is add a disabled attribute
-            $validator = new Services\Validators\Character($input);
-            if ( $validator->passes() )
-                $options[] = '<option value="' . $id . '">' . $name . '</option>';
-            else
-                $options[] = '<option value="' . $id . '"disabled="disabled">' . $name . '</option>';
+            return $options;
         }
-        return $options;
+        else
+        {
+            return false;
+        }
+
     }
 
 }

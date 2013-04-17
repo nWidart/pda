@@ -5,49 +5,7 @@ class DiabloController extends BaseController {
     {
         return 'nice';
     }
-    /**
-     * Get the heroes for the given battletag
-     * return a html valid <option> list
-     *
-     */
-    public function postGetHeroes()
-    {
-        // Get the battletag & set it in the session
-        //
-        $battletag = e( Input::get('battletag'));
-        // Find the user using the user id
-        $user = Sentry::getUserProvider()->findById( Sentry::getUser()->id );
-        $user->battletag = $battletag;
-        $user->save();
 
-        // Instantiate a new d3 instance
-        $Diablo3 = new Diablo3( $battletag, 'eu', 'en_US' );
-
-        // Get the info about that battle tag
-        $career = $Diablo3->getCareer();
-
-        // The array containing the <option> html
-        $options = [];
-
-        foreach ( $career['heroes'] as $key ) {
-            $name = $key['name'];
-            $id = $key['id'];
-            if ( !isset( $d3data[ $id ] ) ) {
-                $d3data[$id] = [];
-            }
-
-            // Make a array for the validator
-            $input = [ 'character' => $id ];
-
-            // Check if character already is in database if it is add a disabled attribute
-            $validator = new Services\Validators\Character($input);
-            if ( $validator->passes() )
-                $options[] = '<option value="' . $id . '">' . $name . '</option>';
-            else
-                $options[] = '<option value="' . $id . '"disabled="disabled">' . $name . '</option>';
-        }
-        return Response::json($options);
-    }
 
     /**
      * Import all selected characters into the db

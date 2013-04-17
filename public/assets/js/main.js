@@ -103,7 +103,7 @@ $(document).ready(function() {
             $updateBtagForm.modal('loading');
             if (data.success)
                 alertify.success( data.success );
-            else
+            else if (data.error)
             {
                 alertify.error( data.error );
                 var html = '<div class="alert alert-error fade-in">';
