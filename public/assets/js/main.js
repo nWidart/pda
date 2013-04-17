@@ -66,7 +66,6 @@ $(document).ready(function() {
             else
             {
                 alertify.error( data.error );
-                console.log(data.errors);
                 var html = '<div class="alert alert-error fade-in">';
                 html += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
                 html += '<ul>';
@@ -75,7 +74,7 @@ $(document).ready(function() {
                 }
                 html += '</ul>';
                 html += '</div>';
-                $modal.find('.modal-body').prepend(html);
+                $modal.prepend(html);
             }
         });
         posting.fail( function(data) {
@@ -114,7 +113,7 @@ $(document).ready(function() {
                 }
                 html += '</ul>';
                 html += '</div>';
-                $updateBtagForm.find('.modal-body').prepend(html);
+                $updateBtagForm.prepend(html);
             }
         });
     });
