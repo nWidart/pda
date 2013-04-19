@@ -12,5 +12,9 @@ class Character extends Eloquent {
     {
         return $this->belongsTo('User');
     }
+    public function items()
+    {
+        return $this->belongsToMany('item', 'character_items');
+    }
 
 }

@@ -36,7 +36,6 @@ class DiabloController extends BaseController {
             // Duplicate heros are disabled on front-end, but for safe mesure
             if ( $validator->passes() )
             {
-                ChromePhp::log($character);
                 $heroData = $Diablo3->getHero( $character );
                 $newChar = new Character;
                 $newChar->user_id = $userId;

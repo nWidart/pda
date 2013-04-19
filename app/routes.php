@@ -25,3 +25,9 @@ Route::controller('diablo', 'DiabloController');
  *
  */
 Route::controller('dashboard', 'AccountController');
+
+/**
+ * Registring the RESTful Character Controller
+ *
+ */
+Route::controller('character', 'CharacterController');
