@@ -12,16 +12,19 @@ class CharacterController extends BaseController {
 
     public function getIndex( $id )
     {
-        return $this->_getCharacterItems(15212314);
+        return "indexed";
     }
     public function getProfile( $id )
     {
+        // Get a character with all its items (& item modifiers)
+        $char = Character::with('items.modifiers')->first()->toArray();
+        ChromePhp::log($char);
+
         $character = Character::find( $id );
         $heroData = $this->_saveCharacterItems( $character['hero_id'], $id );
 
         return $id;
     }
-
     private function _saveCharacterItems( $heroId, $charId )
     {
         if ( isset( Sentry::getUser()->battletag ) && isset( Sentry::getUser()->server ) )
@@ -33,6 +36,7 @@ class CharacterController extends BaseController {
             return false;
         // Instantiate a new d3 instance
         $Diablo3 = new Diablo3($battletag, $server, 'en_US');
+        // Get the hero information for the given heroId
         $heroData = $Diablo3->getHero($heroId);
 
         // Check if we got all the hero data
@@ -40,17 +44,21 @@ class CharacterController extends BaseController {
         //
         if( is_array( $heroData) )
         {
+            // Looping over every item that character has
             foreach ($heroData['items'] as $item) {
+                // Get all the information about every item
                 $itemData = $Diablo3->getItem($item['tooltipParams']);
                 // If we got data back
                 if ( is_array( $itemData ) )
                 {
                     // Step 1. Add the base item
-                    // TODO: If the item already exists get its ID and use that to add modifiers
                     $input = [ 'name' => $itemData['name'] ];
+                    // Validate the item name (has to be unique)
                     $validator = new Services\Validators\Item( $input );
                     if ( $validator->passes() )
                     {
+                        // Create the new item
+                        //
                         $item = new Item;
                         $item->name = $itemData['name'];
                         $item->save();
@@ -59,8 +67,7 @@ class CharacterController extends BaseController {
                     {
                         // The base item already exists get its ID
                         //
-                        $item = Item::where( 'name', '=', $itemData['name'] )->get()->toArray();
-                        $itemId = $item[0]['id'];
+                        $item = Item::where( 'name', '=', $itemData['name'] )->first();
                     }
 
                     // Step 2. Add the modifiers to that item
@@ -80,8 +87,20 @@ class CharacterController extends BaseController {
                     $modifier = $item->modifiers()->save($modifier);
 
                     // Step 3. Attach the item to a Character
-                    $char = Character::find( $charId );
-                    $char->items()->attach( $item->id );
+                    // Check if character already has that item
+                    // If so detach it
+                    //
+                    $input = [ 'item_id' => $item->id ];
+                    $validator = new Services\Validators\CharacterItem( $input );
+                    if ( $validator->passes() )
+                    {
+                        $char = Character::find( $charId );
+                        $char->items()->attach( $item->id );
+                    }
+                    else
+                    {
+
+                    }
                 }
                 else
                 {

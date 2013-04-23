@@ -18,24 +18,7 @@ class AccountController extends BaseController {
      */
     public function getIndex()
     {
-        // $item = new Item;
-        // $item->name = "name";
-        // $item->save();
-
-        // $modifier = new Modifier;
-        // $modifier->dexterity = 1000;
-        // $modifier->strength = 800;
-        // $modifier->vitality = 1500;
-        // $modifier->intelligence = 1800;
-
-        // $item = Item::find( $item->id );
-        // $mods = $item->modifiers()->save($modifier);
-
-        // $char = Character::find( 2 );
-        // $char->items()->attach( $item->id );
-
-        // Get a character with all its items (& item modifiers)
-        $char = Character::with('items.modifiers')->first()->toArray();
+        $char = Character::find(2)->with('items.modifiers')->first()->toArray();
         ChromePhp::log($char);
 
         // Look for characters for logged in user

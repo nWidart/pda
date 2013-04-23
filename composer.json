@@ -13,7 +13,8 @@
 			"app/database/seeds",
 			"app/tests/TestCase.php",
 			"app/services",
-			"app/libraries"
+			"app/libraries",
+			"app/libraries/Diablo3"
 		]
 	},
 	"scripts": {
