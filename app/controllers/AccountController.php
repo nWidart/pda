@@ -18,8 +18,19 @@ class AccountController extends BaseController {
      */
     public function getIndex()
     {
+        // return Diablo3Util::getSkillImages(119742011);
         $char = Character::find(2)->with('items.modifiers')->first()->toArray();
         ChromePhp::log($char);
+        Profiler::startTimer('testLogging');
+
+        Profiler::logInfo('Hello World!');
+        Profiler::logNotice('Some event occurred.');
+        Profiler::logWarning('Careful: some warning.');
+        Profiler::logError('Runtime error.');
+        Profiler::logCritical('This needs to be fixed now!');
+        Profiler::logEmergency('The website is down right now.');
+
+        Profiler::endTimer('testLogging');
 
         // Look for characters for logged in user
         $user = User::find( (int)Sentry::getUser()->id )->characters->first();

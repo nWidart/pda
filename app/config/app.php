@@ -114,7 +114,8 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
-		// 'Diablo3\Diablo3Util'
+		'Diablo3\Diablo3ServiceProvider',
+		'Profiler\ProfilerServiceProvider'
 
 	),
 
@@ -181,7 +182,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
-		'Restful'         => 'Jonob\Restful\Restful',
+		'Profiler'		  => 'Profiler\Facades\Profiler',
 
 	),
 

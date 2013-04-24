@@ -11,7 +11,6 @@ Account Signup | PDA
         <form method="post" action="" class="">
             <input type="hidden" name="csrf_token" id="csrf_token" class="span4" value="{{{ Session::getToken() }}}" />
 
-
             <div class="control-group {{{ $errors->has('email') ? 'error' : '' }}}">
                 <div class="controls">
                     <input type="text" name="email" id="email {{{ $errors->has('email') ? 'inputWarning' : '' }}}" class="span4" value="{{{ Request::old('email') }}}" placeholder="Email"/>

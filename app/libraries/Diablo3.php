@@ -377,37 +377,44 @@ class Diablo3 {
     public function getAllSkillImages($heroeID, $size = null)
     {
         $hero_data = $this->getHero($heroeID);
-
-        foreach ($hero_data['skills']['active'] as $skills)
+        if ( is_array($hero_data) )
         {
-            if (isset($skills['skill']['icon']))
+            foreach ($hero_data['skills']['active'] as $skills)
             {
-                $skillname = $skills['skill']['icon'];
-
-                // Checking the size
-                switch ($size)
+                if (isset($skills['skill']['icon']))
                 {
-                    case '64':
-                        $this->getSkillImage($skillname, '64');
-                        break;
-                    case '41':
-                        $this->getSkillImage($skillname, '42');
-                        break;
-                    case '21':
-                        $this->getSkillImage($skillname, '21');
-                        break;
-                    case null:
-                        $this->getSkillImage($skillname, '64');
-                        $this->getSkillImage($skillname, '42');
-                        $this->getSkillImage($skillname, '21');
-                        break;
-                    default:
-                        error_log("Not a correct image size.Choose between 64,42,21.");
-                        return "Not a correct image size. Choose between 64,42,21.";
-                        break;
+                    $skillname = $skills['skill']['icon'];
+
+                    // Checking the size
+                    switch ($size)
+                    {
+                        case '64':
+                            $this->getSkillImage($skillname, '64');
+                            break;
+                        case '41':
+                            $this->getSkillImage($skillname, '42');
+                            break;
+                        case '21':
+                            $this->getSkillImage($skillname, '21');
+                            break;
+                        case null:
+                            $this->getSkillImage($skillname, '64');
+                            $this->getSkillImage($skillname, '42');
+                            $this->getSkillImage($skillname, '21');
+                            break;
+                        default:
+                            error_log("Not a correct image size.Choose between 64,42,21.");
+                            return "Not a correct image size. Choose between 64,42,21.";
+                            break;
+                    }
                 }
             }
         }
+        else
+        {
+            return false;
+        }
+        return true;
     }
 
     /**

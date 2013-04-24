@@ -21,7 +21,8 @@ class CharacterController extends BaseController {
         ChromePhp::log($char);
 
         $character = Character::find( $id );
-        $heroData = $this->_saveCharacterItems( $character['hero_id'], $id );
+        // $heroData = $this->_saveCharacterItems( $character['hero_id'], $id );
+        Diablo3Util::saveCharacterItems( $character['hero_id'], $id );
 
         return $id;
     }

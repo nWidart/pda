@@ -2,7 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class ExampleServiceProvider extends ServiceProvider {
+class Diablo3ServiceProvider extends ServiceProvider {
 
     /**
      * Register the service provider.
@@ -14,7 +14,7 @@ class ExampleServiceProvider extends ServiceProvider {
         // Register 'underlyingclass' instance container to our UnderlyingClass object
         $this->app['diablo3util'] = $this->app->share(function($app)
         {
-            return new Diablo3\Diablo3Util;
+            return new Diablo3Util;
         });
 
         // Shortcut so developers don't need to add an Alias in app/config/app.php

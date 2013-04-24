@@ -62,6 +62,10 @@ class AuthController extends BaseController {
                 echo 'User with this login already exists.';
             }
         }
+        Profiler::logInfo( 'error: ');
+        ChromePhp::log('ok');
+        // return 'ok';
+        // return Redirect::back()->withInput()->withErrors($validator->getErrors());
         return Redirect::back()->withInput()->withErrors($validator->getErrors());
     }
 
