@@ -1,14 +1,7 @@
 {
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "http://packages.cartalyst.com"
-        }
-    ],
 	"require": {
 		"laravel/framework": "4.0.*",
 		"cartalyst/sentry": "2.0.*",
-        "cartalyst/sentry-social": "2.0.*",
 		"way/generators": "dev-master",
 		"loic-sharma/profiler": "1.0.*"
 	},

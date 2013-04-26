@@ -13,3 +13,18 @@
 .settings {
     display: none;
 }
+
+.characters {
+  /* dropdown in accordion */
+}
+.characters .accordion-heading {
+    position: relative;
+}
+.characters .accordion-heading .edit {
+    position: absolute;
+    top: 8px;
+    right: 30px;
+}
+.characters .area {
+    border-left: 4px solid #f38787;
+}

@@ -25,6 +25,8 @@
     @section('styles')
     @show
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="{{ asset( 'assets/js/jquery-1.9.1.min.js' )}}"></script>
+
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
