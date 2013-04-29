@@ -12,9 +12,12 @@ class Item extends Eloquent {
     {
         return $this->belongsToMany('character', 'character_items');
     }
-    public function modifiers()
+    // public function modifiers()
+    // {
+    //     return $this->hasMany('Modifier');
+    // }
+    public function attributes()
     {
-        return $this->hasMany('Modifier');
+        return $this->hasMany('ItemAttribute');
     }
-
 }

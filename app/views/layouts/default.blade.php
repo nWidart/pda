@@ -62,7 +62,8 @@
                 <ul class="nav pull-right">
                   @if( Sentry::check() )
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <?php echo ( empty( Sentry::getUser()->first_name ) ) ? '{John Doe}' : Sentry::getUser()->first_name; ?>
+                      <span class="username">
+                      <?php echo ( empty( Sentry::getUser()->first_name ) ) ? '{John Doe}' : Sentry::getUser()->first_name; ?></span>
                        <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a class="" data-toggle="modal" href="#modal" ><i class="icon-cog"></i> Preferences</a></li>

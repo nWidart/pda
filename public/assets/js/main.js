@@ -62,7 +62,10 @@ $(document).ready(function() {
 
             $modal.modal('loading');
             if (data.success)
+            {
+                $('span.username').html( $('input[name="firstName"]').val() );
                 alertify.success( data.success );
+            }
             else
             {
                 alertify.error( data.error );
