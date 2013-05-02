@@ -45,7 +45,7 @@
 
   <body>
 
-    @include('layouts.navigation_logged')
+    @include('layouts.navigation')
 
     <div class="container">
         @include('layouts.notifications')
