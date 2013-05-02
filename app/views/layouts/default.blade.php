@@ -13,16 +13,14 @@
 
     <!-- Le styles -->
     <link href="{{{ asset('assets/css/bootstrap.css') }}}" rel="stylesheet">
-    <style>
-      body {
-        /* padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
-    </style>
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
     <link href="{{{ asset('assets/css/bootstrap-responsive.css') }}}" rel="stylesheet">
+
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
     <link href="{{{ asset('assets/css/alertify.css') }}}" rel="stylesheet">
     <link href="{{{ asset('assets/css/bootstrap-modal.css') }}}" rel="stylesheet">
     <link href="{{{ asset('assets/css/m-buttons.css') }}}" rel="stylesheet">
+    <link href="{{{ asset('assets/css/entypo16.css') }}}" rel="stylesheet">
+    <link href="{{{ asset('assets/css/m-forms.css') }}}" rel="stylesheet">
     <link href="{{{ asset('assets/css/main.css') }}}" rel="stylesheet">
     @section('styles')
     @show
@@ -30,6 +28,8 @@
     <script src="{{ asset( 'assets/js/jquery-1.9.1.min.js' )}}"></script>
 
 
+    <!--[if IE 7]>
+    <link href="{{{ asset('assets/css/entypo16-ie7.css') }}}" rel="stylesheet"><![endif]-->
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="../assets/js/html5shiv.js"></script>
@@ -45,69 +45,9 @@
 
   <body>
 
-    <div class="navbar navbar-inverse">
-        <div class="navbar-inner">
-            <div class="container">
-                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="brand" href="#">Personal Diablo Assistant</a>
-                <div class="nav-collapse collapse">
-                    <ul class="nav">
-                        @if( Sentry::check() )
-                            <li {{ (Request::is('dashboard') ? 'class=active' : '') }}><a href="{{ URL::to('dashboard') }}">Dashboard</a></li>
-                            @if ( isset($characters) )
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle {{ (Request::is('character') ? 'class=active' : '') }}" data-toggle="dropdown" data-hover="dropdown">Characters<b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        @foreach($characters as $character)
-                                            <li><a class="" data-toggle="modal" href="{{ URL::action('CharacterController@getProfile', [$character->id]) }}" >{{ $character->name }}</a></li>
-                                        @endforeach
-                                    </ul>
-                                </li>
-                            @endif
-                        @else
-                            <li {{{ (Request::is('/') ? 'class=active' : '') }}}><a href="{{{ URL::to('') }}}">Home</a></li>
-                            <li><a href="#about">Features</a></li>
-                        @endif
-                    </ul>
+    @include('layouts.navigation_logged')
 
-                    <div class="pull-right">
-                        <ul class="nav pull-right">
-                            @if( Sentry::check() )
-                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
-                                <span class="username">
-                                <?php echo ( empty( Sentry::getUser()->first_name ) ) ? '{John Doe}' : Sentry::getUser()->first_name; ?></span>
-                                <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="" data-toggle="modal" href="#modal" ><i class="icon-cog"></i> Preferences</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="{{ URL::action('AuthController@getLogout') }}"><i class="icon-off"></i> Logout</a></li>
-                                </ul>
-                            </li>
-                            @else
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown">Sign In <strong class="caret"></strong></a>
-                                <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-                                    {{ Form::open(array('action' => 'AuthController@postLogin')) }}
-                                        <input style="margin-bottom: 15px;" type="text" placeholder="Email" id="email" name="email">
-                                        <input style="margin-bottom: 15px;" type="password" placeholder="Password" id="password" name="password">
-                                        <input class="m-btn blue rnd btn-block" type="submit" id="sign-in" value="Sign In">
-                                        <small>Don't have an account yet? <a href="{{ URL::action('AuthController@getRegister') }}">Create one.</a></small>
-                                    </form>
-                                </div>
-                            </li>
-                            @endif
-                        </ul><!-- end nav -->
-                    </div><!-- end pull-right -->
-                </div><!--/.nav-collapse -->
-            </div><!-- end container -->
-        </div>
-    </div>
-
-    <div class="container-fluid">
+    <div class="container">
         @include('layouts.notifications')
         @yield('content')
         @if( Sentry::check() )
@@ -131,6 +71,10 @@
       $('.alert-warning').on('click', function() {
         $('.alert-warning').fadeOut();
       });
+      // $('a[data-toggle="tooltip"]').on('mouseenter', function() {
+      //   console.log(this);
+      //   this.tooltip('toggle');
+      // });
     </script>
     @section('scripts')
     @show

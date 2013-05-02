@@ -1,3 +1,39 @@
+/*
+General Styles
+ */
+body {
+    background: #f2f2f2;
+    padding-top: 120px;
+}
+.well {
+    background: #FFF;
+    border: 1px solid #dfe9f6;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+/*
+General Typography
+ */
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Ubuntu";
+}
+
+h3 {
+    font-weight: 400;
+    line-height: 0;
+    color: #5d6d81; /* text color */
+    font-size: 18px;
+    display: inline-block;
+    margin-top: 24px;
+    margin-bottom: 5px;
+}
+h4 {
+    font-weight: 300;
+    color: #9da7b3; /* text color */
+    font-size: 14px;
+    line-height: 0;
+}
+
 .modalList {
     list-style:none;
 }
@@ -69,9 +105,28 @@
 .navbar .nav li:hover > a,
 .navbar .nav li.active > a {
     background: #eb5a47;
-    border-radius: 3px;
     color: #ffffff;
 }
+.navbar .nav > li.active:hover > a,
+.navbar .nav > li:hover > a,
+.navbar .nav > li.active > a {
+    border-radius: 3px;
+}
+.dropdown-menu {
+    border-color: #dfe9f6;
+    -moz-border-radius: 1px 1px 3px 3px;
+    -webkit-border-radius: 1px 1px 3px 3px;
+    border-radius: 1px 1px 3px 3px; /* border radius */
+
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; /* prevents bg color from leaking outside the border */
+    background-color: #fff; /* layer fill content */
+    -moz-box-shadow: 0 0 4px rgba(0,0,0,.08); /* outer glow */
+    -webkit-box-shadow: 0 0 4px rgba(0,0,0,.08); /* outer glow */
+    box-shadow: 0 0 4px rgba(0,0,0,.08); /* outer glow */
+}
+
 .navbar .nav > li > a {
     padding: 10px 18px;
     color: #fff; /* text color */
@@ -86,7 +141,6 @@
 .navbar .nav > .active > a:focus {
     color: #424242;
 }
-
 
 /*
 Slider
@@ -121,4 +175,89 @@ Buttons
     box-shadow: 0 2px 0 #9b3b2f;
     position: relative;
     top: 7px;
+}
+
+
+/*
+Badges
+*/
+.badge-big:nth-child(4n+1){
+    margin-left:0;
+}
+.badge-big {
+    background: #FFF;
+    border: 1px solid #dfe9f6;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    position: relative;
+    margin-bottom: 20px;
+}
+.badge-big:hover {
+    border-color: #8d97a6;
+}
+.badge-big > a.hidden-eye {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color:white;
+    -webkit-transition: all ease-in-out .1s;
+       -moz-transition: all ease-in-out .1s;
+        -ms-transition: all ease-in-out .1s;
+         -o-transition: all ease-in-out .1s;
+            transition: all ease-in-out .1s;
+}
+.badge-big:hover > a.hidden-eye {
+    color:#5d6d81;
+}
+.badge-body {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.avatar {
+    -moz-border-radius: 40px;
+    -webkit-border-radius: 40px;
+    border-radius: 40px; /* border radius */
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; /* prevents bg color from leaking outside the border */
+    float:left;
+    margin-right: 20px;
+}
+.badge-footer {
+
+}
+.badge-footer span {
+    font-weight: 500;
+}
+.badge-footer p {
+    margin: 5px 0 0 0;
+}
+.badge-footer > div {
+    width: 50%;
+    display: inline-block;
+    float: left;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+    font-family: "Ubuntu";
+    font-weight: 400;
+    font-size: 12px;
+}
+.badge-footer .level {
+    -moz-border-radius: 0 0 0 3px;
+    -webkit-border-radius: 0 0 0 3px;
+    border-radius: 0 0 0 3px; /* border radius */
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; /* prevents bg color from leaking outside the border */
+    background-color: #13b9d5; /* layer fill content */
+}
+.badge-footer .plevel {
+    -moz-border-radius: 0 0 3px;
+    -webkit-border-radius: 0 0 3px;
+    border-radius: 0 0 3px; /* border radius */
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; /* prevents bg color from leaking outside the border */
+    background-color: #f17935; /* layer fill content */
 }

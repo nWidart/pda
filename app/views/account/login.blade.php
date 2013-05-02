@@ -13,7 +13,7 @@ Account Signup | PDA
 
             <div class="control-group {{{ $errors->has('email') ? 'error' : '' }}}">
                 <div class="controls">
-                    <input type="text" name="email" id="email" class="span4" value="{{{ Input::old('email') }}}" placeholder="Email" />
+                    <input type="text" name="email" id="email" class="m-ctrl-large m-wrap" value="{{{ Input::old('email') }}}" placeholder="Email" />
                     <span class="help-block">
                         {{ $errors->first('email') }}
                     </span>
@@ -22,7 +22,7 @@ Account Signup | PDA
 
             <div class="control-group {{{ $errors->has('password') ? 'error' : '' }}}">
                 <div class="controls">
-                    <input type="password" name="password" class="span4" id="password" value="" placeholder="Password" />
+                    <input type="password" name="password" class="m-ctrl-large m-wrap" id="password" value="" placeholder="Password" />
                     <span class="help-block">
                         {{ $errors->first('password') }}
                     </span>
