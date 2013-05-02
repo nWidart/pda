@@ -65,24 +65,19 @@ class Diablo3Util {
                     }
 
                     // Step 2. Add the modifiers to that item
-                    // No validation? Maybe just to check for integers/floats.
-                    // TODO: check if ALL the modifiers are unique. If not means an item rolled exactly the same mods.
-                    // how?
-                    $modifier = new \Modifier;
-                    $modifier->dexterity = ( isset( $itemData['attributesRaw']['Dexterity_Item']['min'] ) )
-                                            ? $itemData['attributesRaw']['Dexterity_Item']['min'] : 0;
-                    $modifier->intelligence = ( isset( $itemData['attributesRaw']['Intelligence_Item']['min'] ) )
-                                            ? $itemData['attributesRaw']['Intelligence_Item']['min'] : 0;
-                    $modifier->strength = ( isset( $itemData['attributesRaw']['Strength_Item']['min'] ) )
-                                            ? $itemData['attributesRaw']['Strength_Item']['min'] : 0;
-                    $modifier->vitality = ( isset( $itemData['attributesRaw']['Vitality_Item']['min'] ) )
-                                            ? $itemData['attributesRaw']['Vitality_Item']['min'] : 0;
-                    $item = \Item::find( $item->id );
-                    $modifier = $item->modifiers()->save($modifier);
+                    //
+                    foreach ($itemData['attributesRaw'] as $name => $value) {
+                        // $dbAttr = \ItemAttribute::whereName( $name )->whereMax( $value['max'] )->where( 'item_id', '=', $item->id )->first();
+
+                        // $attribute = new \ItemAttribute;
+                        // $attribute->name = $name;
+                        // $attribute->max = $value['max'];
+                        // $item = \Item::find( $item->id );
+                        // $attribute = $item->attributes()->save( $attribute );
+                    }
 
                     // Step 3. Attach the item to a Character
-                    // Check if character already has that item
-                    // If so detach it
+                    // Check if character already has that item If so detach it
                     //
                     $input = [ 'item_id' => $item->id ];
                     $char = \Character::find( $charId );

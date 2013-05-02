@@ -29,7 +29,7 @@ Account Signup | PDA
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-info btn-block">Login</button>
+            <button type="submit" class="m-btn blue rnd btn-block">Login</button>
         </form>
     </div>
 </div>
