@@ -38,75 +38,81 @@
     <!-- Fav and touch icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{{ asset('assets/ico/apple-touch-icon-144-precomposed.png') }}}">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{{ asset('assets/ico/apple-touch-icon-114-precomposed.png') }}}">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{{ asset('assets/ico/apple-touch-icon-72-precomposed.png') }}}">
-                    <link rel="apple-touch-icon-precomposed" href="{{{ asset('assets/ico/apple-touch-icon-57-precomposed.png') }}}">
-                                   <link rel="shortcut icon" href="{{{ asset('assets/ico/favicon.png') }}}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{{ asset('assets/ico/apple-touch-icon-72-precomposed.png') }}}">
+    <link rel="apple-touch-icon-precomposed" href="{{{ asset('assets/ico/apple-touch-icon-57-precomposed.png') }}}">
+    <link rel="shortcut icon" href="{{{ asset('assets/ico/favicon.png') }}}">
   </head>
 
   <body>
 
     <div class="navbar navbar-inverse">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="#">Personal Diablo Assistant</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li {{{ (Request::is('/') ? 'class=active' : '') }}}><a href="{{{ URL::to('') }}}">Home</a></li>
-              <li><a href="#about">Features</a></li>
-            </ul>
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="#">Personal Diablo Assistant</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        @if( Sentry::check() )
+                            <li {{ (Request::is('dashboard') ? 'class=active' : '') }}><a href="{{ URL::to('dashboard') }}">Dashboard</a></li>
+                            @if ( isset($characters) )
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle {{ (Request::is('character') ? 'class=active' : '') }}" data-toggle="dropdown" data-hover="dropdown">Characters<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        @foreach($characters as $character)
+                                            <li><a class="" data-toggle="modal" href="{{ URL::action('CharacterController@getProfile', [$character->id]) }}" >{{ $character->name }}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                            @endif
+                        @else
+                            <li {{{ (Request::is('/') ? 'class=active' : '') }}}><a href="{{{ URL::to('') }}}">Home</a></li>
+                            <li><a href="#about">Features</a></li>
+                        @endif
+                    </ul>
 
-            <div class="pull-right">
-                <ul class="nav pull-right">
-                  @if( Sentry::check() )
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
-                      <span class="username">
-                      <?php echo ( empty( Sentry::getUser()->first_name ) ) ? '{John Doe}' : Sentry::getUser()->first_name; ?></span>
-                       <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="" data-toggle="modal" href="#modal" ><i class="icon-cog"></i> Preferences</a></li>
-                            <li class="divider"></li>
-                            <li><a href="{{ URL::action('AuthController@getLogout') }}"><i class="icon-off"></i> Logout</a></li>
-                        </ul>
-                    </li>
-                    @else
-                    <li class="dropdown">
-                      <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown">Sign In <strong class="caret"></strong></a>
-                      <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-                        {{ Form::open(array('action' => 'AuthController@postLogin')) }}
-                          <input style="margin-bottom: 15px;" type="text" placeholder="Email" id="email" name="email">
-                          <input style="margin-bottom: 15px;" type="password" placeholder="Password" id="password" name="password">
-                          <input class="m-btn blue rnd btn-block" type="submit" id="sign-in" value="Sign In">
-                          <small>Don't have an account yet? <a href="{{ URL::action('AuthController@getRegister') }}">Create one.</a></small>
-                        </form>
-                      </div>
-                    </li>
-                    @endif
-                </ul><!-- end nav -->
-              </div><!-- end pull-right -->
-              @if( Sentry::check() )
-              <div class="btn-group pull-right">
-                <a class="btn" href="{{ URL::to('dashboard') }}">
-                  <i class="icon-user"></i> Dashboard</span>
-                </a>
-              </div>
-              @endif
-
-          </div><!--/.nav-collapse -->
-        </div><!-- end container -->
-      </div>
+                    <div class="pull-right">
+                        <ul class="nav pull-right">
+                            @if( Sentry::check() )
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+                                <span class="username">
+                                <?php echo ( empty( Sentry::getUser()->first_name ) ) ? '{John Doe}' : Sentry::getUser()->first_name; ?></span>
+                                <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="" data-toggle="modal" href="#modal" ><i class="icon-cog"></i> Preferences</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="{{ URL::action('AuthController@getLogout') }}"><i class="icon-off"></i> Logout</a></li>
+                                </ul>
+                            </li>
+                            @else
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown">Sign In <strong class="caret"></strong></a>
+                                <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+                                    {{ Form::open(array('action' => 'AuthController@postLogin')) }}
+                                        <input style="margin-bottom: 15px;" type="text" placeholder="Email" id="email" name="email">
+                                        <input style="margin-bottom: 15px;" type="password" placeholder="Password" id="password" name="password">
+                                        <input class="m-btn blue rnd btn-block" type="submit" id="sign-in" value="Sign In">
+                                        <small>Don't have an account yet? <a href="{{ URL::action('AuthController@getRegister') }}">Create one.</a></small>
+                                    </form>
+                                </div>
+                            </li>
+                            @endif
+                        </ul><!-- end nav -->
+                    </div><!-- end pull-right -->
+                </div><!--/.nav-collapse -->
+            </div><!-- end container -->
+        </div>
     </div>
 
     <div class="container-fluid">
-      @include('layouts.notifications')
-      @yield('content')
-      @if( Sentry::check() )
-        @include('layouts.modals')
-      @endif
+        @include('layouts.notifications')
+        @yield('content')
+        @if( Sentry::check() )
+            @include('layouts.modals')
+        @endif
     </div> <!-- /container -->
 
     <!-- Le javascript
