@@ -124,7 +124,7 @@ input[type="color"].m-wrap:focus,
 input[type="radio"].m-wrap,
 input[type="checkbox"].m-wrap {
   	margin: 4px 0 0;
-  	margin-top: 1px \9;
+  	margin-top: 1px;
   	*margin-top: 0;
   	line-height: normal;
 	cursor: pointer;
