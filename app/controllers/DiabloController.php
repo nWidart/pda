@@ -14,7 +14,7 @@ class DiabloController extends BaseController {
     public function postImport()
     {
         // Get the selected characters array
-        $characters = Input::get('d3characters');
+        $characters = Input::all();
 
         // if not characters where selected redirect
         if ( !$characters )
@@ -28,7 +28,7 @@ class DiabloController extends BaseController {
 
         $userId = Sentry::getUser()->id;
         // For each character, add it to the DB with the currect logged in user
-
+        // return $characters;
         foreach ($characters as $character) {
             $input = [ 'character' => $character];
             $validator = new Services\Validators\Character($input);

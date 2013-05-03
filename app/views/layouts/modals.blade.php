@@ -96,22 +96,32 @@
                     <div class="tab-pane fade" id="importHeroes">
                         <?php if ( !empty( $user->battletag ) && !empty( $user->server) ): ?>
                         <form class="d3form_p2" action="/diablo/import" method="post">
-                            @if ( !empty( $options ) )
-                                <select multiple="multiple" class="d3characters" name="d3characters[]">
-                                    @foreach($options as $option)
-                                        {{ $option }}
+                            <div class="inner-form">
+                                @if ( !empty( $heroes ) )
+                                    @foreach( $heroes as $hero )
+                                        <div class="badge-small">
+                                            <input type="checkbox" name="{{$hero['name']}}" value="{{$hero['id']}}" />
+                                            <img src="assets/img/d3/portraits/64/barbarian_0.png" alt="" class="avatar">
+
+                                            <h3>{{$hero['name']}}</h3>
+                                            <h4>{{$hero['class']}}</h4>
+                                            <i class="icon-check-1"></i>
+                                        </div>
                                     @endforeach
-                                </select>
-                            @else
-                                <p class="text-error">No characters were found for: <strong><?php echo $user->battletag; ?></strong> on server: <strong><?php echo strtoupper( $user->server ); ?></strong></p>
-                                <p>
-                                    <a href="#profile" class="jsProfile" data-toggle="tab">Add/modify your Battletag and server info.</a>
-                                </p>
-                            @endif
+                                @else
+                                    <p class="text-error">No characters were found for: <strong><?php echo $user->battletag; ?></strong> on server: <strong><?php echo strtoupper( $user->server ); ?></strong></p>
+                                    <p>
+                                        <a href="#profile" class="jsProfile" data-toggle="tab">Add/modify your Battletag and server info.</a>
+                                    </p>
+                                @endif
+                            </div><!-- end inner-form -->
+                            <div class="clearfix"></div>
                             <br>
                             <div class="modal-footer">
-                              <a href="/dashboard" class="btn">Cancel</a>
-                              {{ Form::submit('Import', ['class' => 'btn btn-primary']);}}
+                                <div class="m-btn-group">
+                                    <a href="#" data-dismiss="modal" class="m-btn black">Cancel</a>
+                                    {{ Form::submit('Import', ['class' => 'm-btn green']);}}
+                                </div>
                             </div>
                         </form>
                         <?php else: ?>
@@ -129,3 +139,16 @@
     </div>
   </div>
 </div>
+<script>
+    $('.badge-small').on('click', function(){
+        if(!$(this).find('input[type="checkbox"]').prop('checked')){
+            $(this).find('input[type="checkbox"]').prop('checked', true).attr('checked','checked');
+            $(this).addClass('badge-small-selected');
+            $(this).find('i.icon-check-1').show();
+        }else{
+            $(this).find('input[type="checkbox"]').prop('checked', false).removeAttr('checked');
+            $(this).removeClass('badge-small-selected');
+            $(this).find('i.icon-check-1').hide();
+        }
+    });
+</script>

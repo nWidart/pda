@@ -4,6 +4,7 @@ General Styles
 body {
     background: #f2f2f2;
     padding-top: 100px;
+    font-size: 14px;
 }
 .well {
     background: #FFF;
@@ -16,6 +17,7 @@ General Typography
  */
 h1,h2,h3,h4,h5,h6 {
     font-family: "Ubuntu";
+    line-height: 1.5em;
 }
 h1 {
     font-size: 22px;
@@ -24,12 +26,9 @@ h1 {
 }
 h3 {
     font-weight: 400;
-    line-height: 0;
     color: #5d6d81; /* text color */
     font-size: 18px;
-    display: inline-block;
-    margin-top: 24px;
-    margin-bottom: 5px;
+    display: block;
 }
 h4 {
     font-weight: 300;
@@ -45,7 +44,7 @@ Modal Styling
     top: 45%;
 }
 .modal {
-    width: 629px;
+    width: 712px;
     border: none;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -267,6 +266,7 @@ Buttons
 /*
 Badges
 */
+/* Big badges */
 .badge-big:nth-child(4n+1){
     margin-left:0;
 }
@@ -278,6 +278,7 @@ Badges
     position: relative;
     margin-bottom: 20px;
 }
+
 .badge-big:hover {
     border-color: #8d97a6;
 }
@@ -346,4 +347,57 @@ Badges
     -webkit-background-clip: padding-box;
     background-clip: padding-box; /* prevents bg color from leaking outside the border */
     background-color: #f17935; /* layer fill content */
+}
+/* Small Badges */
+.badge-small {
+    width: 111px;
+    height: 105px;
+    border: 1px solid #dee8f6; /* stroke */
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px; /* border radius */
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; /* prevents bg color from leaking outside the border */
+    background-color: #fff; /* layer fill content */
+    padding: 20px;
+    float: left;
+    text-align: center;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.badge-small > h3 {
+    margin-top: 0;
+}
+.badge-small:nth-child(4n) {
+    margin-right: 0;
+}
+.badge-small:hover {
+    border-color: #8d97a6;
+    cursor: pointer;
+}
+.badge-small-selected:hover,
+.badge-small-selected {
+    border: 1px solid #39b54a;
+}
+.badge-small > .avatar {
+    float: none;
+    margin: 0 auto;
+    width: 64px;
+}
+.badge-small input[type="checkbox"]{
+    display: none;
+}
+.badge-small > .icon-check-1 {
+    display: none;
+    font-size: 30px;
+    color: #39b54a;
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
+}
+.inner-form {
+    min-height: 150px;
+    margin: 0 20px;
 }
