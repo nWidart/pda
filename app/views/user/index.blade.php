@@ -9,6 +9,9 @@ Your Profile | PDA
 
 @section('content')
     <div class="row">
+        <h1>Characters</h1>
+    </div>
+    <div class="row">
         @if ( isset($characters) )
             @foreach($characters as $character)
                 <div class="span3 badge-big">

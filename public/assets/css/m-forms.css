@@ -47,10 +47,8 @@ input[type="color"].m-wrap,
 	font-size: 14px;
 	line-height: 20px;
 	color: #333333;
-
 	background-color: #ffffff;
 	border: 1px solid #eeeeee;
-
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	border-radius: 0;
@@ -60,7 +58,7 @@ input[type="color"].m-wrap,
 input.m-wrap,
 textarea.m-wrap,
 .m-uneditable-input {
-  width: 206px;
+  /*width: 206px;*/
 }
 
 textarea.m-wrap {
@@ -250,7 +248,7 @@ textarea.m-wrap::-webkit-input-placeholder {
 }
 
 .m-ctrl-large {
-  width: 320px !important;
+  width: 356px !important;
 }
 
 .m-ctrl-huge

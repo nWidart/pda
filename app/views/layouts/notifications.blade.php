@@ -1,10 +1,10 @@
 <div class="row">
 @if (count($errors->all()) > 0)
-<div class="alert alert-error alert-block">
-	<button type="button" class="close" data-dismiss="alert">&times;</button>
-	<h4>Error</h4>
-	Please check the form bellow for errors
-</div>
+<script type="text/javascript">
+	$(document).ready( function() {
+		alertify.error( 'Please check the form for errors.' );
+	});
+</script>
 @endif
 
 @if ($message = Session::get('success'))

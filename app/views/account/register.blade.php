@@ -13,7 +13,7 @@ Account Signup | PDA
 
             <div class="control-group {{{ $errors->has('email') ? 'error' : '' }}}">
                 <div class="controls">
-                    <input type="text" name="email" id="email {{{ $errors->has('email') ? 'inputWarning' : '' }}}" class="span4" value="{{{ Request::old('email') }}}" placeholder="Email"/>
+                    <input type="text" name="email" id="email {{{ $errors->has('email') ? 'inputWarning' : '' }}}" class="m-ctrl-large m-wrap" value="{{{ Request::old('email') }}}" placeholder="Email"/>
                     <span class="help-block">
                         {{ $errors->first('email') }}
                     </span>
@@ -22,7 +22,7 @@ Account Signup | PDA
 
             <div class="control-group {{{ $errors->has('password') ? 'error' : '' }}}">
                 <div class="controls">
-                    <input type="password" name="password" id="password {{{ $errors->has('password') ? 'inputWarning' : '' }}}" class="span4" value="" placeholder="Password" />
+                    <input type="password" name="password" id="password {{{ $errors->has('password') ? 'inputWarning' : '' }}}" class="m-ctrl-large m-wrap" value="" placeholder="Password" />
                     <span class="help-block">
                         {{ $errors->first('password') }}
                     </span>
@@ -31,14 +31,14 @@ Account Signup | PDA
 
             <div class="control-group {{{ $errors->has('password_confirmation') ? 'error' : '' }}}">
                 <div class="controls">
-                    <input type="password" name="password_confirmation" id="password_confirmation {{{ $errors->has('password_confirmation') ? 'inputWarning' : '' }}}" class="span4" value="" placeholder="Password confirmation" />
+                    <input type="password" name="password_confirmation" id="password_confirmation {{{ $errors->has('password_confirmation') ? 'inputWarning' : '' }}}" class="m-ctrl-large m-wrap" value="" placeholder="Password confirmation" />
                     <span class="help-block">
                         {{ $errors->first('password_confirmation') }}
                     </span>
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-info btn-block">Signup</button>
+            <button type="submit" class="m-btn blue rnd btn-block">Signup</button>
         </form>
     </div>
 
