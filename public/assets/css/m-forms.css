@@ -450,3 +450,11 @@ select.m-wrap:focus:required:invalid:focus {
      -moz-border-radius: 0px;
           border-radius: 0px;
 }
+
+
+legend {
+  color: #494949;
+  font-weight: 300;
+  font-size: 22px;
+  border-bottom-color: #DFE9F6;
+}
