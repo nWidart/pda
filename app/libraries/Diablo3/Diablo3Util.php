@@ -2,7 +2,7 @@
 
 class Diablo3Util {
     /** getSkillImages
-     * Saves all the skill images for a given battletag
+     * Saves all the skill images for a given character ID
      *
      * @param  int $charId
      * @return string
@@ -11,6 +11,18 @@ class Diablo3Util {
     {
         $Diablo3 = new \Diablo3( \Sentry::getUser()->battletag, \Sentry::getUser()->server, 'en_US' );
         return ( $Diablo3->getAllSkillImages( $charId ) ) ? 'true' : 'false';
+    }
+
+    /** getItemImages
+     * Saves all the item images for a given character ID
+     *
+     * @param  int $charId
+     * @return string
+     */
+    public function getItemImages( $charId )
+    {
+        $Diablo3 = new \Diablo3( \Sentry::getUser()->battletag, \Sentry::getUser()->server, 'en_US' );
+        return ( $Diablo3->getAllItemImages( $charId ) ) ? 'true' : 'false';
     }
 
     /**
@@ -55,6 +67,7 @@ class Diablo3Util {
                         //
                         $item = new \Item;
                         $item->name = $itemData['name'];
+                        $item->icon = $itemData['icon'];
                         $item->save();
                     }
                     else
@@ -69,11 +82,11 @@ class Diablo3Util {
                     foreach ($itemData['attributesRaw'] as $name => $value) {
                         // $dbAttr = \ItemAttribute::whereName( $name )->whereMax( $value['max'] )->where( 'item_id', '=', $item->id )->first();
 
-                        // $attribute = new \ItemAttribute;
-                        // $attribute->name = $name;
-                        // $attribute->max = $value['max'];
-                        // $item = \Item::find( $item->id );
-                        // $attribute = $item->attributes()->save( $attribute );
+                        $attribute = new \ItemAttribute;
+                        $attribute->name = $name;
+                        $attribute->max = $value['max'];
+                        $item = \Item::find( $item->id );
+                        $attribute = $item->attributes()->save( $attribute );
                     }
 
                     // Step 3. Attach the item to a Character

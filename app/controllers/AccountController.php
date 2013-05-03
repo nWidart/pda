@@ -18,7 +18,6 @@ class AccountController extends BaseController {
      */
     public function getIndex()
     {
-        // return Diablo3Util::getSkillImages(119742011);
         // $char = Character::find(2)->with('items.modifiers')->first()->toArray();
 
         // Look for characters for logged in user

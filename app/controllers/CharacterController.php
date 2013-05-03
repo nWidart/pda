@@ -17,13 +17,15 @@ class CharacterController extends BaseController {
     public function getProfile( $id )
     {
         // Get a character with all its items (& item modifiers)
-        // $char = Character::with('items.modifiers')->first()->toArray();
-        // ChromePhp::log($char);
+        $char = Character::whereId($id)->with('items.attributes')->first()->toArray();
+        ChromePhp::log($char);
 
-        $character = Character::find( $id );
+        // $character = Character::find( $id );
         // $heroData = $this->_saveCharacterItems( $character['hero_id'], $id );
-        Diablo3Util::saveCharacterItems( $character['hero_id'], $id );
+        // Diablo3Util::saveCharacterItems( $character['hero_id'], $id );
 
-        return $id;
+        $characters = User::find( (int)Sentry::getUser()->id )->characters;
+        $data = ['characters' => $characters, 'user' => Sentry::getUser() ];
+        return View::make( 'user.character', $data );
     }
 }

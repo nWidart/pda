@@ -1,12 +1,6 @@
 <?php
 
 class DiabloController extends BaseController {
-    public function postTesting()
-    {
-        return 'nice';
-    }
-
-
     /**
      * Import all selected characters into the db
      *

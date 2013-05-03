@@ -12,8 +12,8 @@
                 <ul class="nav">
                     <li {{ (Request::is('dashboard') ? 'class=active' : '') }}><a href="{{ URL::to('dashboard') }}">Dashboard</a></li>
                     @if ( isset($characters) )
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle {{ (Request::is('character') ? 'class=active' : '') }}" data-toggle="dropdown" data-hover="dropdown">Characters<b class="caret"></b></a>
+                        <li class="dropdown {{ (Request::is('character/profile/*') ? 'active' : '') }}">
+                            <a href="#" class="dropdown-toggle {{ (Request::is('character/profile/*') ? 'active' : '') }}" data-toggle="dropdown" data-hover="dropdown">Characters<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 @foreach($characters as $character)
                                     <li><a class="" href="{{ URL::action('CharacterController@getProfile', [$character->id]) }}" >{{ $character->name }}</a></li>
