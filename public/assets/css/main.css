@@ -3,7 +3,7 @@ General Styles
  */
 body {
     background: #f2f2f2;
-    padding-top: 120px;
+    padding-top: 100px;
 }
 .well {
     background: #FFF;
@@ -17,7 +17,11 @@ General Typography
 h1,h2,h3,h4,h5,h6 {
     font-family: "Ubuntu";
 }
-
+h1 {
+    font-size: 22px;
+    color: #494949;
+    font-weight: 300;
+}
 h3 {
     font-weight: 400;
     line-height: 0;
@@ -33,20 +37,91 @@ h4 {
     font-size: 14px;
     line-height: 0;
 }
-
+/*
+Modal Styling
+ */
+/* General */
+.modal.fade.in {
+    top: 45%;
+}
+.modal {
+    width: 629px;
+    border: none;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px; /* border radius */
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; /* prevents bg color from leaking outside the border */
+    background-color: #f1f1f1; /* layer fill content */
+    -moz-box-shadow: 0 0 0px rgba(0,0,0,.3); /* drop shadow */
+    -webkit-box-shadow: 0 0 0px rgba(0,0,0,.3); /* drop shadow */
+    box-shadow: 0 0 0px rgba(0,0,0,.3); /* drop shadow */
+}
+.modal form {
+    margin: 0;
+}
+/* Header */
+.modal-header {
+    height: 75px;
+    padding: 0px;
+    margin-bottom: 20px;
+    -moz-border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0; /* border radius */
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box; /* prevents bg color from leaking outside the border */
+    background-color: #eb5947; /* layer fill content */
+}
+i.s30 {
+    font-size: 30px;
+    margin: 0 auto;
+    width: 38px;
+    color: #fff;
+    display: block;
+    margin-bottom: 17px;
+}
 .control-group.error input {
     border-color:#c0392b;
 }
-
+/* Modal Body */
+.modal-body {
+    padding: 0;
+}
 .modalList {
     list-style:none;
+    width: 275px;
+    margin: 0 auto;
 }
 .modalList li {
     float:left;
-    margin: 0 10px;
+    padding: 12px 15px;
+    border-right: 1px solid white;
 }
-.modal-header {
-    padding: 28px 15px;
+.modalList li:last-child {
+    border:none;
+}
+.modalList li > a {
+    font-weight: 300;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Ubuntu', helvetica, sans-serif;
+}
+.modalList li:hover,
+.modalList li.active {
+    background: #d35140;
+}
+.modalList li.active > a {
+    font-weight: 500;
+}
+
+#modalTab .nav-tabs > .active > a {
+    background-color: #f1f1f1;
+}
+#modalTab .tab-content .nav-tabs {
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .battleNet,
@@ -68,6 +143,12 @@ h4 {
 .characters .area {
     border-left: 4px solid #f38787;
 }
+
+/* Modal footer */
+.modal-footer {
+    border-top-color: #dfe9f6;
+}
+
 /**
  * The TOP Nav bar
  */
@@ -129,6 +210,7 @@ h4 {
     -moz-box-shadow: 0 0 4px rgba(0,0,0,.08); /* outer glow */
     -webkit-box-shadow: 0 0 4px rgba(0,0,0,.08); /* outer glow */
     box-shadow: 0 0 4px rgba(0,0,0,.08); /* outer glow */
+    top: 46px;
 }
 
 .navbar .nav > li > a {

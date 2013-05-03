@@ -396,15 +396,7 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 .m-btn.green {
   color: white;
   text-shadow: none;
-  background-color: #35aa47;
-  background-image: -moz-linear-gradient(top, #35aa47, #35aa47);
-  background-image: -ms-linear-gradient(top, #35aa47, #35aa47);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#35aa47), to(#35aa47));
-  background-image: -webkit-linear-gradient(top, #35aa47, #35aa47);
-  background-image: -o-linear-gradient(top, #35aa47, #35aa47);
-  background-image: linear-gradient(top, #35aa47, #35aa47);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#35aa47', endColorstr='#35aa47', GradientType=0);
+  background: #35aa47;
 }
 .m-btn.green:hover,
 .m-btn.green:focus,

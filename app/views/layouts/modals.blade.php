@@ -1,9 +1,21 @@
-<div class="modal hide fade in" id="modal">
+<div class="modal hide fade in" id="modal" data-backdrop="static">
   <div class="modal-header">
     <ul class="modalList">
-        <li><a href="#profile" class="jsProfile" data-toggle="tab">Proile</a></li>
-        <li><a href="#importHeroes" data-toggle="tab">Import Heroes</a></li>
-        <li><a href="#settings" data-toggle="tab">Settings</a></li>
+        <li class="active">
+            <a href="#profile" data-toggle="tab">
+                <i class="icon-user-1 s30"></i>
+                Proile</a>
+        </li>
+        <li>
+            <a href="#importHeroes" data-toggle="tab">
+                <i class="icon-download-1 s30"></i>
+                Import Heroes</a>
+        </li>
+        <li>
+            <a href="#settings" data-toggle="tab">
+                <i class="icon-cog-1 s30"></i>
+                Settings</a>
+        </li>
     </ul>
   </div>
   <div class="modal-body">
@@ -25,20 +37,22 @@
                                 {{ Form::label('battletag', 'Battletag', ['class' => 'control-label' ])}}
                                     <div class="controls">
                                         <?php $battletag = (isset($user)) ? $user->battletag : ''; ?>
-                                        {{ Form::text('battletag', $battletag, array('placeholder' => 'Battletag')) }}
+                                        {{ Form::text('battletag', $battletag, array('placeholder' => 'Battletag', 'class' => ' m-wrap')) }}
                                     </div>
                                 </div>
                                 <div class="control-group">
                                 {{ Form::label('server', 'Server', ['class' => 'control-label' ])}}
                                     <div class="controls">
                                         <?php $server = (isset($user)) ? $user->server : 'eu'; ?>
-                                        {{ Form::select('server', ['eu' => 'EU', 'us' => 'US', 'tw' => 'TW', 'kr' => 'KR', 'cn' => 'CN' ], $server) }}
+                                        {{ Form::select('server', ['eu' => 'EU', 'us' => 'US', 'tw' => 'TW', 'kr' => 'KR', 'cn' => 'CN' ], $server, array('class'=> 'm-wrap')) }}
                                     </div>
                                 </div>
 
                                 <div class="modal-footer">
-                                  <a href="/dashboard" class="btn">Cancel</a>
-                                  {{ Form::submit('Update Battle.net information', ['class' => 'btn btn-primary']) }}
+                                    <div class="m-btn-group">
+                                      <a href="#" data-dismiss="modal" class="m-btn black">Cancel</a>
+                                      {{ Form::submit('Update Battle.net information', ['class' => 'm-btn green']) }}
+                                    </div>
                                 </div>
                                 {{ Form::close() }}
                             </div>
@@ -52,19 +66,21 @@
                                     {{ Form::label('firstName', 'First Name', ['class' => 'control-label' ])}}
                                     <div class="controls">
                                       <?php $firstName = (isset($user)) ? $user->first_name : ''; ?>
-                                      {{ Form::text('firstName', $firstName, array('placeholder' => 'First Name')) }}
+                                      {{ Form::text('firstName', $firstName, array('placeholder' => 'First Name', 'class' => ' m-wrap')) }}
                                     </div>
                                   </div>
                                   <div class="control-group">
                                     {{ Form::label('lastName', 'Last Name', ['class' => 'control-label' ])}}
                                     <div class="controls">
                                       <?php $lastName = (isset($user)) ? $user->last_name : ''; ?>
-                                      {{ Form::text('lastName', $lastName, array('placeholder' => 'Last Name')) }}
+                                      {{ Form::text('lastName', $lastName, array('placeholder' => 'Last Name', 'class' => ' m-wrap')) }}
                                     </div>
                                   </div>
                                   <div class="modal-footer">
-                                    <a href="/dashboard" class="btn">Cancel</a>
-                                    {{ Form::submit('Update profile', ['class' => 'btn btn-primary']) }}
+                                    <div class="m-btn-group">
+                                        <a href="#" data-dismiss="modal" class="m-btn black">Cancel</a>
+                                        {{ Form::submit('Update profile', ['class' => 'm-btn green']) }}
+                                    </div>
                                   </div>
                                 </form>
                             </div>
