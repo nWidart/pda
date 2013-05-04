@@ -27,6 +27,7 @@ $app = new Illuminate\Foundation\Application;
 $env = $app->detectEnvironment(array(
 
 	'local' => array('*.dev'),
+    'dev' => array('*diablo-assistant.eu1.frbit.net')
 
 ));
 
