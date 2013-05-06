@@ -21,6 +21,7 @@
     <link href="{{{ asset('assets/css/m-buttons.css') }}}" rel="stylesheet">
     <link href="{{{ asset('assets/css/entypo16.css') }}}" rel="stylesheet">
     <link href="{{{ asset('assets/css/m-forms.css') }}}" rel="stylesheet">
+    <link href="{{{ asset('assets/css/tablecloth.css') }}}" rel="stylesheet">
     <link href="{{{ asset('assets/css/main.css') }}}" rel="stylesheet">
     @section('styles')
     @show
@@ -66,11 +67,18 @@
     <script src="{{{ asset('assets/js/bootstrap/bootstrap-modal.js') }}}"></script>
     <script src="{{{ asset('assets/js/alertify.min.js') }}}"></script>
     <script src="{{{ asset('assets/js/unslider.min.js') }}}"></script>
+    <script src="{{{ asset('assets/js/bootstrap/jquery.metadata.js') }}}"></script>
+    <script src="{{{ asset('assets/js/bootstrap/jquery.tablecloth.js') }}}"></script>
+    <script src="{{{ asset('assets/js/bootstrap/jquery.tablesorter.min.js') }}}"></script>
     <script src="{{{ asset('assets/js/main.js') }}}"></script>
     <script type="text/javascript">
       $('.alert-warning').on('click', function() {
         $('.alert-warning').fadeOut();
       });
+        $('body').tooltip({
+          selector: "a[data-toggle=tooltip]",
+          container: 'body'
+        })
       // $('a[data-toggle="tooltip"]').on('mouseenter', function() {
       //   console.log(this);
       //   this.tooltip('toggle');

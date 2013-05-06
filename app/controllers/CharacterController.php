@@ -1,12 +1,14 @@
 <?php
 
 class CharacterController extends BaseController {
+    public $characters;
     /**
      * Attach the Auth filter to the controller
      *
      */
     public function __construct()
     {
+        $this->characters = User::find( (int)Sentry::getUser()->id )->characters;
         $this->beforeFilter('auth');
     }
 
@@ -17,15 +19,16 @@ class CharacterController extends BaseController {
     public function getProfile( $id )
     {
         // Get a character with all its items (& item modifiers)
-        $char = Character::whereId($id)->with('items.attributes')->first()->toArray();
-        ChromePhp::log($char);
+        $items = Character::whereId($id)->with('items.attributes')->first()->toArray();
+
+        $itemSet = Diablo3Util::getItemSet( $items );
+        ChromePhp::log($itemSet);
 
         // $character = Character::find( $id );
         // $heroData = $this->_saveCharacterItems( $character['hero_id'], $id );
         // Diablo3Util::saveCharacterItems( $character['hero_id'], $id );
 
-        $characters = User::find( (int)Sentry::getUser()->id )->characters;
-        $data = ['characters' => $characters, 'user' => Sentry::getUser() ];
+        $data = ['user' => Sentry::getUser(), 'characters' => $this->characters, 'items' => $itemSet ];
         return View::make( 'user.character', $data );
     }
 }

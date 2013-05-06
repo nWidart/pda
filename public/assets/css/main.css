@@ -485,3 +485,168 @@ Badges
   min-height: 150px;
   margin: 0 20px;
 }
+
+/*
+CHARACTER view
+    characterView
+ */
+.actionBar {
+  margin-left: 30px;
+}
+
+.table th, .table td {
+  border: none;
+}
+
+.table th {
+  padding: 8px 10px;
+}
+
+.table td {
+  padding: 2px 20px;
+}
+
+.characterView {
+  box-shadow: 0 0 0 1px #dfe9f6;
+  background: #fff;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  padding: 20px;
+  width: 458px;
+  min-height: 639px;
+  position: relative;
+}
+
+.characterView ul {
+  list-style: none;
+}
+
+.characterView li {
+  border: 1px solid #f1c40f;
+  position: absolute;
+}
+
+.characterView img.unique {
+  border-color: #d35400;
+}
+
+.characterView li.helm {
+  top: 20px;
+  left: 220px;
+}
+
+.characterView li.chest {
+  top: 155px;
+  left: 211px;
+}
+
+.characterView li.shoulders {
+  top: 80px;
+  left: 136px;
+}
+
+.characterView li.gloves {
+  top: 214px;
+  left: 100px;
+}
+
+.characterView li.belt {
+  top: 325px;
+  left: 220px;
+}
+
+.characterView li.pants {
+  top: 395px;
+  left: 220px;
+}
+
+.characterView li.boots {
+  top: 529px;
+  left: 220px;
+}
+
+.characterView li.amulet {
+  top: 100px;
+  left: 304px;
+}
+
+.characterView li.bracer {
+  top: 170px;
+  left: 325px;
+}
+
+.characterView li.mace {
+  bottom: 20px;
+  left: 100px;
+}
+
+.characterView li.sword {
+  bottom: 20px;
+  left: 325px;
+}
+
+.characterView li.ring {
+  bottom: 230px;
+  left: 325px;
+}
+
+.characterView li.ring:nth-child(2) {
+  border-color: green;
+}
+
+/*
+CHARACTER view
+    tables
+ */
+table.statistics {
+  background: #FFF;
+  -webkit-box-shadow: 0 0 0 1px #dfe9f6;
+  box-shadow: 0 0 0 1px #dfe9f6;
+  -webkit-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+}
+
+table.statistics > thead {
+  background: #eb5a47;
+  border-bottom: 1px solid #9b3b2f;
+  width: 142%;
+}
+
+table.statistics thead th {
+  color: #fff;
+  font-family: 'Ubuntu';
+  font-weight: 200;
+}
+
+table.statistics thead th:first-child {
+  -webkit-border-radius: 3px 0 0 0;
+  border-radius: 3px 0 0 0;
+}
+
+table.statistics thead th:last-child {
+  text-align: right;
+  -webkit-border-radius: 0 3px 0 0;
+  border-radius: 0 3px 0 0;
+}
+
+table.statistics tbody {
+  font-size: 12px;
+}
+
+table.statistics tbody tr:first-child td {
+  padding-top: 10px;
+}
+
+table.statistics tbody tr:last-child td {
+  padding-bottom: 10px;
+}
+
+table.statistics td {
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+table.statistics tr:hover td {
+  background: #f1f1f1;
+}
