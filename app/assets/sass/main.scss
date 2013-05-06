@@ -1,4 +1,14 @@
 @import 'bourbon/bourbon';
+$light_blue : #dfe9f6;
+$red : #eb5a47;
+$dark_red : #9b3b2f;
+$light_red : #eb6d5c;
+$yellow : #f1c40f;
+
+$gray : #494949;
+$light_gray : #ababab;
+
+
 /*
 General Styles
  */
@@ -7,10 +17,11 @@ body {
     background: #f2f2f2;
     padding-top: 100px;
     font-size: 14px;
+    color: $gray;
 }
 .well {
     background: #FFF;
-    border: 1px solid #dfe9f6;
+    border: 1px solid $light_blue;
     -webkit-border-radius: 3px;
     border-radius: 3px;
 }
@@ -147,7 +158,7 @@ i.s30 {
 
 /* Modal footer */
 .modal-footer {
-    border-top-color: #dfe9f6;
+    border-top-color: $light_blue;
 }
 
 /**
@@ -199,7 +210,7 @@ i.s30 {
     border-radius: 3px;
 }
 .dropdown-menu {
-    border-color: #dfe9f6;
+    border-color: $light_blue;
     -moz-border-radius: 1px 1px 3px 3px;
     -webkit-border-radius: 1px 1px 3px 3px;
     border-radius: 1px 1px 3px 3px; /* border radius */
@@ -274,11 +285,14 @@ Badges
 }
 .badge-big {
     background: #FFF;
-    border: 1px solid #dfe9f6;
+    border: 1px solid $light_blue;
     -webkit-border-radius: 3px;
     border-radius: 3px;
     position: relative;
     margin-bottom: 20px;
+}
+.badge-big.span3 {
+    width: 268px;
 }
 
 .badge-big:hover {

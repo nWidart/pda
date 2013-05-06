@@ -8,10 +8,15 @@ Character View | PDA
 
 @section('content')
     <div class="row">
-        <h1>Character</h1>
+        <div class="span12">
+            <h1>Character</h1>
+        </div>
     </div>
     <div class="row">
-        Character page
+        <div class="span6 characterView">
+            Character view
+        </div>
+
     </div>
 @stop
 
