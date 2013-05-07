@@ -1,12 +1,6 @@
 <?php
 
 class AuthController extends BaseController {
-
-    public function getIndex()
-    {
-        return 'indexed';
-    }
-
     /**
      * Returns the view to register a new User.
      *
@@ -42,30 +36,26 @@ class AuthController extends BaseController {
                 {
                     $m->to( Input::get('email') )->subject('Welcome on your PDA.');
                 });
-                // Success!
+
                 // Logs the user in
                 $creds = [
                     'email' => $user->email,
                     'password' => Input::get('password'),
                 ];
                 Sentry::authenticate($creds, false);
-                // Redirect to proile page
-                // TODO: will redirecto to dashboard
-                return Redirect::route('profile')->with('success', 'Account created successfully!');
+
+                // Redirect to dashboard page
+                return Redirect::to('dashboard')->with('success', 'Account created successfully!');
             }
             catch (Cartalyst\Sentry\Users\LoginRequiredException $e)
             {
-                echo 'Login field is required.';
+                $error = 'Login field is required.';
             }
             catch (Cartalyst\Sentry\Users\UserExistsException $e)
             {
-                echo 'User with this login already exists.';
+                $error = 'User with this login already exists.';
             }
         }
-        Profiler::logInfo( 'error: ');
-        ChromePhp::log('ok');
-        // return 'ok';
-        // return Redirect::back()->withInput()->withErrors($validator->getErrors());
         return Redirect::back()->withInput()->withErrors($validator->getErrors());
     }
 

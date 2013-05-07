@@ -2,8 +2,8 @@
 
 class Register extends Validator {
     public static $rules = [
-        'email' => 'Required|email',
-        'password' => 'Required|Confirmed',
-        'password_confirmation' => 'Required'
+        'email' => 'required|email',
+        'password' => 'required|confirmed',
+        'password_confirmation' => 'required'
     ];
 }

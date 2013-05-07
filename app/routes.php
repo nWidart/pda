@@ -9,10 +9,27 @@ Route::get('/', [ 'as' => 'home', function()
 }]);
 
 /**
- * Registring the RESTful Auth Controller
+ * Registring the Authentication Routes
  *
  */
-Route::controller('auth', 'AuthController');
+
+# Login
+Route::get('auth/login', 'AuthController@getLogin');
+Route::post('auth/login', 'AuthController@postLogin');
+
+# Register
+Route::get('auth/register', 'AuthController@getRegister');
+Route::post('auth/register', 'AuthController@postRegister');
+
+# Account Activation
+Route::get('auth/activate/{userID}/{activationCode}', 'AuthController@getActivate');
+
+# Forgot Password Confirmation
+// Route::get('auth/forgot-password/{userID}/{resetCode}', 'AuthController@getForgotPasswordConfirmation');
+// Route::post('auth/forgot-password/{userID}/{resetCode}', 'AuthController@postForgotPasswordConfirmation');
+
+// # Logout
+Route::get('auth/logout', 'AuthController@getLogout');
 
 /**
  * Registring the RESTful Diablo Controller
