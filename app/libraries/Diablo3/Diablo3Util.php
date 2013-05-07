@@ -26,6 +26,20 @@ class Diablo3Util {
         return ( $Diablo3->getAllItemImages( $charId ) ) ? 'true' : 'false';
     }
 
+    public function getSkillSet( $heroId )
+    {
+        if ( isset( \Sentry::getUser()->battletag ) && isset( \Sentry::getUser()->server ) )
+        {
+            $battletag = \Sentry::getUser()->battletag;
+            $server = \Sentry::getUser()->server;
+        }
+        else
+            return false;
+        // Instantiate a new d3 instance
+        $Diablo3 = new \Diablo3($battletag, $server, 'en_US');
+        // Get the hero information for the given heroId
+        $heroData = $Diablo3->getHero($heroId);
+    }
     /**
      * Syncs the character items with Battle.Net (saves items)
      * @param  [type] $heroId [description]
