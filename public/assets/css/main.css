@@ -640,6 +640,10 @@ table.statistics tbody tr:last-child td {
   padding-bottom: 10px;
 }
 
+table.statistics tbody tr > td:first-child {
+  font-weight: 500;
+}
+
 table.statistics td {
   -webkit-transition: all 0.1s;
   -moz-transition: all 0.1s;

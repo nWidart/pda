@@ -544,6 +544,9 @@ table.statistics tbody tr:first-child td {
 table.statistics tbody tr:last-child td {
     padding-bottom: 10px;
 }
+table.statistics tbody tr > td:first-child {
+    font-weight: 500;
+}
 table.statistics td {
     @include transition( all .1s);
 }

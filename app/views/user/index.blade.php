@@ -42,8 +42,4 @@ Your Profile | PDA
 @stop
 
 @section('scripts')
-<script src="{{{ asset('assets/js/jquery.multi-select.js') }}}"></script>
-<script>
-    $(".d3characters").multiSelect();
-</script>
 @stop

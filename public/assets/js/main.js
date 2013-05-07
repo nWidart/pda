@@ -1,10 +1,20 @@
 $(document).ready(function() {
     /**
+     * Table Toggles on character page
+     *
+     */
+    $('table.statistics thead').on('click', function()
+    {
+        $(this).parent().find('tbody').fadeToggle();
+        // console.log( $(this).parent().find('tbody') );
+    });
+    /**
      * Doing the POST request for the profile info tab
      *
      */
     var $modal = $('.updateProfileInfo');
-    $modal.on('submit', function(e){
+    $modal.on('submit', function(e)
+    {
         e.preventDefault();
         $modal.modal('loading');
         var firstName = $('input[name="firstName"]').val(),
