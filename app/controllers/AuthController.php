@@ -8,6 +8,12 @@ class AuthController extends BaseController {
      */
     public function getRegister()
     {
+        // Check if we're logged in already
+        if ( Sentry::check() )
+        {
+            return Redirect::to('dashboard');
+        }
+
         return View::make('account.register');
     }
 
@@ -99,13 +105,19 @@ class AuthController extends BaseController {
      */
     public function getLogin()
     {
+        // Check if we're logged in already
+        if ( Sentry::check() )
+        {
+            return Redirect::to('dashboard');
+        }
+
         return View::make('account.login');
     }
 
     /**
      * Handles the login logic
      *
-     * @return View Profile view if successful || login view
+     * @return Redirect
      */
     public function postLogin()
     {
@@ -122,40 +134,40 @@ class AuthController extends BaseController {
 
                 // Try to authenticate the user
                 $user = Sentry::authenticate($credentials, false);
-                ChromePhp::log($user);
-                // User logged in
-                // Redirect to the profile page
+
                 return Redirect::to('dashboard')->with('success', 'Successfully logged in.');
             }
             catch (Cartalyst\Sentry\Users\LoginRequiredException $e)
             {
-                echo 'Login field is required.';
+                $error = 'Login field is required.';
             }
             catch (Cartalyst\Sentry\Users\PasswordRequiredException $e)
             {
-                echo 'Password field is required.';
+                $error = 'Password field is required.';
             }
             catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
             {
-                echo 'User was not found.';
+                $error = 'User was not found.';
             }
             catch (Cartalyst\Sentry\Users\UserNotActivatedException $e)
             {
-                echo 'User is not activated.';
+                $error = 'User is not activated.';
             }
+            // Redirect with sentry errors
+            return Redirect::back()->withInput()->with('error', $error);
         }
-        // Something is wrong, redirect with the correct errors
+        // Something went wrong, redirect with the correct errors
         return Redirect::back()->withInput()->withErrors($validator->getErrors());
     }
 
     /**
-     * Handles the logout logic
+     * Handles the logout
      *
      * @return Redirect To homepage
      */
     public function getLogout()
     {
         Sentry::logout();
-        return Redirect::route('home')->with('success', 'Loged out!');
+        return Redirect::route('home')->with('success', 'Logged out!');
     }
 }

@@ -28,7 +28,7 @@ Route::get('auth/activate/{userId}/{activationCode}', 'AuthController@getActivat
 // Route::get('auth/forgot-password/{userID}/{resetCode}', 'AuthController@getForgotPasswordConfirmation');
 // Route::post('auth/forgot-password/{userID}/{resetCode}', 'AuthController@postForgotPasswordConfirmation');
 
-// # Logout
+# Logout
 Route::get('auth/logout', 'AuthController@getLogout');
 
 /**
