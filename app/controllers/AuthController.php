@@ -14,7 +14,7 @@ class AuthController extends BaseController {
     /**
      * Handles the registration.
      *
-     * @return [type] [description]
+     * @return Redirect
      */
     public function postRegister()
     {
@@ -23,29 +23,23 @@ class AuthController extends BaseController {
         {
             try
             {
-                // Let's register a user.
-                // Optional TRUE param to activate user
-                //
-                $user = Sentry::register(array(
+                $user = Sentry::register( array(
                     'email'    => Input::get('email'),
                     'password' => Input::get('password'),
-                ), true);
+                ) );
 
-                $data = [];
-                Mail::send('emails.auth.welcome', $data, function($m)
+                // Sets the data for the email & gets the activationCode for the user
+                //
+                $data = [
+                    'user' => $user,
+                    'activationcode' => $user->getActivationCode()
+                ];
+                Mail::send('emails.auth.welcome', $data, function($m) use($user)
                 {
-                    $m->to( Input::get('email') )->subject('Welcome on your PDA.');
+                    $m->to( $user->email )->subject( 'Welcome on your PDA.' );
                 });
 
-                // Logs the user in
-                $creds = [
-                    'email' => $user->email,
-                    'password' => Input::get('password'),
-                ];
-                Sentry::authenticate($creds, false);
-
-                // Redirect to dashboard page
-                return Redirect::to('dashboard')->with('success', 'Account created successfully!');
+                return Redirect::to('auth/register')->with('success', 'Account created successfully! Please check your email to activate your account.');
             }
             catch (Cartalyst\Sentry\Users\LoginRequiredException $e)
             {
@@ -55,8 +49,47 @@ class AuthController extends BaseController {
             {
                 $error = 'User with this login already exists.';
             }
+            // Something went wrong - Redirect with Sentry errors
+            return Redirect::back()->withInput()->with('error', $error);
         }
-        return Redirect::back()->withInput()->withErrors($validator->getErrors());
+        // Something went wrong
+        return Redirect::back()->withInput()->withErrors( $validator->getErrors() );
+    }
+
+    /**
+     * User account activation page.
+     *
+     * @param  integer  $userId
+     * @param  string   $actvationCode
+     * @return Redirect
+     */
+
+    public function getActivate($userId = null, $activationCode = null)
+    {
+        try
+        {
+            // Get the user we are trying to activate
+            $user = Sentry::getUserProvider()->findById($userId);
+
+            // Try to activate this user account
+            if ( $user->attemptActivation( $activationCode ) )
+            {
+                // Send a welcome email ?
+
+                // Redirect to the login page
+                return Redirect::to('auth/login')->with('success', "Account activated successfully. You're ready to login.");
+            }
+
+            // The activation failed.
+            $error = 'Activation failed.';
+        }
+        catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
+        {
+            $error = 'User does not exist.';
+        }
+
+        // Redirect to the home page with error message
+        return Redirect::to('/')->with('error', $error);
     }
 
     /**

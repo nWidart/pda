@@ -22,7 +22,7 @@ Route::get('auth/register', 'AuthController@getRegister');
 Route::post('auth/register', 'AuthController@postRegister');
 
 # Account Activation
-Route::get('auth/activate/{userID}/{activationCode}', 'AuthController@getActivate');
+Route::get('auth/activate/{userId}/{activationCode}', 'AuthController@getActivate');
 
 # Forgot Password Confirmation
 // Route::get('auth/forgot-password/{userID}/{resetCode}', 'AuthController@getForgotPasswordConfirmation');
