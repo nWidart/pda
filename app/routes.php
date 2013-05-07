@@ -1,8 +1,5 @@
 <?php
-/**
- * The home page
- *
- */
+# Homepage
 Route::get('/', [ 'as' => 'home', function()
 {
 	return View::make('home');
@@ -12,7 +9,6 @@ Route::get('/', [ 'as' => 'home', function()
  * Registring the Authentication Routes
  *
  */
-
 # Login
 Route::get('auth/login', 'AuthController@getLogin');
 Route::post('auth/login', 'AuthController@postLogin');
@@ -24,10 +20,6 @@ Route::post('auth/register', 'AuthController@postRegister');
 # Account Activation
 Route::get('auth/activate/{userId}/{activationCode}', 'AuthController@getActivate');
 
-# Forgot Password Confirmation
-// Route::get('auth/forgot-password/{userID}/{resetCode}', 'AuthController@getForgotPasswordConfirmation');
-// Route::post('auth/forgot-password/{userID}/{resetCode}', 'AuthController@postForgotPasswordConfirmation');
-
 # Logout
 Route::get('auth/logout', 'AuthController@getLogout');
 
@@ -35,7 +27,7 @@ Route::get('auth/logout', 'AuthController@getLogout');
  * Registring the RESTful Diablo Controller
  *
  */
-Route::controller('diablo', 'DiabloController');
+Route::post('diablo/import', 'DiabloController@postImport');
 
 /**
  * Registring the RESTful Account Controller
@@ -47,4 +39,4 @@ Route::controller('dashboard', 'AccountController');
  * Registring the RESTful Character Controller
  *
  */
-Route::controller('character', 'CharacterController');
+Route::get('character/profile/{id}', 'CharacterController@getProfile');
