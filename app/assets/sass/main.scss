@@ -248,35 +248,6 @@ Slider
         .banner ul li { float: left; }
 
 /*
-Buttons
- */
-.nw-btn {
-    color: #FFF;
-    border-radius: 3px;
-    text-decoration: none;
-    text-align: center;
-    padding: 20px 30px;
-    -webkit-transition: all 0.1s;
-    -moz-transition: all 0.1s;
-    transition: all 0.1s;
-    -webkit-box-shadow: 0px 9px 0px #9b3b2f;
-    -moz-box-shadow: 0px 9px 0px #9b3b2f;
-    box-shadow: 0px 9px 0px #9b3b2f;
-    font-size: 20px;
-}
-.red {
-    background: #eb5a47;
-}
-.red:active {
-    -webkit-box-shadow: 0 2px 0 #9b3b2f;
-    -moz-box-shadow: 0 2px 0 #9b3b2f;
-    box-shadow: 0 2px 0 #9b3b2f;
-    position: relative;
-    top: 7px;
-}
-
-
-/*
 Badges
 */
 /* Big badges */
@@ -444,7 +415,7 @@ CHARACTER view
     border-radius: 3px;
     padding: 20px;
     width: 458px;
-    min-height: 639px;
+    min-height: 739px;
     position: relative;
 }
 .characterView ul {
@@ -514,6 +485,14 @@ CHARACTER view
 CHARACTER view
     tables
  */
+.charToolbar .m-btn-strip {
+    float: right;
+    margin-right: 30px;
+    margin-top: 8px;
+}
+.characterStatsRow div.span3 {
+    width: 292px;
+}
 table.statistics {
     background: #FFF;
     -webkit-box-shadow: 0 0 0 1px $light_blue;
@@ -540,6 +519,22 @@ table.statistics thead th:last-child {
     -webkit-border-radius: 0 3px 0 0;
     border-radius: 0 3px 0 0;
 }
+table.statistics tr.secondTableHeader {
+    background: $light_red;
+}
+table.statistics tr.secondTableHeader:hover th {
+    background: $light_red;
+}
+    table.statistics tr.secondTableHeader th {
+        color: #fff;
+        font-weight: 300;
+        padding: 0 10px;
+    }
+
+    table.statistics tr.secondTableHeader a {
+        color: $yellow;
+        font-weight: 500;
+    }
 table.statistics tbody {
     font-size: 12px;
 }

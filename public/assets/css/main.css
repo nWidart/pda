@@ -286,36 +286,6 @@ Slider
 }
 
 /*
-Buttons
- */
-.nw-btn {
-  color: #FFF;
-  border-radius: 3px;
-  text-decoration: none;
-  text-align: center;
-  padding: 20px 30px;
-  -webkit-transition: all 0.1s;
-  -moz-transition: all 0.1s;
-  transition: all 0.1s;
-  -webkit-box-shadow: 0px 9px 0px #9b3b2f;
-  -moz-box-shadow: 0px 9px 0px #9b3b2f;
-  box-shadow: 0px 9px 0px #9b3b2f;
-  font-size: 20px;
-}
-
-.red {
-  background: #eb5a47;
-}
-
-.red:active {
-  -webkit-box-shadow: 0 2px 0 #9b3b2f;
-  -moz-box-shadow: 0 2px 0 #9b3b2f;
-  box-shadow: 0 2px 0 #9b3b2f;
-  position: relative;
-  top: 7px;
-}
-
-/*
 Badges
 */
 /* Big badges */
@@ -513,7 +483,7 @@ CHARACTER view
   border-radius: 3px;
   padding: 20px;
   width: 458px;
-  min-height: 639px;
+  min-height: 739px;
   position: relative;
 }
 
@@ -598,6 +568,16 @@ CHARACTER view
 CHARACTER view
     tables
  */
+.charToolbar .m-btn-strip {
+  float: right;
+  margin-right: 30px;
+  margin-top: 8px;
+}
+
+.characterStatsRow div.span3 {
+  width: 292px;
+}
+
 table.statistics {
   background: #FFF;
   -webkit-box-shadow: 0 0 0 1px #dfe9f6;
@@ -627,6 +607,25 @@ table.statistics thead th:last-child {
   text-align: right;
   -webkit-border-radius: 0 3px 0 0;
   border-radius: 0 3px 0 0;
+}
+
+table.statistics tr.secondTableHeader {
+  background: #eb6d5c;
+}
+
+table.statistics tr.secondTableHeader:hover th {
+  background: #eb6d5c;
+}
+
+table.statistics tr.secondTableHeader th {
+  color: #fff;
+  font-weight: 300;
+  padding: 0 10px;
+}
+
+table.statistics tr.secondTableHeader a {
+  color: #f1c40f;
+  font-weight: 500;
 }
 
 table.statistics tbody {

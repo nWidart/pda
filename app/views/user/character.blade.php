@@ -8,11 +8,27 @@ Character View | PDA
 
 @section('content')
     <div class="row">
-        <div class="span12">
+        <div class="span8">
             <h1>Character</h1>
         </div>
+        <div class="span4 charToolbar">
+            <div class="m-btn-strip">
+                <div class="m-btn-group">
+                  <a class="m-btn red rnd mini"><i class="icon-list-1"></i> Items</a>
+                  <a class="m-btn red rnd dropdown-carrettoggle mini" data-toggle="dropdown" data-hover="dropdown" href="#">
+                    <span class="caret white"></span>
+                  </a>
+                  <ul class="m-dropdown-menu">
+                      <li><a href="#"><i class="icon-list-1"></i> View Saved Items</a></li>
+                      <li><a href="#"><i class="icon-list-add"></i> Add New Item</a></li>
+                  </ul>
+                </div>
+                <a class="m-btn red rnd mini" data-toggle="tooltip" title="" data-original-title="Sync with Battle.net"><i class="icon-arrows-ccw"></i></a>
+            </div>
+
+        </div>
     </div>
-    <div class="row">
+    <div class="row characterStatsRow">
         <div class="span6 characterView">
             <ul>
                 <?php $n = 0; ?>
@@ -32,57 +48,23 @@ Character View | PDA
             </ul>
         </div>
         <div class="span3">
-            <table class="table statistics table-hover">
-                <thead>
-                    <tr>
-                        <th>Offensive Statistics</th>
-                        <th><i class="icon-down-open-1"></i></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>DPS</td>
-                        <td>80 000</td>
-                    </tr>
-                    <tr>
-                        <td>DPS</td>
-                        <td>70 000</td>
-                    </tr>
-                    <tr>
-                        <td>DPS</td>
-                        <td>50 000</td>
-                    </tr>
-                </tbody>
-            </table>
+            @include('layouts.tables.offensiveStatistics')
         </div>
         <div class="span3">
-            <table class="table statistics table-hover">
-                <thead>
-                    <tr>
-                        <th>Offensive Statistics</th>
-                        <th><i class="icon-down-open-1"></i></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>DPS</td>
-                        <td>80 000</td>
-                    </tr>
-                    <tr>
-                        <td>DPS</td>
-                        <td>70 000</td>
-                    </tr>
-                    <tr>
-                        <td>DPS</td>
-                        <td>50 000</td>
-                    </tr>
-                </tbody>
-            </table>
+            @include('layouts.tables.defensiveStatistics')
         </div>
-        <div class="m-btn-group actionBar">
-            <a href="#" class="m-btn red icn-only" data-toggle="tooltip" data-placement="left" title="" data-original-title="Tooltip on left"><i class="icon-remove icon-white"></i></a>
+        <div class="span3">
+            @include('layouts.tables.damageRange')
         </div>
-
+        <div class="span3">
+            @include('layouts.tables.defensiveSpecifics')
+        </div>
+        <div class="span3">
+            @include('layouts.tables.baseStatistics')
+        </div>
+        <div class="span3">
+            @include('layouts.tables.healthStatistics')
+        </div>
     </div>
 @stop
 
