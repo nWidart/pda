@@ -18,24 +18,25 @@ class AccountController extends BaseController {
      */
     public function getIndex()
     {
-        // $char = Character::find(2)->with('items.modifiers')->first()->toArray();
-
         // Look for characters for logged in user
         $user = User::find( (int)Sentry::getUser()->id )->characters->first();
+
+        // If the user has characters
         if ( $user )
         {
-            $characters = User::find( (int)Sentry::getUser()->id )->characters;
-            $user = Sentry::getUser();
-            $data = [ 'characters' => $characters, 'heroes' => ( $this->_getHeroes() ) ? $this->_getHeroes() : '', 'user' => $user ];
+            $data = [
+                'characters' => User::find( (int)Sentry::getUser()->id )->characters,
+                'heroes' => ( $this->_getHeroes() ) ? $this->_getHeroes() : '',
+                'user' => Sentry::getUser()
+            ];
             return View::make('user.index', $data);
         }
         else
         {
-            $user = Sentry::getUser();
             $data = [
                 'notice' => "You havent imported any characters yet. <a data-toggle='modal' href='#modal' >Do it now!</a>",
                 'heroes' => ( $this->_getHeroes() ) ? $this->_getHeroes() : '',
-                'user' => $user,
+                'user' => Sentry::getUser(),
             ];
             return View::make('user.index', $data);
         }
@@ -64,10 +65,6 @@ class AccountController extends BaseController {
                     $data = [ 'success' => 'Profile updated.' ];
                     return Response::json( $data );
                 }
-                else
-                {
-
-                }
             }
             catch (Cartalyst\Sentry\Users\UserExistsException $e)
             {
@@ -76,14 +73,13 @@ class AccountController extends BaseController {
             }
             catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
             {
-                return 'User was not found.';
+                $data = [ 'error' => 'User was not found.' ];
+                return Response::json( $data );
             }
         }
         else
         {
             $errors = $validator->getErrors();
-            // $errorFirstName = ($errors->has('firstName')) ? $errors->get('firstName') : null;
-            // $errorLastName = ($errors->has('lastName')) ? $errors->get('lastName') : null;
             $data = [
                 'error' => 'Something went wrong',
                 'errors' => $errors->all(),
@@ -116,10 +112,6 @@ class AccountController extends BaseController {
                     $data = [ 'success' => 'Profile updated.' ];
                     return Response::json( $data );
                 }
-                else
-                {
-
-                }
             }
             catch (Cartalyst\Sentry\Users\UserExistsException $e)
             {
@@ -128,7 +120,8 @@ class AccountController extends BaseController {
             }
             catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
             {
-                return 'User was not found.';
+                $data = [ 'error' => 'User was not found.' ];
+                return Response::json( $data );
             }
         }
         else
@@ -145,8 +138,8 @@ class AccountController extends BaseController {
 
     /**
      * Get the heroes takes battletag from db
-     * return a html valid <option> list
      *
+     * @return arary    hero list
      */
     private function _getHeroes()
     {
@@ -184,7 +177,6 @@ class AccountController extends BaseController {
 
         }
         return $heroes;
-
     }
 
 }

@@ -131,6 +131,7 @@ class Diablo3Util {
      */
     public function getItemSet( $items )
     {
+        $itemSet = [];
         $n = 0;
         foreach ($items['items'] as $item)
         {

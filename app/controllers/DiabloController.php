@@ -16,13 +16,14 @@ class DiabloController extends BaseController {
 
         // Get the battle tag from the session
         $battletag = Sentry::getUser()->battletag;
+        $server = Sentry::getUser()->server;
 
         // Instantiate a new d3 instance
-        $Diablo3 = new Diablo3( $battletag, 'eu', 'en_US' );
+        $Diablo3 = new Diablo3( $battletag, $server, 'en_US' );
 
         $userId = Sentry::getUser()->id;
+
         // For each character, add it to the DB with the currect logged in user
-        // return $characters;
         foreach ($characters as $character) {
             $input = [ 'character' => $character];
             $validator = new Services\Validators\Character($input);
