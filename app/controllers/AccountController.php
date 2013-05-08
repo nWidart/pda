@@ -42,6 +42,12 @@ class AccountController extends BaseController {
         }
     }
 
+    /**
+     * Updating user info
+     * First Name & Last Name
+     *
+     * @return Reponse::json
+     */
     public function postUpdateUserInfo()
     {
         $firstName = Input::get('firstName');
@@ -88,6 +94,12 @@ class AccountController extends BaseController {
         }
     }
 
+    /**
+     * Updating user info
+     * Battletag & Server
+     *
+     * @return Reponse::json
+     */
     public function postUpdateUserBtagInfo()
     {
         $battletag = Input::get('battletag');
@@ -173,8 +185,6 @@ class AccountController extends BaseController {
                 $heroes[$n]['gender'] = $key['gender'];
                 $n++;
             }
-
-
         }
         return $heroes;
     }

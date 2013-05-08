@@ -26,6 +26,12 @@ class Diablo3Util {
         return ( $Diablo3->getAllItemImages( $charId ) ) ? 'true' : 'false';
     }
 
+    /**
+     * Gets all the active skills form a heroId
+     *
+     * @param  int $heroId
+     * @return array
+     */
     public function getSkillSet( $heroId )
     {
         if ( isset( \Sentry::getUser()->battletag ) && isset( \Sentry::getUser()->server ) )
@@ -55,6 +61,7 @@ class Diablo3Util {
 
         return $skillSet;
     }
+
     /**
      * Syncs the character items with Battle.Net (saves items)
      * @param  [type] $heroId [description]

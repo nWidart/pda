@@ -12,6 +12,12 @@ class CharacterController extends BaseController {
         $this->characters = User::find( (int)Sentry::getUser()->id )->characters;
     }
 
+    /**
+     * Show the character profile
+     *
+     * @param  int $id
+     * @return View
+     */
     public function getProfile( $id )
     {
         // Get a character with all its items (& item modifiers)
