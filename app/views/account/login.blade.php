@@ -5,7 +5,7 @@ Account Signup | PDA
 @stop
 
 @section('content')
-<div class="row">
+<div class="row spaceTop">
     <div class="span4 offset4 well">
         <legend>Sign In</legend>
        {{ Form::open(array('action' => 'AuthController@postLogin')) }}
