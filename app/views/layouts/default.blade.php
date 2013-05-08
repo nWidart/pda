@@ -22,6 +22,8 @@
     <link href="{{{ asset('assets/css/entypo16.css') }}}" rel="stylesheet">
     <link href="{{{ asset('assets/css/m-forms.css') }}}" rel="stylesheet">
     <link href="{{{ asset('assets/css/tablecloth.css') }}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://us.battle.net/d3/static/css/tooltips.css">
+    <script src="http://us.battle.net/d3/static/js/tooltips.js"></script>
     <link href="{{{ asset('assets/css/main.css') }}}" rel="stylesheet">
     @section('styles')
     @show
