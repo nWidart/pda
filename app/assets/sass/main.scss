@@ -389,7 +389,30 @@ Badges
     margin: 0 20px;
 }
 
-
+/*
+CHARACTER view
+    skillView
+ */
+.skillView {
+    box-shadow: 0 0 0 1px $light_blue;
+    background: #272727;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding: 20px;
+    width: 458px;
+    margin-bottom: 30px;
+}
+.skillView ul {
+    list-style: none;
+    margin-left: 0;
+}
+.skillView ul li {
+    float: left;
+    margin-right: 14px;
+}
+.skillView ul li:last-child {
+    margin-right: 0;
+}
 /*
 CHARACTER view
     characterView

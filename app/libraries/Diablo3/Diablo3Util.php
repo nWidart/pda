@@ -39,6 +39,21 @@ class Diablo3Util {
         $Diablo3 = new \Diablo3($battletag, $server, 'en_US');
         // Get the hero information for the given heroId
         $heroData = $Diablo3->getHero($heroId);
+
+        // If errors were returned
+        if ( !is_array( $heroData ) ) return false;
+
+        $skillSet = [];
+        $n = 0;
+        foreach ($heroData['skills']['active'] as $skills)
+        {
+            // Checking for empty ones (=not a lvl60 hero)
+            if ( isset( $skills['skill'] ) )
+                $skillSet[$n] = $skills['skill'];
+            $n++;
+        }
+
+        return $skillSet;
     }
     /**
      * Syncs the character items with Battle.Net (saves items)

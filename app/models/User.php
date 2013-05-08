@@ -1,6 +1,7 @@
 <?php
+use Cartalyst\Sentry\Users\Eloquent\User as SentryUserModel;
 
-class User extends Eloquent {
+class User extends SentryUserModel {
 
 	/**
 	 * The database table used by the model.

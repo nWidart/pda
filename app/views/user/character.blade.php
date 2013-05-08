@@ -28,7 +28,18 @@ Character View | PDA
 
         </div>
     </div>
+
+
     <div class="row characterStatsRow">
+        <div class="span6 skillView">
+            <ul>
+                @foreach( $skills as $skill)
+                    <li><a href="/d3/en/class/barbarian/passive/ruthless">{{ Html::image("assets/img/d3/skills/64/{$skill['icon']}.png") }}</a></li>
+                @endforeach
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+
         <div class="span6 characterView">
             <ul>
                 <?php $n = 0; ?>
