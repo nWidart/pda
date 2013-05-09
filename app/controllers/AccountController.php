@@ -10,6 +10,7 @@ class AccountController extends BaseController {
         $this->beforeFilter('auth');
     }
 
+
     /**
      * Displaying the dashboard
      * If no characters are already imported, prompt the user to import

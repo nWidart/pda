@@ -10,6 +10,7 @@ class CharacterController extends BaseController {
     {
         $this->beforeFilter('auth');
         $this->characters = User::find( (int)Sentry::getUser()->id )->characters;
+
     }
 
     /**
