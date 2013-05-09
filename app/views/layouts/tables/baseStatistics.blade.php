@@ -7,16 +7,28 @@
     </thead>
     <tbody>
         <tr>
-            <td>DPS</td>
-            <td>80 000</td>
+            <td>Strength</td>
+            <td>{{ $heroStats['baseStatistics']['strength'] }}</td>
         </tr>
         <tr>
-            <td>DPS</td>
-            <td>70 000</td>
+            <td>Intelligence</td>
+            <td>{{ $heroStats['baseStatistics']['intelligence'] }}</td>
         </tr>
         <tr>
-            <td>DPS</td>
-            <td>50 000</td>
+            <td>Dexterity</td>
+            <td>{{ $heroStats['baseStatistics']['dexterity'] }}</td>
+        </tr>
+        <tr>
+            <td>Vitality</td>
+            <td>{{ $heroStats['baseStatistics']['vitality'] }}</td>
+        </tr>
+        <tr>
+            <td>Magic Find</td>
+            <td>{{ $heroStats['baseStatistics']['magicFind'] }}%</td>
+        </tr>
+        <tr>
+            <td>Gold Find</td>
+            <td>{{ $heroStats['baseStatistics']['goldFind'] }}%</td>
         </tr>
     </tbody>
 </table>

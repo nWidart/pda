@@ -8,43 +8,43 @@
     <tbody>
         <tr>
             <td>Physical Resistance</td>
-            <td>544</td>
+            <td>{{ $heroStats['defensiveSpecifics']['physicalResistance'] }}</td>
         </tr>
         <tr>
             <td>Cold Resistance</td>
-            <td>597</td>
+            <td>{{ $heroStats['defensiveSpecifics']['coldResistance'] }}</td>
         </tr>
         <tr>
             <td>Fire Resistance</td>
-            <td>544</td>
+            <td>{{ $heroStats['defensiveSpecifics']['fireResistance'] }}</td>
         </tr>
         <tr>
             <td>Lightning Resistance</td>
-            <td>590</td>
+            <td>{{ $heroStats['defensiveSpecifics']['lightningResistance'] }}</td>
         </tr>
         <tr>
             <td>Poison Resistance</td>
-            <td>590</td>
+            <td>{{ $heroStats['defensiveSpecifics']['poisonResistance'] }}</td>
         </tr>
         <tr>
             <td>Arcane Resistance</td>
-            <td>598</td>
+            <td>{{ $heroStats['defensiveSpecifics']['arcaneResistance'] }}</td>
         </tr>
         <tr>
             <td>Crowd Control Reduction</td>
-            <td>13</td>
+            <td>{{ $heroStats['defensiveSpecifics']['crowdControlReduction'] }}%</td>
         </tr>
         <tr>
             <td>Missile Damage Reduction</td>
-            <td>0%</td>
+            <td>{{ $heroStats['defensiveSpecifics']['missileDamageReduction'] }}%</td>
         </tr>
         <tr>
             <td>Melee Damage Reduction</td>
-            <td>0%</td>
+            <td>{{ $heroStats['defensiveSpecifics']['meleeDamageReduction'] }}%</td>
         </tr>
         <tr>
             <td>Elite Damage Reduction</td>
-            <td>0%</td>
+            <td>{{ $heroStats['defensiveSpecifics']['eliteDamageReduction'] }}%</td>
         </tr>
     </tbody>
 </table>

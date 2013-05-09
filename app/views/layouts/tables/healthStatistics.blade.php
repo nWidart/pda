@@ -8,35 +8,35 @@
     <tbody>
         <tr>
             <td>Maximum Life</td>
-            <td>40 106</td>
+            <td>{{ $heroStats['healthStatistics']['maximumLife'] }}</td>
         </tr>
         <tr>
             <td>Life Steal</td>
-            <td>5,8%</td>
+            <td>{{ $heroStats['healthStatistics']['lifeSteal'] }}%</td>
         </tr>
         <tr>
             <td>Life Per Hit</td>
-            <td>407</td>
+            <td>{{ $heroStats['healthStatistics']['lifePerHit'] }}</td>
         </tr>
         <tr>
             <td>Total Life Bonus</td>
-            <td>0%</td>
+            <td>{{ $heroStats['healthStatistics']['totalLifeBonus'] }}%</td>
         </tr>
         <tr>
             <td>Life Per Second</td>
-            <td>619</td>
+            <td>{{ $heroStats['healthStatistics']['lifePerSecond'] }}</td>
         </tr>
         <tr>
             <td>Life Per Kill</td>
-            <td>0</td>
+            <td>{{ $heroStats['healthStatistics']['lifePerKill'] }}</td>
         </tr>
         <tr>
             <td>Health Globe Healing Bonus</td>
-            <td>0</td>
+            <td>{{ $heroStats['healthStatistics']['healthGlobeHealingBonus'] }}</td>
         </tr>
         <tr>
             <td>Bonus to Gold/Globe Radius</td>
-            <td>0</td>
+            <td>{{ $heroStats['healthStatistics']['bonusGoldGlobeRadius'] }}</td>
         </tr>
     </tbody>
 </table>

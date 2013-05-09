@@ -24,12 +24,9 @@ class CharacterController extends BaseController {
         // Get a character with all its items (& item modifiers)
         $items = Character::whereId($id)->with('items.attributes')->first()->toArray();
 
-        $test = Character::whereId($id)->with('items.attributes')->first();
-        ChromePhp::log( $test->items()->first() );
-        foreach ($test->items() as $item) {
-            $itemIntel = $item->attributes()->where('name', '=', 'Strength_Item')->first();
-            ChromePhp::log($intemIntel->max);
-        }
+        $heroStats = Diablo3Util::saveCharacterStatistics( $id );
+
+
 
         // Gets all the items + adds the type & uniqueness to it
         $itemSet = Diablo3Util::getItemSet( $items );
@@ -42,10 +39,11 @@ class CharacterController extends BaseController {
         $skillSet = Diablo3Util::getSkillset( $items['hero_id'] );
 
         $data = [
-            'user' => Sentry::getUser(),
+            'user'       => Sentry::getUser(),
             'characters' => $this->characters,
-            'items' => $itemSet,
-            'skills' => $skillSet
+            'items'      => $itemSet,
+            'skills'     => $skillSet,
+            'heroStats'  => $heroStats
         ];
         return View::make( 'user.character', $data );
     }
