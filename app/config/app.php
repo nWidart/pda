@@ -113,10 +113,14 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
+
+
 		'Cartalyst\Sentry\SentryServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Diablo3\Diablo3ServiceProvider',
-		'Profiler\ProfilerServiceProvider'
+		'Profiler\ProfilerServiceProvider',
+        'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider'
+
 
 	),
 
