@@ -42,6 +42,9 @@ class DiabloController extends BaseController {
                 $newChar->paragonLevel = $heroData['paragonLevel'];
                 $newChar->gender = $heroData['gender'];
                 $newChar->save();
+                Diablo3Util::saveCharacterItems( $newChar->hero_id, $newChar->id );
+                Diablo3Util::getSkillImages( $newChar->hero_id );
+                Diablo3Util::getItemImages( $newChar->hero_id );
             }
         }
         // Return redirect to dashboard

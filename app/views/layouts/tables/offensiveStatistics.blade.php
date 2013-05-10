@@ -8,23 +8,23 @@
     <tbody>
         <tr>
             <td>DPS</td>
-            <td>87 108,37</td>
+            <td>{{ round( $heroStats['offensiveStatistics']['dps'], 2 ) }}</td>
         </tr>
         <tr>
             <td>Attacks Per Second</td>
-            <td>1,692 MH <br> 1,974 OH</td>
+            <td>{{ $heroStats['offensiveStatistics']['attacksPerSecond']['mainHand'] }} MH <br> {{ $heroStats['offensiveStatistics']['attacksPerSecond']['offHand'] }} OH</td>
         </tr>
         <tr>
             <td>+% Attack Speed</td>
-            <td>26%</td>
+            <td>{{ $heroStats['offensiveStatistics']['percentAttackSpeed'] }}%</td>
         </tr>
         <tr>
             <td>Critical Hit Chance</td>
-            <td>47,5%</td>
+            <td>{{ $heroStats['offensiveStatistics']['criticalHitChance'] }}%</td>
         </tr>
         <tr>
             <td>Critical Hit Damage</td>
-            <td>320%</td>
+            <td>{{ $heroStats['offensiveStatistics']['criticalHitDamage'] }}%</td>
         </tr>
     </tbody>
 </table>

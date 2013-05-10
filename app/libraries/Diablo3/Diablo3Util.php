@@ -261,6 +261,7 @@ class Diablo3Util {
 
         // Get the items as a collection
         $itemsCollection = \Character::whereId($heroId)->with('items.attributes')->first();
+        // \ChromePhp::log( $itemsCollection->items()->attributes()->where('name', '=', 'Strength_Item')->first() );
 
         $heroStats = [
             'defensiveStatistics' => [
@@ -295,6 +296,16 @@ class Diablo3Util {
                 'healthGlobeHealingBonus' => 0,
                 'bonusGoldGlobeRadius'    => 0,
                 'ehp'                     => 0
+            ],
+            'offensiveStatistics' => [
+                'dps'                => 0,
+                'attacksPerSecond'   =>  [
+                    'mainHand'       => 0,
+                    'offHand'        => 0
+                ],
+                'percentAttackSpeed' => 0,
+                'criticalHitChance'  => 0,
+                'criticalHitDamage'  => 0
             ]
         ];
         // Base Stats at lvl 60
@@ -341,16 +352,11 @@ class Diablo3Util {
         foreach ($itemsCollection->items()->get() as $item)
         {
             // baseStatistics
-            # Calulating the strength of the items
             $heroStats['baseStatistics']['strength'] += $this->_getAttributeTotal( $item, 'Strength_Item' );
-            # Calulating the int of the items
             $heroStats['baseStatistics']['intelligence'] += $this->_getAttributeTotal( $item, 'Intelligence_Item' );
             $heroStats['baseStatistics']['dexterity'] += $this->_getAttributeTotal( $item, 'Dexterity_Item' );
-            # Calulating the vitality of the items
             $heroStats['baseStatistics']['vitality'] += $this->_getAttributeTotal( $item, 'Vitality_Item' );
-            # Magic Find
             $heroStats['baseStatistics']['magicFind'] += $this->_getAttributeTotal( $item, 'Magic_Find' );
-            # Gold Find
             $heroStats['baseStatistics']['goldFind'] += $this->_getAttributeTotal( $item, 'Gold_Find' );
 
             // defensiveStatistics
@@ -390,9 +396,7 @@ class Diablo3Util {
             $heroStats['defensiveStatistics']['resistanceAll'] += $this->_getAttributeTotal( $item, 'Resistance_All' );
 
             // healtStatistics
-            # Life Steal
             $heroStats['healthStatistics']['lifeSteal'] += $this->_getAttributeTotal( $item, 'Steal_Health_Percent' );
-            # Life on hit
             $heroStats['healthStatistics']['lifePerHit'] += $this->_getAttributeTotal( $item, 'Hitpoints_On_Hit' );
             # TODO Total Life Bonus
             # $heroStats['healthStatistics']['totalLifeBonus'] += $this->_getAttributeTotal( $item, '' );
@@ -405,7 +409,16 @@ class Diablo3Util {
             # TODO Bonus to Gold/Globe Radius
             # $heroStats['healthStatistics']['bonusGoldGlobeRadius'] += $this->_getAttributeTotal( $item, '' );
             #
+
+            // offensiveStatistics
+            $heroStats['offensiveStatistics']['criticalHitChance'] += $this->_getAttributeTotal( $item, 'Crit_Percent_Bonus_Capped' );
+            $heroStats['offensiveStatistics']['criticalHitDamage'] += $this->_getAttributeTotal( $item, 'Crit_Damage_Percent' );
+            $heroStats['offensiveStatistics']['percentAttackSpeed'] += $this->_getAttributeTotal( $item, 'Attacks_Per_Second_Percent' );
+            // $heroStats['offensiveStatistics']['attacksPerSecond'] += $this->_getAttributeTotal( $item, 'Attacks_Per_Second_Item');
+
         }
+        // override test for crit damage
+        $heroStats['offensiveStatistics']['criticalHitDamage'] = 0.326;
 
         // defensiveStatistics
         # Damage reduction from armor = Armor / (50 × Monster Level + Armor)
@@ -428,14 +441,135 @@ class Diablo3Util {
 
         // healtStatistics
         # Maximum life
-        # Life when player level < 35: = 36 + 4 × Level + 10 × Vitality
-        # Life when player level ≥ 35: = 36 + 4 × Level + (Level - 25) × Vitality
         if ( $itemsCollection->level < 35 )
             $heroStats['healthStatistics']['maximumLife'] = 36 + 4 * $itemsCollection->level + 10 * $heroStats['baseStatistics']['vitality'];
         else
             $heroStats['healthStatistics']['maximumLife'] = 36 + 4 * $itemsCollection->level + ($itemsCollection->level - 25) * $heroStats['baseStatistics']['vitality'];
         # EHP: = Life / ((1 - DR from Armor) × (1 - DR from Resistance) × (1 - 0.30 if monk or barbarian) × (1 - DR from other source))
         $heroStats['healthStatistics']['ehp'] = $heroStats['healthStatistics']['maximumLife'] / ( ( 1 - $heroStats['defensiveStatistics']['armorDamageReduction'] ) * ( 1 - $heroStats['defensiveStatistics']['resistanceDamageReduction'] ) * ( 1 - 0.30 ) );
+
+        // Damage calculations
+        // Check if dualwielding
+        // yes: dual wield dps = 1.15 × (main-hand damage + off-hand damage) / ((1 / main-hand attacks per second) + (1 / off-hand attacks per second))
+        // no: (min dmg + max dmg) * ( 1 + attacks per second ) * ( 1 + attack speed ) * ( 1 + critChance * critDamage ) * 1 * ( 1 + Primary Stat / 100 ) / 2
+        // either 1H or 2H
+        $weapons = $itemsCollection->items()->where('icon', 'like', '%1h%')->orWhere('icon', 'like', '%2h%')->get();
+        if ( count( $weapons) > 1 )
+        {
+            $n = 0;
+            // Dualwielding
+            // +15% incr attck speed.
+            $minimumDamage = $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Min#Physical' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Min#Arcane' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Min#Cold' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Min#Fire' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Min#Poison' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Min#Lightning' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Bonus_Min#Physical' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Bonus_Min#Arcane' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Bonus_Min#Cold' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Bonus_Min#Fire' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Bonus_Min#Poison' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Bonus_Min#Lightning' );
+            $maximumDamage = $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Delta#Physical' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Delta#Arcane' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Delta#Cold' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Delta#Fire' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Delta#Poison' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Delta#Lightning' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Bonus_Delta#Physical' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Bonus_Delta#Arcane' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Bonus_Delta#Cold' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Bonus_Delta#Fire' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Bonus_Delta#Poison' )
+                            + $this->_getAttributeTotal( $weapons[$n], 'Damage_Weapon_Bonus_Delta#Lightning' );
+            $heroStats['offensiveStatistics']['attacksPerSecond']['mainHand'] = $this->_getAttributeTotal( $weapons[$n], 'Attacks_Per_Second_Item' ) * ( 1 + $heroStats['offensiveStatistics']['percentAttackSpeed'] + 0.15 );
+            $heroStats['offensiveStatistics']['attacksPerSecond']['offHand'] = $this->_getAttributeTotal( $weapons[1], 'Attacks_Per_Second_Item' ) * ( 1 + $heroStats['offensiveStatistics']['percentAttackSpeed'] + 0.15 );
+            // Checking class, different primary stat
+            switch ( $itemsCollection->class )
+            {
+                case 'barbarian':
+                    $heroStats['offensiveStatistics']['dps'] = ( $minimumDamage + $maximumDamage )
+                                                                * ( 1 + $heroStats['offensiveStatistics']['attacksPerSecond']['mainHand'] )
+                                                                * ( 1 + $heroStats['offensiveStatistics']['percentAttackSpeed'] )
+                                                                * ( 1 + $heroStats['offensiveStatistics']['criticalHitChance'] + ($heroStats['offensiveStatistics']['criticalHitDamage']) )
+                                                                * ( 1 + $heroStats['baseStatistics']['strength'] / 100 ) / 2;
+                    break;
+                case 'wizard': case 'witch-doctor':
+                    $heroStats['offensiveStatistics']['dps'] = ( $minimumDamage + $maximumDamage )
+                                                                * ( 1 + $heroStats['offensiveStatistics']['attacksPerSecond']['mainHand'] )
+                                                                * ( 1 + $heroStats['offensiveStatistics']['percentAttackSpeed'] )
+                                                                * ( 1 + $heroStats['offensiveStatistics']['criticalHitChance'] + ($heroStats['offensiveStatistics']['criticalHitDamage']) )
+                                                                * ( 1 + $heroStats['baseStatistics']['intelligence'] / 100 ) / 2;
+                    break;
+                case 'demon-hunter': case 'monk':
+                    $heroStats['offensiveStatistics']['dps'] = ( $minimumDamage + $maximumDamage )
+                                                                * ( 1 + $heroStats['offensiveStatistics']['attacksPerSecond']['mainHand'] )
+                                                                * ( 1 + $heroStats['offensiveStatistics']['percentAttackSpeed'] )
+                                                                * ( 1 + $heroStats['offensiveStatistics']['criticalHitChance'] + ($heroStats['offensiveStatistics']['criticalHitDamage']) )
+                                                                * ( 1 + $heroStats['baseStatistics']['dexterity'] / 100 ) / 2;
+                    break;
+            }
+        }
+        else
+        {
+            // Single Weapon
+            $minimumDamage = $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Min#Physical' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Min#Arcane' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Min#Cold' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Min#Fire' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Min#Poison' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Min#Lightning' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Bonus_Min#Physical' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Bonus_Min#Arcane' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Bonus_Min#Cold' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Bonus_Min#Fire' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Bonus_Min#Poison' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Bonus_Min#Lightning' );
+            $maximumDamage = $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Delta#Physical' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Delta#Arcane' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Delta#Cold' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Delta#Fire' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Delta#Poison' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Delta#Lightning' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Bonus_Delta#Physical' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Bonus_Delta#Arcane' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Bonus_Delta#Cold' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Bonus_Delta#Fire' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Bonus_Delta#Poison' )
+                            + $this->_getAttributeTotal( $weapons, 'Damage_Weapon_Bonus_Delta#Lightning' );
+            $heroStats['offensiveStatistics']['attacksPerSecond']['mainHand'] = $this->_getAttributeTotal( $weapons, 'Attacks_Per_Second_Item' ) * ( 1 + $heroStats['offensiveStatistics']['percentAttackSpeed'] + 0.15 );
+            $heroStats['offensiveStatistics']['attacksPerSecond']['offHand'] = $this->_getAttributeTotal( $weapons, 'Attacks_Per_Second_Item' ) * ( 1 + $heroStats['offensiveStatistics']['percentAttackSpeed'] + 0.15 );
+            $heroStats['offensiveStatistics']['dps'] = ( $minimumDamage + $maximumDamage )
+                                                        * ( 1 + $heroStats['offensiveStatistics']['attacksPerSecond']['mainHand'] )
+                                                        * ( 1 + $heroStats['offensiveStatistics']['percentAttackSpeed'] )
+                                                        * ( 1 + $heroStats['offensiveStatistics']['criticalHitChance'] + ($heroStats['offensiveStatistics']['criticalHitDamage']) )
+                                                        * ( 1 + $heroStats['baseStatistics']['strength'] / 100 ) / 2;
+            switch ( $itemsCollection->class )
+            {
+                case 'barbarian':
+                    $heroStats['offensiveStatistics']['dps'] = ( $minimumDamage + $maximumDamage )
+                                                                * ( 1 + $heroStats['offensiveStatistics']['attacksPerSecond']['mainHand'] )
+                                                                * ( 1 + $heroStats['offensiveStatistics']['percentAttackSpeed'] )
+                                                                * ( 1 + $heroStats['offensiveStatistics']['criticalHitChance'] + ($heroStats['offensiveStatistics']['criticalHitDamage']) )
+                                                                * ( 1 + $heroStats['baseStatistics']['strength'] / 100 ) / 2;
+                    break;
+                case 'wizard': case 'witch-doctor':
+                    $heroStats['offensiveStatistics']['dps'] = ( $minimumDamage + $maximumDamage )
+                                                                * ( 1 + $heroStats['offensiveStatistics']['attacksPerSecond']['mainHand'] )
+                                                                * ( 1 + $heroStats['offensiveStatistics']['percentAttackSpeed'] )
+                                                                * ( 1 + $heroStats['offensiveStatistics']['criticalHitChance'] + ($heroStats['offensiveStatistics']['criticalHitDamage']) )
+                                                                * ( 1 + $heroStats['baseStatistics']['intelligence'] / 100 ) / 2;
+                    break;
+                case 'demon-hunter': case 'monk':
+                    $heroStats['offensiveStatistics']['dps'] = ( $minimumDamage + $maximumDamage )
+                                                                * ( 1 + $heroStats['offensiveStatistics']['attacksPerSecond']['mainHand'] )
+                                                                * ( 1 + $heroStats['offensiveStatistics']['percentAttackSpeed'] )
+                                                                * ( 1 + $heroStats['offensiveStatistics']['criticalHitChance'] + ($heroStats['offensiveStatistics']['criticalHitDamage']) )
+                                                                * ( 1 + $heroStats['baseStatistics']['dexterity'] / 100 ) / 2;
+                    break;
+            }
+        }
 
 
         // Setting %
@@ -446,13 +580,24 @@ class Diablo3Util {
         $heroStats['healthStatistics']['totalLifeBonus'] = $this->_getPercent( $heroStats['healthStatistics']['totalLifeBonus'] );
         $heroStats['baseStatistics']['magicFind'] = $this->_getPercent( $heroStats['baseStatistics']['magicFind'] );
         $heroStats['baseStatistics']['goldFind'] = $this->_getPercent( $heroStats['baseStatistics']['goldFind'] );
+        $heroStats['offensiveStatistics']['percentAttackSpeed'] = $this->_getPercent( $heroStats['offensiveStatistics']['percentAttackSpeed'] );
+        $heroStats['offensiveStatistics']['criticalHitChance'] = $this->_getPercent( $heroStats['offensiveStatistics']['criticalHitChance'] );
+        $heroStats['offensiveStatistics']['criticalHitDamage'] = round( $heroStats['offensiveStatistics']['criticalHitDamage'] * 1000, 2);
 
         \ChromePhp::log($heroStats);
         return $heroStats;
     }
+
+    public function dualwield( $items )
+    {
+
+    }
+
     private function _getAttributeTotal( $item, $attribute )
     {
+        \ChromePhp::log($item->name);
         $attr = $item->attributes()->where('name', '=', $attribute )->first();
+
         if ( $attr )
         {
             return $attr->max;
