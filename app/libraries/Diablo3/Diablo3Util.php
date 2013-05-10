@@ -595,10 +595,13 @@ class Diablo3Util {
 
     private function _getAttributeTotal( $item, $attribute )
     {
-        \ChromePhp::log($item->name);
-        $attr = $item->attributes()->where('name', '=', $attribute )->first();
+        if ( isset( $item->name ) )
+        {
+            \ChromePhp::log($item->name);
+            $attr = $item->attributes()->where('name', '=', $attribute )->first();
+        }
 
-        if ( $attr )
+        if ( isset( $attr ) )
         {
             return $attr->max;
         }
