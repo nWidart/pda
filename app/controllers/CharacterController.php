@@ -24,7 +24,11 @@ class CharacterController extends BaseController {
         // Get a character with all its items (& item modifiers)
         $items = Character::whereId($id)->with('items.attributes')->first()->toArray();
 
-        $heroStats = Diablo3Util::saveCharacterStatistics( $id );
+        Session::put('charId', $id);
+        $heroStats = Cache::remember('heroStats', 10, function()
+        {
+            return Diablo3Util::saveCharacterStatistics( Session::get('charId') );
+        });
 
         // Gets all the items + adds the type & uniqueness to it
         $itemSet = Diablo3Util::getItemSet( $items );
