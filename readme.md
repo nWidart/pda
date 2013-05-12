@@ -12,6 +12,8 @@ The is the sourcecode for the PDA website.
  - [Diablo3 PHP Wrapper](https://github.com/XjSv/Diablo-3-API-PHP) (Extendented this a lot)
  - [Diablo3 API](https://github.com/Blizzard/d3-api-docs)
  - [bootstrap-modal](https://github.com/jschr/bootstrap-modal)
+ - [Iron.io](http://iron.io) (push queues)
+ - [Redis.io](http://redis.io) (Session & cache DB)
  
 ## More Info
 Everything on [my blog](http://nicolaswidart.com/site/category/heaj/tfe/).
