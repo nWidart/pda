@@ -1,4 +1,12 @@
 <?php
+Event::listen('user.logout', function()
+{
+    Cache::forget('heroes');
+});
+Event::listen('hero.import', function()
+{
+    Cache::forget('heroes');
+});
 
 /*
 |--------------------------------------------------------------------------

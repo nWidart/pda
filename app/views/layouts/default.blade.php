@@ -57,6 +57,11 @@
             @include('layouts.modals')
         @endif
     </div> <!-- /container -->
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">© Personal Diablo Assistant</p>
+      </div>
+    </div>
 
     <!-- Le javascript
     ================================================== -->

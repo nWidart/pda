@@ -168,6 +168,7 @@ class AuthController extends BaseController {
     public function getLogout()
     {
         Sentry::logout();
+        Event::fire('user.logout');
         return Redirect::route('home')->with('success', 'Logged out!');
     }
 }

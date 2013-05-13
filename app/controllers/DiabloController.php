@@ -48,6 +48,7 @@ class DiabloController extends BaseController {
             }
         }
         // Return redirect to dashboard
+        Event::fire('hero.import');
         return Redirect::to('dashboard')->with('success', 'Import successful');
     }
 }
