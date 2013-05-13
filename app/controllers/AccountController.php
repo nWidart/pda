@@ -21,13 +21,17 @@ class AccountController extends BaseController {
     {
         // Look for characters for logged in user
         $user = User::find( (int)Sentry::getUser()->id )->characters->first();
+        $heroes = Cache::remember('heroes', 10, function ()
+        {
+           return  ( $this->_getHeroes() ) ? $this->_getHeroes() : '';
+        });
 
         // If the user has characters
         if ( $user )
         {
             $data = [
                 'characters' => User::find( (int)Sentry::getUser()->id )->characters,
-                'heroes' => ( $this->_getHeroes() ) ? $this->_getHeroes() : '',
+                'heroes' => $heroes,
                 'user' => Sentry::getUser()
             ];
             return View::make('user.index', $data);
