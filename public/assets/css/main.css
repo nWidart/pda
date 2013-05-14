@@ -692,3 +692,11 @@ table.statistics td {
 table.statistics tr:hover td {
   background: #f1f1f1;
 }
+
+/*
+    AH Tools Section
+ */
+.commodityCashOutProfit,
+.itemCashOutProfit {
+  font-weight: bold;
+}

@@ -13,7 +13,7 @@
                     <li {{ (Request::is('dashboard') ? 'class=active' : '') }}><a href="{{ URL::to('dashboard') }}">Dashboard</a></li>
                     @if ( isset($characters) )
                         <li class="dropdown {{ (Request::is('character/profile/*') ? 'active' : '') }}">
-                            <a href="#" class="dropdown-toggle {{ (Request::is('character/profile/*') ? 'active' : '') }}" data-toggle="dropdown" data-hover="dropdown">Characters<b class="caret"></b></a>
+                            <a href="#" class="dropdown-toggle {{ (Request::is('character/profile/*') ? 'active' : '') }}" data-toggle="dropdown" data-hover="dropdown">Characters <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 @foreach($characters as $character)
                                     <li><a class="" href="{{ URL::action('CharacterController@getProfile', [$character->id]) }}" >{{ $character->name }}</a></li>
@@ -21,7 +21,12 @@
                             </ul>
                         </li>
                     @endif
-                    <li {{ (Request::is('ahtool') ? 'class=active' : '') }}><a href="{{ URL::to('ah') }}">AH Tools</a></li>
+                    <li class="dropdown {{ (Request::is('ah/realmoney-calculator') ? 'active' : '') }}">
+                        <a href="#" class="dropdown-toggle {{ (Request::is('ah/realmoney-calculator') ? 'active' : '') }}" data-toggle="dropdown" data-hover="dropdown">AH Tools <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="" href="{{ URL::to('ah/realmoney-calculator') }}" >Real-Money Profit Calc</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 @else
                     <ul class="nav">
