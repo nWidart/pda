@@ -35,11 +35,12 @@ class CharacterController extends BaseController {
         });
 
         // Gets all the items + adds the type & uniqueness to it
-        // TODO do NOT cache this
-        $itemSet = Cache::remember('itemSet', 10, function ()
-        {
-            return Diablo3Util::getItemSet( Session::get('items') );
-        });
+        // TODO Better cache system
+        // $itemSet = Cache::remember('itemSet', 10, function ()
+        // {
+        //     return Diablo3Util::getItemSet( Session::get('items') );
+        // });
+        $itemSet = Diablo3Util::getItemSet( Session::get('items') );
 
         // Get skillSet for current user
         // $skillSet = Cache::remember('skillSet', 10, function ()

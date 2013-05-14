@@ -12,21 +12,23 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="{{{ asset('assets/css/bootstrap.css') }}}" rel="stylesheet">
-    <link href="{{{ asset('assets/css/bootstrap-responsive.css') }}}" rel="stylesheet">
-
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
-    <link href="{{{ asset('assets/css/alertify.css') }}}" rel="stylesheet">
-    <link href="{{{ asset('assets/css/bootstrap-modal.css') }}}" rel="stylesheet">
-    <link href="{{{ asset('assets/css/m-buttons.css') }}}" rel="stylesheet">
-    <link href="{{{ asset('assets/css/entypo16.css') }}}" rel="stylesheet">
-    <link href="{{{ asset('assets/css/m-forms.css') }}}" rel="stylesheet">
-    <link href="{{{ asset('assets/css/tablecloth.css') }}}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="http://us.battle.net/d3/static/css/tooltips.css">
-    <script src="http://us.battle.net/d3/static/js/tooltips.js"></script>
+    <link href="{{{ asset('assets/css/bootstrap/bootstrap.css') }}}" rel="stylesheet">
+    <link href="{{{ asset('assets/css/bootstrap/bootstrap-responsive.css') }}}" rel="stylesheet">
+    <link href="{{{ asset('assets/css/bootstrap/bootstrap-modal.css') }}}" rel="stylesheet">
+
+    <link href="{{{ asset('assets/css/vendor/alertify.css') }}}" rel="stylesheet">
+    <link href="{{{ asset('assets/css/vendor/m-buttons.css') }}}" rel="stylesheet">
+    <link href="{{{ asset('assets/css/vendor/entypo16.css') }}}" rel="stylesheet">
+    <link href="{{{ asset('assets/css/vendor/m-forms.css') }}}" rel="stylesheet">
+    <link href="{{{ asset('assets/css/vendor/tablecloth.css') }}}" rel="stylesheet">
+    <link href="{{{ asset('assets/css/vendor/jquery.qtip.css') }}}" rel="stylesheet">
     <link href="{{{ asset('assets/css/main.css') }}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://us.battle.net/d3/static/css/tooltips.css">
+
     @section('styles')
     @show
+    <script src="http://us.battle.net/d3/static/js/tooltips.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="{{ asset( 'assets/js/jquery-1.9.1.min.js' )}}"></script>
 
@@ -72,24 +74,21 @@
     <script src="{{{ asset('assets/js/bootstrap/bootstrap-modalmanager.js') }}}"></script>
     <script src="{{{ asset('assets/js/bootstrap/twitter-bootstrap-hover-dropdown.min.js') }}}"></script>
     <script src="{{{ asset('assets/js/bootstrap/bootstrap-modal.js') }}}"></script>
-    <script src="{{{ asset('assets/js/alertify.min.js') }}}"></script>
-    <script src="{{{ asset('assets/js/unslider.min.js') }}}"></script>
     <script src="{{{ asset('assets/js/bootstrap/jquery.metadata.js') }}}"></script>
     <script src="{{{ asset('assets/js/bootstrap/jquery.tablecloth.js') }}}"></script>
     <script src="{{{ asset('assets/js/bootstrap/jquery.tablesorter.min.js') }}}"></script>
+    <script src="{{{ asset('assets/js/vendor/alertify.min.js') }}}"></script>
+    <script src="{{{ asset('assets/js/vendor/unslider.min.js') }}}"></script>
+    <script src="{{{ asset('assets/js/vendor/jquery.qtip.js') }}}"></script>
     <script src="{{{ asset('assets/js/main.js') }}}"></script>
     <script type="text/javascript">
-      $('.alert-warning').on('click', function() {
-        $('.alert-warning').fadeOut();
-      });
+    $(document).ready(function()
+    {
         $('body').tooltip({
           selector: "a[data-toggle=tooltip]",
           container: 'body'
-        })
-      // $('a[data-toggle="tooltip"]').on('mouseenter', function() {
-      //   console.log(this);
-      //   this.tooltip('toggle');
-      // });
+        });
+    });
     </script>
     @section('scripts')
     @show

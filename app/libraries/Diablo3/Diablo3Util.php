@@ -171,84 +171,73 @@ class Diablo3Util {
         $n = 0;
         foreach ($items['items'] as $item)
         {
-            switch ($item['icon']) {
+            switch ($item['icon'])
+            {
                 case Str::contains($item['icon'], 'helm'):
                     $itemSet[$n]['type'] = 'helm';
-                    $itemSet[$n]['item'] = $item;
                     $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
                     break;
 
                 case Str::contains($item['icon'], 'chest'):
                     $itemSet[$n]['type'] = 'chest';
-                    $itemSet[$n]['item'] = $item;
                     $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
                     break;
 
                 case Str::contains($item['icon'], 'boots'):
                     $itemSet[$n]['type'] = 'boots';
-                    $itemSet[$n]['item'] = $item;
                     $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
                     break;
 
                 case Str::contains($item['icon'], 'gloves'):
                     $itemSet[$n]['type'] = 'gloves';
-                    $itemSet[$n]['item'] = $item;
                     $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
                     break;
 
                 case Str::contains($item['icon'], 'shoulders'):
                     $itemSet[$n]['type'] = 'shoulders';
-                    $itemSet[$n]['item'] = $item;
                     $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
                     break;
 
                 case Str::contains($item['icon'], 'pants'):
                     $itemSet[$n]['type'] = 'pants';
-                    $itemSet[$n]['item'] = $item;
                     $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
                     break;
 
                 case Str::contains($item['icon'], 'bracer'):
                     $itemSet[$n]['type'] = 'bracer';
-                    $itemSet[$n]['item'] = $item;
                     $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
                     break;
 
                 case Str::contains($item['icon'], 'mace'):
                     $itemSet[$n]['type'] = 'mace';
-                    $itemSet[$n]['item'] = $item;
                     $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
                     break;
 
                 case Str::contains($item['icon'], 'sword'):
                     $itemSet[$n]['type'] = 'sword';
-                    $itemSet[$n]['item'] = $item;
                     $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
                     break;
 
                 case Str::contains($item['icon'], 'belt'):
                     $itemSet[$n]['type'] = 'belt';
-                    $itemSet[$n]['item'] = $item;
                     $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
                     break;
 
                 case Str::contains($item['icon'], 'ring'):
                     $itemSet[$n]['type'] = 'ring';
-                    $itemSet[$n]['item'] = $item;
                     $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
                     break;
 
                 case Str::contains($item['icon'], 'amulet'):
                     $itemSet[$n]['type'] = 'amulet';
-                    $itemSet[$n]['item'] = $item;
                     $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
                     break;
                 default:
                     $itemSet[$n]['type'] = 'nothingYet';
-                    $itemSet[$n]['item'] = $item;
                     $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
                     break;
             }
+            $itemSet[$n]['item'] = $item;
             $n++;
         }
         return $itemSet;

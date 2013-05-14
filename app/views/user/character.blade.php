@@ -47,12 +47,24 @@ Character View | PDA
                     <?php $uniqueness = ( $item['unique'] ) ? 'unique' : ''; ?>
                     <?php if ( $item['item']['name'] === 'ring' ) : ?>
                         <li class="<?php echo $item['type'] . ' ' . $uniqueness; ?>" id="123 <?php echo $n; ?>">
-                            {{ Html::image("assets/img/d3/items/large/{$item['item']['icon']}.png", $item['item']['name'], ['class' => $item['type'] . ' ' . $uniqueness ] ) }}
+                            <a href="" data-tooltip="<?php
+                              foreach ($item['item']['attributes'] as $attr) {
+                                    echo $attr['name'] . ' : ' . $attr['max'];
+                                }
+                            ?>" class="nwTooltip">
+                            {{ HTML::image("assets/img/d3/items/large/{$item['item']['icon']}.png", $item['item']['name'], ['class' => $item['type'] . ' ' . $uniqueness ] ) }}
+                            </a>
                         </li>
                         <?php $n++; ?>
                     <?php else: ?>
                         <li class="<?php echo $item['type'] . ' ' . $uniqueness; ?>">
-                            {{ Html::image("assets/img/d3/items/large/{$item['item']['icon']}.png", $item['item']['name'], ['class' => $item['type'] . ' ' . $uniqueness ] ) }}
+                            <a href="" data-tooltip="<?php
+                              foreach ($item['item']['attributes'] as $attr) {
+                                    echo $attr['name'] . ' : ' . $attr['max'] .'<br>';
+                                }
+                            ?>" data-tooltip-title="{{ $item['item']['name'] }}" class="nwTooltip">
+                            {{ HTML::image("assets/img/d3/items/large/{$item['item']['icon']}.png", $item['item']['name'], ['class' => $item['type'] . ' ' . $uniqueness ] ) }}
+                            </a>
                         </li>
                     <?php endif; ?>
                 @endforeach
@@ -81,11 +93,27 @@ Character View | PDA
 
 @section('scripts')
 <script>
-$(document).ready(function() {
+$(document).ready(function()
+{
+    $('a[title]').qtip();
     $("table").tablecloth({
         theme: "default",
         bordered: false,
         striped: false,
+    });
+    $('.nwTooltip').qtip({
+        content: {
+            title: {
+                text: function (api)
+                {
+                    return $(this).data('tooltip-title');
+                }
+            },
+            attr: 'data-tooltip'
+        },
+        style: {
+            classes: 'qtip-tipsy qtip-shadow'
+        }
     });
 });
 </script>
