@@ -505,12 +505,18 @@ CHARACTER view
     bottom: 20px;
     left: 325px;
 }
+// Offhands
+.characterView li.shield {
+    bottom: 20px;
+    left: 325px;
+}
+
 .characterView li.ring {
     bottom: 230px;
     left: 325px;
 }
-.characterView li.ring:nth-child(2) {
-    border-color:green;
+.characterView li.ring:nth-child(1) {
+    left: 10px;
 }
 
 /*

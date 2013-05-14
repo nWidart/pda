@@ -232,6 +232,12 @@ class Diablo3Util {
                     $itemSet[$n]['type'] = 'amulet';
                     $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
                     break;
+
+                case Str::contains($item['icon'], 'shield'):
+                    $itemSet[$n]['type'] = 'shield';
+                    $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
+                    break;
+
                 default:
                     $itemSet[$n]['type'] = 'nothingYet';
                     $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
