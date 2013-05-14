@@ -700,3 +700,7 @@ table.statistics tr:hover td {
 .itemCashOutProfit {
   font-weight: bold;
 }
+
+label.inline {
+  display: block;
+}

@@ -10,6 +10,11 @@ Real-Money AH Profit Calculator | PDA
     <div class="row">
         <div class="span12">
             <h1>Real-Money Auction House Profit Calculator</h1>
+            <p class="muted">
+                Here you are able to check the profit you will make after the <em>auction house</em> and <em>cash out</em> fee. <br>
+                Simply input the price of the item/commodity was solf for and you'll be able to check the profit.
+            </p>
+            <hr>
         </div>
     </div>
     <div class="row">
@@ -17,7 +22,6 @@ Real-Money AH Profit Calculator | PDA
             <table class="table table-hover table-striped">
                 <thead>
                     <tr>
-
                         <div class="m-input-prepend">
                             <span class="add-on">$</span>
                             {{ Form::input('text', 'inputPrice','', [ 'placeholder' => 'Amount', 'class' => 'm-wrap' ] ) }}
