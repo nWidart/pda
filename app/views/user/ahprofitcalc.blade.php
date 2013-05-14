@@ -18,9 +18,9 @@ Real-Money AH Profit Calculator | PDA
                 <thead>
                     <tr>
 
-                        <div class="input-prepend">
+                        <div class="m-input-prepend">
                             <span class="add-on">$</span>
-                            {{ Form::input('text', 'inputPrice','', [ 'placeholder' => 'Amount' ] ) }}
+                            {{ Form::input('text', 'inputPrice','', [ 'placeholder' => 'Amount', 'class' => 'm-wrap' ] ) }}
                         </div>
                     </tr>
                     <tr>
@@ -57,18 +57,15 @@ Real-Money AH Profit Calculator | PDA
 
 @section('scripts')
 <script>
-
-
-
 $(document).ready(function() {
     $("input[name='inputPrice']").on("change keyup paste", function(){
         var value = parseFloat($(this).val());
         if (value != 0 && !isNaN(value))
         {
-            var item1 = value - 1;
-            var item2 = item1 * 0.85;
-            var comm1 = value * 0.85;
-            var comm2 = comm1 * 0.85;
+            var item1 = value - 1,
+                item2 = item1 * 0.85,
+                comm1 = value * 0.85,
+                comm2 = comm1 * 0.85;
 
             $('.itemSellPrice').html('$' + roundTwo(value).toFixed(2)); // 0
             $('.itemBnetProfit').html('$' + roundTwo(item1).toFixed(2));
@@ -77,13 +74,13 @@ $(document).ready(function() {
             $('.itemCashOutProfitPercent').html(roundTwo(item2 / value * 100).toFixed(2) + '%');
 
             $('.commoditySellPrice').html('$' + roundTwo(value).toFixed(2)); // 5
-            $('.commodityBnetProfit').html('$' + roundTwo(comm1).toFixed(2)); //
+            $('.commodityBnetProfit').html('$' + roundTwo(comm1).toFixed(2)); // 6
             $('.commodityBnetProfitPercent').html(roundTwo(comm1 / value * 100).toFixed(2) + '%');
             $('.commodityCashOutProfit').html('$' + roundTwo(comm2).toFixed(2));
             $('.commodityCashOutProfitPercent').html(roundTwo(comm2 / value * 100).toFixed(2) + '%');
         }
     });
-    function roundTwo(value)
+    function roundTwo( value )
     {
         var value = Math.round(value * 100) / 100
         return value;

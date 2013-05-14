@@ -21,4 +21,13 @@ class AuctionHouseController extends BaseController {
         ];
         return View::make('user.ahprofitcalc', $data);
     }
+
+    public function getGoldOrRealMoney()
+    {
+        $data = [
+            'user'       => Sentry::getUser(),
+            'characters' => $this->characters
+        ];
+        return View::make('user.goldRealMoney', $data);
+    }
 }

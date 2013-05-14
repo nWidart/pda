@@ -21,10 +21,11 @@
                             </ul>
                         </li>
                     @endif
-                    <li class="dropdown {{ (Request::is('ah/realmoney-calculator') ? 'active' : '') }}">
-                        <a href="#" class="dropdown-toggle {{ (Request::is('ah/realmoney-calculator') ? 'active' : '') }}" data-toggle="dropdown" data-hover="dropdown">AH Tools <b class="caret"></b></a>
+                    <li class="dropdown {{ (Request::is('ah/*') ? 'active' : '') }}">
+                        <a href="#" class="dropdown-toggle {{ (Request::is('ah/*') ? 'active' : '') }}" data-toggle="dropdown" data-hover="dropdown">AH Tools <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a class="" href="{{ URL::to('ah/realmoney-calculator') }}" >Real-Money Profit Calc</a></li>
+                            <li><a class="" href="{{ URL::to('ah/realmoney-calculator') }}" >Real Money Profit Calc</a></li>
+                            <li><a class="" href="{{ URL::to('ah/gold-or-realmoney') }}" >Gold or Real Money</a></li>
                         </ul>
                     </li>
                 </ul>
