@@ -219,6 +219,10 @@ Comparing Items | PDA
                         </tr>
                     </tbody>
                 </table>
+                <div class="m-btn-group">
+                    <a href="#" class="m-btn green"><i class="icon-switch"></i> Equip Item</a>
+                    <a href="#" class="m-btn black reset"><i class="icon-ccw-1"></i> Reset</a>
+                </div>
             </div>
         </div>
     </div>
@@ -228,14 +232,24 @@ Comparing Items | PDA
 <script>
 $(function()
 {
+    // Reset the results table (hide it)
+    $('.reset').on('click', function(e)
+    {
+        $('.JsResults').slideUp();
+    });
+
+    // Calculate the stats
+    // TODO a post request to realy calculate something...
     $('button.calc').on('click', function(e)
     {
         $('.spinner').show();
         setTimeout(function(){
-            $('.JsResults').fadeIn();
+            $('.JsResults').slideDown();
             $('.spinner').hide();
         }, 1000);
     });
+
+    // Styling the table and making it sortable
     $("table").tablecloth({
         theme: "stats",
         bordered: true,
@@ -244,7 +258,12 @@ $(function()
         striped: true,
 
     });
+
+    // Searchable select boxes
     $(".select").select2();
+
+    // Add a attribute
+    // Not used
     $('.jsAddAttr').on('click', function(e)
     {
         var html = '<li>';
