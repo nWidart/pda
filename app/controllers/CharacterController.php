@@ -47,6 +47,8 @@ class CharacterController extends BaseController {
         // {
         //     return Diablo3Util::getSkillset( Session::get('heroId') );
         // });
+        // Diablo3Util::saveCharacterItems( Session::get('heroId'), $id );
+        // Diablo3Util::getItemImages( Session::get('heroId') );
         Diablo3Util::getSkillImages(Session::get('heroId'));
 
         $skillSet = Diablo3Util::getSkillset( Session::get('heroId') );

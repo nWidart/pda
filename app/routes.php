@@ -48,3 +48,9 @@ Route::get('ah/realmoney-calculator', 'AuctionHouseController@getAHProfitCalc');
 Route::get('ah/gold-or-realmoney', 'AuctionHouseController@getGoldOrRealMoney');
 
 Route::get('item/compare/{itemId}', 'DiabloController@getCompareItem');
+
+Route::post('items/update', function()
+{
+    $name = Input::get('value');
+    ChromePhp::log($name);
+});

@@ -519,14 +519,14 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 }
 .mini
 {
-  height: 13px;
+  /*height: 13px;*/
   font-size: 11px;
   line-height: 13px;
   padding: 4px 10px;
 }
 .big
 {
-	height: 38px;
+	/*height: 38px;*/
 	font-size: 18px;
 	line-height: 38px;
 	padding: 20px 26px;

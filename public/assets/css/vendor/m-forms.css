@@ -14,6 +14,9 @@ select.m-wrap,
 textarea.m-wrap {
   font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+label.m-wrap.inline{
+  display: inline;
+}
 
 label.m-wrap {
   display: block;
@@ -239,6 +242,9 @@ textarea.m-wrap::-webkit-input-placeholder {
   margin-left: 10px;
 }
 
+.m-ctrl-mini {
+  width: 50px !important;
+}
 .m-ctrl-small {
   width: 120px !important;
 }

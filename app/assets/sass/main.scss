@@ -690,6 +690,9 @@ label.inline {
         background-position: 0 5px;
         overflow: hidden;
     }
+    .item-data > .attrs li label {
+        line-height: 32px;
+    }
     .item-data > .attrs .value {
         color: #a4a4c0;
     }
