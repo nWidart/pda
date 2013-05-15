@@ -646,6 +646,10 @@ CHARACTER view
     tables
     ======================================================================================
  */
+.m-btn.dropdown-carrettoggle {
+  line-height: 15px;
+}
+
 .charToolbar .m-btn-strip {
   float: right;
   margin-right: 30px;
@@ -803,12 +807,12 @@ label.inline {
   padding: 1px 15px;
   background-image: url("../img/bullet.gif");
   background-repeat: no-repeat;
-  background-position: 0 5px;
+  background-position: 0 8px;
   overflow: hidden;
 }
 
-.item-data > .attrs li label {
-  line-height: 32px;
+.calc {
+  width: 427px;
 }
 
 .item-data > .attrs .value {

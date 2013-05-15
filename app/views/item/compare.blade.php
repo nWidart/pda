@@ -127,7 +127,7 @@ Comparing Items | PDA
                     <button class="m-btn green mini jsAddAttr">+</button>
                 </div>
             </div> <!-- End .badge Item -->
-            <button class="m-btn red big">Calculate</button>
+            <button class="m-btn red big btn-block calc">Calculate</button>
         </div> <!-- End span5 -->
         <div class="span2 results">
             <h2>Results</h2>
