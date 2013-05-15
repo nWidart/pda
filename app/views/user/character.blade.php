@@ -45,24 +45,24 @@ Character View | PDA
                 <?php $n = 0; ?>
                 @foreach($items as $item)
                     <?php $uniqueness = ( $item['unique'] ) ? 'unique' : ''; ?>
-                    <?php if ( $item['item']['name'] === 'ring' ) : ?>
-                        <li class="<?php echo $item['type'] . ' ' . $uniqueness; ?>" id="123 <?php echo $n; ?>">
-                            <a href="" data-tooltip="<?php
+                    <?php if ( $item['type'] === 'ring' ) : ?>
+                        <li class="<?php echo $item['type'] . ' ' . $uniqueness; ?>" id="<?php echo $n; ?>">
+                            <a href="{{ URL::to('item/compare')}}" data-tooltip="<?php
                               foreach ($item['item']['attributes'] as $attr) {
-                                    echo $attr['name'] . ' : ' . $attr['max'];
+                                    echo $attr['name'] . ' : ' . $attr['max'].'<br>';
                                 }
-                            ?>" class="nwTooltip">
+                            ?>" class="nwTooltip" data-tooltip-title="{{ $item['item']['name'] }}">
                             {{ HTML::image("assets/img/d3/items/large/{$item['item']['icon']}.png", $item['item']['name'], ['class' => $item['type'] . ' ' . $uniqueness ] ) }}
                             </a>
                         </li>
                         <?php $n++; ?>
                     <?php else: ?>
                         <li class="<?php echo $item['type'] . ' ' . $uniqueness; ?>">
-                            <a href="" data-tooltip="<?php
+                            <a href="{{ URL::to('item/compare/' . $item['item']['id'] ) }}" data-tooltip="<?php
                               foreach ($item['item']['attributes'] as $attr) {
                                     echo $attr['name'] . ' : ' . $attr['max'] .'<br>';
                                 }
-                            ?>" data-tooltip-title="{{ $item['item']['name'] }}" class="nwTooltip">
+                            ?>" data-tooltip-title="{{ $item['item']['name'] }}" class="nwTooltip" data-itemId="{{ $item['item']['id'] }}">
                             {{ HTML::image("assets/img/d3/items/large/{$item['item']['icon']}.png", $item['item']['name'], ['class' => $item['type'] . ' ' . $uniqueness ] ) }}
                             </a>
                         </li>

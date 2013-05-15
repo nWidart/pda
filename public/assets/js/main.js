@@ -6,7 +6,6 @@ $(document).ready(function() {
     $('table.statistics thead').on('click', function()
     {
         $(this).parent().find('tbody').fadeToggle();
-        // console.log( $(this).parent().find('tbody') );
     });
     /**
      * Doing the POST request for the profile info tab
@@ -50,6 +49,19 @@ $(document).ready(function() {
             console.log('fail');
         });
     });
+
+    /**
+     * Loading to compare items modal
+     */
+     // var $compareItem = $(' .nwTooltip ');
+     // $compareItem.on('click', function (e)
+     // {
+     //    e.preventDefault();
+     //    $updateBtagForm.modal('loading');
+     //    var itemId = $(this).attr('data-itemId');
+
+
+     // });
 
     /**
      * Doing the POST request for the battletag info tab

@@ -41,5 +41,10 @@ Route::controller('dashboard', 'AccountController');
  */
 Route::get('character/profile/{id}', 'CharacterController@getProfile');
 
+/**
+ * Registring the Auction House tools
+ */
 Route::get('ah/realmoney-calculator', 'AuctionHouseController@getAHProfitCalc');
 Route::get('ah/gold-or-realmoney', 'AuctionHouseController@getGoldOrRealMoney');
+
+Route::get('item/compare/{itemId}', 'DiabloController@getCompareItem');

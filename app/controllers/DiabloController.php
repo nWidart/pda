@@ -1,9 +1,21 @@
 <?php
 
 class DiabloController extends BaseController {
+    public $characters;
+    /**
+     * Attach the Auth filter to the controller
+     *
+     */
+    public function __construct()
+    {
+        $this->beforeFilter('auth');
+        if ( Sentry::check() )
+            $this->characters = User::find( (int)Sentry::getUser()->id )->characters;
+    }
+
     /**
      * Import all selected characters into the db
-     *
+     * @return Redirect
      */
     public function postImport()
     {
@@ -50,5 +62,20 @@ class DiabloController extends BaseController {
         // Return redirect to dashboard
         Event::fire('hero.import');
         return Redirect::to('dashboard')->with('success', 'Import successful');
+    }
+
+    /**
+     * Showing the compare items page
+     * @param  int $itemId
+     * @return View
+     */
+    public function getCompareItem( $itemId )
+    {
+        $data = [
+            'user'       => Sentry::getUser(),
+            'characters' => $this->characters,
+            'item1'      => Item::whereId( $itemId )->with('attributes')->first()
+        ];
+        return View::make('item.compare', $data);
     }
 }
