@@ -15,7 +15,7 @@ The is the sourcecode for the PDA website.
  - [Alertify](http://fabien-d.github.io/alertify.js)
  - [Select2](http://ivaynberg.github.io/select2/)
  - [x-editable](http://vitalets.github.io/x-editable/)
-
+ - [qTip2](http://craigsworks.com/projects/qtip2/tutorials/advanced/#override) (Tooltips)
 
 ### PHP Libraries
  - [Diablo3 API](https://github.com/Blizzard/d3-api-docs)
