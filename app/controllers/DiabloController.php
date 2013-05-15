@@ -78,4 +78,15 @@ class DiabloController extends BaseController {
         ];
         return View::make('item.compare', $data);
     }
+
+    public function getSync( $charId )
+    {
+        $char = Character::whereId($charId)->with('items.attributes')->first()->toArray();
+
+        Diablo3Util::saveCharacterItems( $char['hero_id'], $charId );
+        Diablo3Util::getSkillImages( $char['hero_id'] );
+        Diablo3Util::getItemImages( $char['hero_id'] );
+
+        return Redirect::back();
+    }
 }

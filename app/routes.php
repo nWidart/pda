@@ -28,6 +28,7 @@ Route::get('auth/logout', 'AuthController@getLogout');
  *
  */
 Route::post('diablo/import', 'DiabloController@postImport');
+Route::get('diablo/sync/{charId}', 'DiabloController@getSync');
 
 /**
  * Registring the RESTful Account Controller

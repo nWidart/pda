@@ -55,6 +55,7 @@ class CharacterController extends BaseController {
 
         $data = [
             'user'       => Sentry::getUser(),
+            'character' => $items,
             'characters' => $this->characters,
             'items'      => $itemSet,
             'skills'     => $skillSet,

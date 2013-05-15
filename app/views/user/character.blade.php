@@ -23,7 +23,7 @@ Character View | PDA
                       <li><a href="#"><i class="icon-list-add"></i> Add New Item</a></li>
                   </ul>
                 </div>
-                <a class="m-btn red rnd mini" data-toggle="tooltip" title="" data-original-title="Sync with Battle.net"><i class="icon-arrows-ccw"></i></a>
+                <a href="{{ URL::to('diablo/sync/' . $character['id'] )}}" class="m-btn red rnd mini" data-toggle="tooltip" title="" data-original-title="Sync with Battle.net"><i class="icon-arrows-ccw"></i></a>
             </div>
 
         </div>
