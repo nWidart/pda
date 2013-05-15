@@ -1,0 +1,2501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a12" title="">
+  <file path="config/app.php" hash="f77a83a7c359e0cce42c1eb843a81af3" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/app.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/auth.php" hash="65a853e087598567bd0c6e30d427f0b0" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/auth.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/cache.php" hash="6e09efbbf2c1f1f85001ff7241530050" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/cache.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/compile.php" hash="a063a05bebb67d35a46575ead3072bdc" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/compile.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/database.php" hash="bfc37bc5c5324f82b5151b35a10f880f" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/database.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/dev/app.php" hash="8004d178415f496b6a16524123c49fa1" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/dev/app.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/dev/database.php" hash="89098d12a88548d1df24f17703a3df3c" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/dev/database.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/local/app.php" hash="2dcba35ddf00607517dfd4f50ae7b024" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/local/app.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/local/database.php" hash="b858d08bde3694755f96c0ae4474bef3" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/local/database.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/mail.php" hash="ebd46726858b50a67acbaaf00067b6f6" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/mail.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/packages/way/guard-laravel/guard.php" hash="0a1a1514171d3ea0d70718d53516841e" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/packages/way/guard-laravel/guard.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/queue.php" hash="e52a1b073162c0a15d0e618018752050" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/queue.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/session.php" hash="559d10fb7e7db145cc61028ce1b81d3a" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/session.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/testing/cache.php" hash="79a0d3931f92eaf814329b9651d6342f" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/testing/cache.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/testing/session.php" hash="c1afa489de99340046cfe999c6ace8b7" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/testing/session.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/view.php" hash="6d732899e8c083a3cf864a3b74d1d29c" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/view.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/workbench.php" hash="4cba405fd2db8a8867d5e246e0d32cd2" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/workbench.php</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/AccountController.php" hash="a4a1961dd3f00c5b7ca746cb9c971a1c" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\BaseController</extends>
+      <name>AccountController</name>
+      <full_name>\AccountController</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="8" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="4">
+          <description>Attach the Auth filter to the controller</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="20" package="Default">
+        <name>getIndex</name>
+        <full_name>getIndex</full_name>
+        <docblock line="14">
+          <description>Displaying the dashboard
+If no characters are already imported, prompt the user to import
+If proile not completed, ask for completion</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="58" package="Default">
+        <name>postUpdateUserInfo</name>
+        <full_name>postUpdateUserInfo</full_name>
+        <docblock line="52">
+          <description>Updating user info
+First Name &amp; Last Name</description>
+          <long-description></long-description>
+          <tag line="52" name="return" description="" type="\Reponse::json">
+            <type by_reference="false">\Reponse::json</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="110" package="Default">
+        <name>postUpdateUserBtagInfo</name>
+        <full_name>postUpdateUserBtagInfo</full_name>
+        <docblock line="104">
+          <description>Updating user info
+Battletag &amp; Server</description>
+          <long-description></long-description>
+          <tag line="104" name="return" description="" type="\Reponse::json">
+            <type by_reference="false">\Reponse::json</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="163" package="Default">
+        <name>_getHeroes</name>
+        <full_name>_getHeroes</full_name>
+        <docblock line="158">
+          <description>Get the heroes takes battletag from db</description>
+          <long-description></long-description>
+          <tag line="158" name="return" description="hero list" type="\arary">
+            <type by_reference="false">\arary</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/AccountController.php</error>
+      <error line="3" code="50000">No DocBlock was found for \AccountController</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/AuctionHouseController.php" hash="a0e947c0855c9126eb6503337c0fa048" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\BaseController</extends>
+      <name>AuctionHouseController</name>
+      <full_name>\AuctionHouseController</full_name>
+      <property final="false" static="false" visibility="public" line="4" namespace="global" package="Default">
+        <name>$characters</name>
+        <default></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="9" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="5">
+          <description>Attach the Auth filter to the controller</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="16" package="Default">
+        <name>getAHProfitCalc</name>
+        <full_name>getAHProfitCalc</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="25" package="Default">
+        <name>getGoldOrRealMoney</name>
+        <full_name>getGoldOrRealMoney</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/AuctionHouseController.php</error>
+      <error line="3" code="50000">No DocBlock was found for \AuctionHouseController</error>
+      <error line="4" code="50018">No DocBlock was found for property $characters</error>
+      <error line="16" code="50010">No DocBlock was found for method getAHProfitCalc()</error>
+      <error line="25" code="50010">No DocBlock was found for method getGoldOrRealMoney()</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/AuthController.php" hash="0452529c82909a68d6fd02405e61c14d" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\BaseController</extends>
+      <name>AuthController</name>
+      <full_name>\AuthController</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="9" package="Default">
+        <name>getRegister</name>
+        <full_name>getRegister</full_name>
+        <docblock line="4">
+          <description>Returns the view to register a new User.</description>
+          <long-description></long-description>
+          <tag line="4" name="return" description="The register view" type="\View">
+            <type by_reference="false">\View</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="25" package="Default">
+        <name>postRegister</name>
+        <full_name>postRegister</full_name>
+        <docblock line="20">
+          <description>Handles the registration.</description>
+          <long-description></long-description>
+          <tag line="20" name="return" description="" type="\Redirect">
+            <type by_reference="false">\Redirect</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="73" package="Default">
+        <name>getActivate</name>
+        <full_name>getActivate</full_name>
+        <docblock line="65">
+          <description>User account activation page.</description>
+          <long-description></long-description>
+          <tag line="65" name="param" description="" type="integer" variable="$userId">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag line="65" name="param" description="" type="string" variable="$actvationCode">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="65" name="return" description="" type="\Redirect">
+            <type by_reference="false">\Redirect</type>
+          </tag>
+        </docblock>
+        <argument line="73">
+          <name>$userId</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="73">
+          <name>$activationCode</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="106" package="Default">
+        <name>getLogin</name>
+        <full_name>getLogin</full_name>
+        <docblock line="101">
+          <description>Returns the login view</description>
+          <long-description></long-description>
+          <tag line="101" name="return" description="The login view" type="\View">
+            <type by_reference="false">\View</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="122" package="Default">
+        <name>postLogin</name>
+        <full_name>postLogin</full_name>
+        <docblock line="117">
+          <description>Handles the login logic</description>
+          <long-description></long-description>
+          <tag line="117" name="return" description="" type="\Redirect">
+            <type by_reference="false">\Redirect</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="168" package="Default">
+        <name>getLogout</name>
+        <full_name>getLogout</full_name>
+        <docblock line="163">
+          <description>Handles the logout</description>
+          <long-description></long-description>
+          <tag line="163" name="return" description="To homepage" type="\Redirect">
+            <type by_reference="false">\Redirect</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/AuthController.php</error>
+      <error line="3" code="50000">No DocBlock was found for \AuthController</error>
+      <error line="65" code="50014">Name of argument $activationCode does not match with the DocBlock's name $actvationCode in getActivate()</error>
+      <notice line="65" code="50013">Parameter $actvationCode could not be found in getActivate()</notice>
+    </parse_markers>
+  </file>
+  <file path="controllers/BaseController.php" hash="86927b926befdbdd51724cd7f5b25138" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\Controller</extends>
+      <name>BaseController</name>
+      <full_name>\BaseController</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="10" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="4">
+          <description>Initializer.</description>
+          <long-description></long-description>
+          <tag line="4" name="access" description="public"/>
+          <tag line="4" name="return" description="" type="\BaseController">
+            <type by_reference="false">\BaseController</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="20" package="Default">
+        <name>setupLayout</name>
+        <full_name>setupLayout</full_name>
+        <docblock line="15">
+          <description>Setup the layout used by the controller.</description>
+          <long-description></long-description>
+          <tag line="15" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/BaseController.php</error>
+      <error line="3" code="50000">No DocBlock was found for \BaseController</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/CharacterController.php" hash="6b5f74340331b69059bbc351949f05fc" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\BaseController</extends>
+      <name>CharacterController</name>
+      <full_name>\CharacterController</full_name>
+      <property final="false" static="false" visibility="public" line="4" namespace="global" package="Default">
+        <name>$characters</name>
+        <default></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="9" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="5">
+          <description>Attach the Auth filter to the controller</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="23" package="Default">
+        <name>getProfile</name>
+        <full_name>getProfile</full_name>
+        <docblock line="17">
+          <description>Show the character profile</description>
+          <long-description></long-description>
+          <tag line="17" name="param" description="" type="int" variable="$id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="17" name="return" description="" type="\View">
+            <type by_reference="false">\View</type>
+          </tag>
+        </docblock>
+        <argument line="23">
+          <name>$id</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <markers>
+      <todo line="31">Change to 1day+?</todo>
+      <todo line="38">Better cache system</todo>
+    </markers>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/CharacterController.php</error>
+      <error line="3" code="50000">No DocBlock was found for \CharacterController</error>
+      <error line="4" code="50018">No DocBlock was found for property $characters</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/DiabloController.php" hash="4d42b98d9f3a948e43608201a7835948" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\BaseController</extends>
+      <name>DiabloController</name>
+      <full_name>\DiabloController</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="8" package="Default">
+        <name>postImport</name>
+        <full_name>postImport</full_name>
+        <docblock line="4">
+          <description>Import all selected characters into the db</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/DiabloController.php</error>
+      <error line="3" code="50000">No DocBlock was found for \DiabloController</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/HomeController.php" hash="f0d1ff9b07d1d4a5c6ba5ca07ce10b8b" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\BaseController</extends>
+      <name>HomeController</name>
+      <full_name>\HomeController</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="18" package="Default">
+        <name>showWelcome</name>
+        <full_name>showWelcome</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/HomeController.php</error>
+      <error line="3" code="50000">No DocBlock was found for \HomeController</error>
+      <error line="18" code="50010">No DocBlock was found for method showWelcome()</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/UserController.php" hash="67e8818c0a66089ab9cd63672fe2e680" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\BaseController</extends>
+      <name>UserController</name>
+      <full_name>\UserController</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="10" package="Default">
+        <name>index</name>
+        <full_name>index</full_name>
+        <docblock line="5">
+          <description>Display a listing of the resource.</description>
+          <long-description></long-description>
+          <tag line="5" name="return" description="" type="\Response">
+            <type by_reference="false">\Response</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="20" package="Default">
+        <name>create</name>
+        <full_name>create</full_name>
+        <docblock line="15">
+          <description>Show the form for creating a new resource.</description>
+          <long-description></long-description>
+          <tag line="15" name="return" description="" type="\Response">
+            <type by_reference="false">\Response</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="30" package="Default">
+        <name>store</name>
+        <full_name>store</full_name>
+        <docblock line="25">
+          <description>Store a newly created resource in storage.</description>
+          <long-description></long-description>
+          <tag line="25" name="return" description="" type="\Response">
+            <type by_reference="false">\Response</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="41" package="Default">
+        <name>show</name>
+        <full_name>show</full_name>
+        <docblock line="35">
+          <description>Display the specified resource.</description>
+          <long-description></long-description>
+          <tag line="35" name="param" description="" type="int" variable="$id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="35" name="return" description="" type="\Response">
+            <type by_reference="false">\Response</type>
+          </tag>
+        </docblock>
+        <argument line="41">
+          <name>$id</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="52" package="Default">
+        <name>edit</name>
+        <full_name>edit</full_name>
+        <docblock line="46">
+          <description>Show the form for editing the specified resource.</description>
+          <long-description></long-description>
+          <tag line="46" name="param" description="" type="int" variable="$id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="46" name="return" description="" type="\Response">
+            <type by_reference="false">\Response</type>
+          </tag>
+        </docblock>
+        <argument line="52">
+          <name>$id</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="63" package="Default">
+        <name>update</name>
+        <full_name>update</full_name>
+        <docblock line="57">
+          <description>Update the specified resource in storage.</description>
+          <long-description></long-description>
+          <tag line="57" name="param" description="" type="int" variable="$id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="57" name="return" description="" type="\Response">
+            <type by_reference="false">\Response</type>
+          </tag>
+        </docblock>
+        <argument line="63">
+          <name>$id</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="74" package="Default">
+        <name>destroy</name>
+        <full_name>destroy</full_name>
+        <docblock line="68">
+          <description>Remove the specified resource from storage.</description>
+          <long-description></long-description>
+          <tag line="68" name="param" description="" type="int" variable="$id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="68" name="return" description="" type="\Response">
+            <type by_reference="false">\Response</type>
+          </tag>
+        </docblock>
+        <argument line="74">
+          <name>$id</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/UserController.php</error>
+      <error line="3" code="50000">No DocBlock was found for \UserController</error>
+    </parse_markers>
+  </file>
+  <file path="database/seeds/DatabaseSeeder.php" hash="1be2b34f3b0b6ee1ba65b6356fff3428" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\Seeder</extends>
+      <name>DatabaseSeeder</name>
+      <full_name>\DatabaseSeeder</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="10" package="Default">
+        <name>run</name>
+        <full_name>run</full_name>
+        <docblock line="5">
+          <description>Run the database seeds.</description>
+          <long-description></long-description>
+          <tag line="5" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file database/seeds/DatabaseSeeder.php</error>
+      <error line="3" code="50000">No DocBlock was found for \DatabaseSeeder</error>
+    </parse_markers>
+  </file>
+  <file path="filters.php" hash="98f44aa48f715691651b8e0235e14951" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file filters.php</error>
+    </parse_markers>
+  </file>
+  <file path="lang/en/pagination.php" hash="90ceb4854ca90e5238ea62ee24a1d52a" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lang/en/pagination.php</error>
+    </parse_markers>
+  </file>
+  <file path="lang/en/reminders.php" hash="0cc2111a55feb2a3198327ab6d8986e4" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lang/en/reminders.php</error>
+    </parse_markers>
+  </file>
+  <file path="lang/en/validation.php" hash="cc34fab21c0310531061f32b434aed86" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file lang/en/validation.php</error>
+    </parse_markers>
+  </file>
+  <file path="libraries/ChromePhp.php" hash="fa5fcb4c46f363a1b99547e99a128145" package="Default">
+    <docblock line="2">
+      <description>Copyright 2010-2013 Craig Campbell</description>
+      <long-description>&lt;p&gt;Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at&lt;/p&gt;
+
+&lt;p&gt;http://www.apache.org/licenses/LICENSE-2.0&lt;/p&gt;
+
+&lt;p&gt;Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.&lt;/p&gt;</long-description>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="24" package="ChromePhp">
+      <extends/>
+      <name>ChromePhp</name>
+      <full_name>\ChromePhp</full_name>
+      <docblock line="18">
+        <description>Server Side Chrome PHP debugger class</description>
+        <long-description></long-description>
+        <tag line="18" name="package" description="ChromePhp"/>
+        <tag line="18" name="author" description="Craig Campbell &lt;iamcraigcampbell@gmail.com&gt;"/>
+      </docblock>
+      <constant namespace="global" line="29" package="ChromePhp">
+        <name>VERSION</name>
+        <full_name>VERSION</full_name>
+        <value>'4.0.0'</value>
+        <docblock line="26">
+          <description></description>
+          <long-description></long-description>
+          <tag line="26" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="34" package="ChromePhp">
+        <name>HEADER_NAME</name>
+        <full_name>HEADER_NAME</full_name>
+        <value>'X-ChromeLogger-Data'</value>
+        <docblock line="31">
+          <description></description>
+          <long-description></long-description>
+          <tag line="31" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="39" package="ChromePhp">
+        <name>BACKTRACE_LEVEL</name>
+        <full_name>BACKTRACE_LEVEL</full_name>
+        <value>'backtrace_level'</value>
+        <docblock line="36">
+          <description></description>
+          <long-description></long-description>
+          <tag line="36" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="44" package="ChromePhp">
+        <name>LOG</name>
+        <full_name>LOG</full_name>
+        <value>'log'</value>
+        <docblock line="41">
+          <description></description>
+          <long-description></long-description>
+          <tag line="41" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="49" package="ChromePhp">
+        <name>WARN</name>
+        <full_name>WARN</full_name>
+        <value>'warn'</value>
+        <docblock line="46">
+          <description></description>
+          <long-description></long-description>
+          <tag line="46" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="54" package="ChromePhp">
+        <name>ERROR</name>
+        <full_name>ERROR</full_name>
+        <value>'error'</value>
+        <docblock line="51">
+          <description></description>
+          <long-description></long-description>
+          <tag line="51" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="59" package="ChromePhp">
+        <name>GROUP</name>
+        <full_name>GROUP</full_name>
+        <value>'group'</value>
+        <docblock line="56">
+          <description></description>
+          <long-description></long-description>
+          <tag line="56" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="64" package="ChromePhp">
+        <name>INFO</name>
+        <full_name>INFO</full_name>
+        <value>'info'</value>
+        <docblock line="61">
+          <description></description>
+          <long-description></long-description>
+          <tag line="61" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="69" package="ChromePhp">
+        <name>GROUP_END</name>
+        <full_name>GROUP_END</full_name>
+        <value>'groupEnd'</value>
+        <docblock line="66">
+          <description></description>
+          <long-description></long-description>
+          <tag line="66" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="global" line="74" package="ChromePhp">
+        <name>GROUP_COLLAPSED</name>
+        <full_name>GROUP_COLLAPSED</full_name>
+        <value>'groupCollapsed'</value>
+        <docblock line="71">
+          <description></description>
+          <long-description></long-description>
+          <tag line="71" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <property final="false" static="false" visibility="protected" line="79" namespace="global" package="Default">
+        <name>$_php_version</name>
+        <default></default>
+        <docblock line="76">
+          <description></description>
+          <long-description></long-description>
+          <tag line="76" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="84" namespace="global" package="Default">
+        <name>$_timestamp</name>
+        <default></default>
+        <docblock line="81">
+          <description></description>
+          <long-description></long-description>
+          <tag line="81" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="89" namespace="global" package="Default">
+        <name>$_json</name>
+        <default>array('version' =&gt; self::VERSION, 'columns' =&gt; array('log', 'backtrace', 'type'), 'rows' =&gt; array())</default>
+        <docblock line="86">
+          <description></description>
+          <long-description></long-description>
+          <tag line="86" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="98" namespace="global" package="Default">
+        <name>$_backtraces</name>
+        <default>array()</default>
+        <docblock line="95">
+          <description></description>
+          <long-description></long-description>
+          <tag line="95" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="103" namespace="global" package="Default">
+        <name>$_error_triggered</name>
+        <default>false</default>
+        <docblock line="100">
+          <description></description>
+          <long-description></long-description>
+          <tag line="100" name="var" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="108" namespace="global" package="Default">
+        <name>$_settings</name>
+        <default>array(self::BACKTRACE_LEVEL =&gt; 1)</default>
+        <docblock line="105">
+          <description></description>
+          <long-description></long-description>
+          <tag line="105" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="true" visibility="protected" line="115" namespace="global" package="Default">
+        <name>$_instance</name>
+        <default></default>
+        <docblock line="112">
+          <description></description>
+          <long-description></long-description>
+          <tag line="112" name="var" description="" type="\ChromePhp">
+            <type by_reference="false">\ChromePhp</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="122" namespace="global" package="Default">
+        <name>$_processed</name>
+        <default>array()</default>
+        <docblock line="117">
+          <description>Prevent recursion when working with objects referring to each other</description>
+          <long-description></long-description>
+          <tag line="117" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="127" package="ChromePhp">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="124">
+          <description>constructor</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="139" package="ChromePhp">
+        <name>getInstance</name>
+        <full_name>getInstance</full_name>
+        <docblock line="134">
+          <description>gets instance of this class</description>
+          <long-description></long-description>
+          <tag line="134" name="return" description="" type="\ChromePhp">
+            <type by_reference="false">\ChromePhp</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="153" package="ChromePhp">
+        <name>log</name>
+        <full_name>log</full_name>
+        <docblock line="147">
+          <description>logs a variable to the console</description>
+          <long-description></long-description>
+          <tag line="147" name="param" description="unlimited OPTIONAL number of additional logs [...]" type="mixed" variable="$data,...">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="147" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="164" package="ChromePhp">
+        <name>warn</name>
+        <full_name>warn</full_name>
+        <docblock line="158">
+          <description>logs a warning to the console</description>
+          <long-description></long-description>
+          <tag line="158" name="param" description="unlimited OPTIONAL number of additional logs [...]" type="mixed" variable="$data,...">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="158" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="175" package="ChromePhp">
+        <name>error</name>
+        <full_name>error</full_name>
+        <docblock line="169">
+          <description>logs an error to the console</description>
+          <long-description></long-description>
+          <tag line="169" name="param" description="unlimited OPTIONAL number of additional logs [...]" type="mixed" variable="$data,...">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="169" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="185" package="ChromePhp">
+        <name>group</name>
+        <full_name>group</full_name>
+        <docblock line="180">
+          <description>sends a group log</description>
+          <long-description></long-description>
+          <tag line="180" name="param" description="value" type="string" variable="">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="196" package="ChromePhp">
+        <name>info</name>
+        <full_name>info</full_name>
+        <docblock line="190">
+          <description>sends an info log</description>
+          <long-description></long-description>
+          <tag line="190" name="param" description="unlimited OPTIONAL number of additional logs [...]" type="mixed" variable="$data,...">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="190" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="206" package="ChromePhp">
+        <name>groupCollapsed</name>
+        <full_name>groupCollapsed</full_name>
+        <docblock line="201">
+          <description>sends a collapsed group log</description>
+          <long-description></long-description>
+          <tag line="201" name="param" description="value" type="string" variable="">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="216" package="ChromePhp">
+        <name>groupEnd</name>
+        <full_name>groupEnd</full_name>
+        <docblock line="211">
+          <description>ends a group log</description>
+          <long-description></long-description>
+          <tag line="211" name="param" description="value" type="string" variable="">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="global" line="227" package="ChromePhp">
+        <name>_log</name>
+        <full_name>_log</full_name>
+        <docblock line="221">
+          <description>internal logging call</description>
+          <long-description></long-description>
+          <tag line="221" name="param" description="" type="string" variable="$type">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="221" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="227">
+          <name>$type</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="227">
+          <name>$args</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="260" package="ChromePhp">
+        <name>_convert</name>
+        <full_name>_convert</full_name>
+        <docblock line="254">
+          <description>converts an object to a better format for logging</description>
+          <long-description></long-description>
+          <tag line="254" name="param" description="" type="Object" variable="$object">
+            <type by_reference="false">Object</type>
+          </tag>
+          <tag line="254" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="260">
+          <name>$object</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="324" package="ChromePhp">
+        <name>_getPropertyKey</name>
+        <full_name>_getPropertyKey</full_name>
+        <docblock line="318">
+          <description>takes a reflection property and returns a nicely formatted key of the property name</description>
+          <long-description></long-description>
+          <tag line="318" name="param" description="" type="\ReflectionProperty" variable="$property">
+            <type by_reference="false">\ReflectionProperty</type>
+          </tag>
+          <tag line="318" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="324">
+          <name>$property</name>
+          <default></default>
+          <type>\ReflectionProperty</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="346" package="ChromePhp">
+        <name>_addRow</name>
+        <full_name>_addRow</full_name>
+        <docblock line="340">
+          <description>adds a value to the data array</description>
+          <long-description></long-description>
+          <tag line="340" name="var" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="340" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="346">
+          <name>$logs</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+        <argument line="346">
+          <name>$backtrace</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="346">
+          <name>$type</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="369" package="ChromePhp">
+        <name>_writeHeader</name>
+        <full_name>_writeHeader</full_name>
+        <argument line="369">
+          <name>$data</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="global" line="380" package="ChromePhp">
+        <name>_encode</name>
+        <full_name>_encode</full_name>
+        <docblock line="374">
+          <description>encodes the data to be sent along with the request</description>
+          <long-description></long-description>
+          <tag line="374" name="param" description="" type="array" variable="$data">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="374" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="380">
+          <name>$data</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="392" package="ChromePhp">
+        <name>addSetting</name>
+        <full_name>addSetting</full_name>
+        <docblock line="385">
+          <description>adds a setting</description>
+          <long-description></long-description>
+          <tag line="385" name="param" description="key" type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="385" name="param" description="value" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="385" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="392">
+          <name>$key</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="392">
+          <name>$value</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="403" package="ChromePhp">
+        <name>addSettings</name>
+        <full_name>addSettings</full_name>
+        <docblock line="397">
+          <description>add ability to set multiple settings in one call</description>
+          <long-description></long-description>
+          <tag line="397" name="param" description="" type="array" variable="$settings">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="397" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="403">
+          <name>$settings</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="416" package="ChromePhp">
+        <name>getSetting</name>
+        <full_name>getSetting</full_name>
+        <docblock line="410">
+          <description>gets a setting</description>
+          <long-description></long-description>
+          <tag line="410" name="param" description="key" type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="410" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="416">
+          <name>$key</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <critical line="76" code="50019">No short description for property $_php_version</critical>
+      <critical line="81" code="50019">No short description for property $_timestamp</critical>
+      <critical line="86" code="50019">No short description for property $_json</critical>
+      <critical line="95" code="50019">No short description for property $_backtraces</critical>
+      <critical line="100" code="50019">No short description for property $_error_triggered</critical>
+      <critical line="105" code="50019">No short description for property $_settings</critical>
+      <critical line="112" code="50019">No short description for property $_instance</critical>
+      <notice line="147" code="50013">Parameter $data,... could not be found in log()</notice>
+      <notice line="158" code="50013">Parameter $data,... could not be found in warn()</notice>
+      <notice line="169" code="50013">Parameter $data,... could not be found in error()</notice>
+      <notice line="180" code="50013">Parameter  could not be found in group()</notice>
+      <notice line="190" code="50013">Parameter $data,... could not be found in info()</notice>
+      <notice line="201" code="50013">Parameter  could not be found in groupCollapsed()</notice>
+      <notice line="211" code="50013">Parameter  could not be found in groupEnd()</notice>
+      <error line="221" code="50015">Argument $args is missing from the Docblock of _log()</error>
+      <error line="340" code="50015">Argument $logs is missing from the Docblock of _addRow()</error>
+      <error line="340" code="50015">Argument $backtrace is missing from the Docblock of _addRow()</error>
+      <error line="340" code="50015">Argument $type is missing from the Docblock of _addRow()</error>
+      <error line="369" code="50010">No DocBlock was found for method _writeHeader()</error>
+    </parse_markers>
+  </file>
+  <file path="libraries/Diablo3/Diablo3ServiceProvider.php" hash="1861134aaf6d117600ab5c7221c4a366" package="Default">
+    <class final="false" abstract="false" namespace="Diablo3" line="5" package="Default">
+      <extends>\Illuminate\Support\ServiceProvider</extends>
+      <name>Diablo3ServiceProvider</name>
+      <full_name>\Diablo3\Diablo3ServiceProvider</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Diablo3" line="12" package="Default">
+        <name>register</name>
+        <full_name>register</full_name>
+        <docblock line="7">
+          <description>Register the service provider.</description>
+          <long-description></long-description>
+          <tag line="7" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file libraries/Diablo3/Diablo3ServiceProvider.php</error>
+      <error line="5" code="50000">No DocBlock was found for \Diablo3\Diablo3ServiceProvider</error>
+    </parse_markers>
+  </file>
+  <file path="libraries/Diablo3/Diablo3Util.php" hash="53d98e3e1f544bbb29981483f5de073e" package="Default">
+    <class final="false" abstract="false" namespace="Diablo3" line="4" package="Default">
+      <extends/>
+      <name>Diablo3Util</name>
+      <full_name>\Diablo3\Diablo3Util</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Diablo3" line="11" package="Default">
+        <name>getSkillImages</name>
+        <full_name>getSkillImages</full_name>
+        <docblock line="5">
+          <description>getSkillImages
+Saves all the skill images for a given character ID</description>
+          <long-description></long-description>
+          <tag line="5" name="param" description="" type="int" variable="$charId">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="5" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="11">
+          <name>$charId</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Diablo3" line="23" package="Default">
+        <name>getItemImages</name>
+        <full_name>getItemImages</full_name>
+        <docblock line="17">
+          <description>getItemImages
+Saves all the item images for a given character ID</description>
+          <long-description></long-description>
+          <tag line="17" name="param" description="" type="int" variable="$charId">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="17" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="23">
+          <name>$charId</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Diablo3" line="35" package="Default">
+        <name>getSkillSet</name>
+        <full_name>getSkillSet</full_name>
+        <docblock line="29">
+          <description>Gets all the active skills form a heroId</description>
+          <long-description></long-description>
+          <tag line="29" name="param" description="" type="int" variable="$heroId">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="29" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="35">
+          <name>$heroId</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Diablo3" line="71" package="Default">
+        <name>saveCharacterItems</name>
+        <full_name>saveCharacterItems</full_name>
+        <docblock line="65">
+          <description>Syncs the character items with Battle.Net (saves items)</description>
+          <long-description></long-description>
+          <tag line="65" name="param" description="[description]" type="\Diablo3\[type]" variable="$heroId">
+            <type by_reference="false">\Diablo3\[type]</type>
+          </tag>
+          <tag line="65" name="param" description="[description]" type="\Diablo3\[type]" variable="$charId">
+            <type by_reference="false">\Diablo3\[type]</type>
+          </tag>
+          <tag line="65" name="return" description="[description]" type="\Diablo3\[type]">
+            <type by_reference="false">\Diablo3\[type]</type>
+          </tag>
+        </docblock>
+        <argument line="71">
+          <name>$heroId</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="71">
+          <name>$charId</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Diablo3" line="168" package="Default">
+        <name>getItemSet</name>
+        <full_name>getItemSet</full_name>
+        <docblock line="161">
+          <description>Creates a itemSet for given Items
+Adds the item type and uniquenes of the item with the item info</description>
+          <long-description></long-description>
+          <tag line="161" name="param" description="" type="array" variable="$items">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="161" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="168">
+          <name>$items</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Diablo3" line="252" package="Default">
+        <name>saveCharacterStatistics</name>
+        <full_name>saveCharacterStatistics</full_name>
+        <argument line="252">
+          <name>$heroId</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Diablo3" line="586" package="Default">
+        <name>dualwield</name>
+        <full_name>dualwield</full_name>
+        <argument line="586">
+          <name>$items</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Diablo3" line="591" package="Default">
+        <name>_getAttributeTotal</name>
+        <full_name>_getAttributeTotal</full_name>
+        <argument line="591">
+          <name>$item</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="591">
+          <name>$attribute</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Diablo3" line="606" package="Default">
+        <name>_getPercent</name>
+        <full_name>_getPercent</full_name>
+        <argument line="606">
+          <name>$num</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="Diablo3" line="619" package="Default">
+        <name>isUniqueItem</name>
+        <full_name>isUniqueItem</full_name>
+        <docblock line="612">
+          <description>Checks if an item is unique or not
+Based on the Item's icon</description>
+          <long-description></long-description>
+          <tag line="612" name="param" description="" type="string" variable="$item">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="612" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="619">
+          <name>$item</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file libraries/Diablo3/Diablo3Util.php</error>
+      <error line="4" code="50000">No DocBlock was found for \Diablo3\Diablo3Util</error>
+      <error line="252" code="50010">No DocBlock was found for method saveCharacterStatistics()</error>
+      <error line="586" code="50010">No DocBlock was found for method dualwield()</error>
+      <error line="591" code="50010">No DocBlock was found for method _getAttributeTotal()</error>
+      <error line="606" code="50010">No DocBlock was found for method _getPercent()</error>
+    </parse_markers>
+  </file>
+  <file path="libraries/Diablo3/Facades/Diablo3Util.php" hash="6d647e9c4800e436f230893f67daa156" package="Default">
+    <class final="false" abstract="false" namespace="Diablo3\Facades" line="5" package="Default">
+      <extends>\Illuminate\Support\Facades\Facade</extends>
+      <name>Diablo3Util</name>
+      <full_name>\Diablo3\Facades\Diablo3Util</full_name>
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="Diablo3\Facades" line="12" package="Default">
+        <name>getFacadeAccessor</name>
+        <full_name>getFacadeAccessor</full_name>
+        <docblock line="7">
+          <description>Get the registered name of the component.</description>
+          <long-description></long-description>
+          <tag line="7" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file libraries/Diablo3/Facades/Diablo3Util.php</error>
+      <error line="5" code="50000">No DocBlock was found for \Diablo3\Facades\Diablo3Util</error>
+    </parse_markers>
+  </file>
+  <file path="libraries/Diablo3.php" hash="f0e9f78277357193c03e11f4a44fef87" package="Default">
+    <class final="false" abstract="false" namespace="global" line="12" package="Default">
+      <extends/>
+      <name>Diablo3</name>
+      <full_name>\Diablo3</full_name>
+      <docblock line="2">
+        <description>Diablo 3 Web API PHP Bridge</description>
+        <long-description>&lt;p&gt;This is meant to be very simple &amp;amp; easy to use.
+You are free to repurpose this for any other coding needs or projects.&lt;/p&gt;</long-description>
+        <tag line="2" name="link" description="http://www.armandotresova.com/projects/diablo_3_api_php.html" link="http://www.armandotresova.com/projects/diablo_3_api_php.html"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="13" namespace="global" package="Default">
+        <name>$battlenet_tag</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="14" namespace="global" package="Default">
+        <name>$host</name>
+        <default>'.battle.net'</default>
+      </property>
+      <property final="false" static="false" visibility="private" line="15" namespace="global" package="Default">
+        <name>$media_host</name>
+        <default>'.media.blizzard.com'</default>
+      </property>
+      <property final="false" static="false" visibility="private" line="16" namespace="global" package="Default">
+        <name>$battlenet_servers</name>
+        <default>array('us', 'eu', 'tw', 'kr', 'cn')</default>
+      </property>
+      <property final="false" static="false" visibility="private" line="17" namespace="global" package="Default">
+        <name>$locales</name>
+        <default>array('en_US', 'en_GB', 'es_MX', 'es_ES', 'it_IT', 'pt_PT', 'pt_BR', 'fr_FR', 'ru_RU', 'pl_PL', 'de_DE', 'ko_KR', 'zh_TW', 'zh_CN')</default>
+      </property>
+      <property final="false" static="false" visibility="private" line="18" namespace="global" package="Default">
+        <name>$followerTypes</name>
+        <default>array('enchantress', 'templar', 'scoundrel')</default>
+      </property>
+      <property final="false" static="false" visibility="private" line="19" namespace="global" package="Default">
+        <name>$artisanTypes</name>
+        <default>array('blacksmith', 'jeweler')</default>
+      </property>
+      <property final="false" static="false" visibility="private" line="20" namespace="global" package="Default">
+        <name>$blizzardErrors</name>
+        <default>array('OOPS', 'LIMITED', 'MAINTENANCE', 'NOTFOUND')</default>
+      </property>
+      <property final="false" static="false" visibility="private" line="21" namespace="global" package="Default">
+        <name>$current_locale</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="22" namespace="global" package="Default">
+        <name>$current_server</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="23" namespace="global" package="Default">
+        <name>$career_url</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="24" namespace="global" package="Default">
+        <name>$hero_url</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="25" namespace="global" package="Default">
+        <name>$item_url</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="26" namespace="global" package="Default">
+        <name>$follower_url</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="27" namespace="global" package="Default">
+        <name>$artisan_url</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="28" namespace="global" package="Default">
+        <name>$item_img_url</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="29" namespace="global" package="Default">
+        <name>$item_img_sizes</name>
+        <default>array('small', 'large')</default>
+      </property>
+      <property final="false" static="false" visibility="private" line="30" namespace="global" package="Default">
+        <name>$skill_img_url</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="31" namespace="global" package="Default">
+        <name>$skill_img_sizes</name>
+        <default>array('21', '42', '64')</default>
+      </property>
+      <property final="false" static="false" visibility="private" line="32" namespace="global" package="Default">
+        <name>$item_save_loc</name>
+        <default>'/assets/img/d3/items/'</default>
+      </property>
+      <property final="false" static="false" visibility="private" line="33" namespace="global" package="Default">
+        <name>$skills_save_loc</name>
+        <default>'/assets/img/d3/skills/'</default>
+      </property>
+      <property final="false" static="false" visibility="private" line="34" namespace="global" package="Default">
+        <name>$paperdolls_save_loc</name>
+        <default>'/assets/img/d3/paperdolls/'</default>
+      </property>
+      <property final="false" static="false" visibility="private" line="35" namespace="global" package="Default">
+        <name>$skill_url</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="36" namespace="global" package="Default">
+        <name>$paperdoll_url</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="37" namespace="global" package="Default">
+        <name>$genders</name>
+        <default>array('male', 'female')</default>
+      </property>
+      <property final="false" static="false" visibility="private" line="38" namespace="global" package="Default">
+        <name>$classes</name>
+        <default>array('barbarian', 'witch-doctor', 'demon-hunter', 'monk', 'wizard')</default>
+      </property>
+      <property final="false" static="false" visibility="private" line="39" namespace="global" package="Default">
+        <name>$authenticate</name>
+        <default>false</default>
+      </property>
+      <property final="false" static="false" visibility="private" line="40" namespace="global" package="Default">
+        <name>$API_private_key</name>
+        <default>'na'</default>
+      </property>
+      <property final="false" static="false" visibility="private" line="41" namespace="global" package="Default">
+        <name>$API_public_key</name>
+        <default>'na'</default>
+      </property>
+      <property final="false" static="false" visibility="private" line="42" namespace="global" package="Default">
+        <name>$last_time_accessed</name>
+        <default>0</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="44" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="44">
+          <name>$battlenet_tag</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="44">
+          <name>$server</name>
+          <default>'us'</default>
+          <type/>
+        </argument>
+        <argument line="44">
+          <name>$locale</name>
+          <default>'en_US'</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="102" package="Default">
+        <name>checkBattletag</name>
+        <full_name>checkBattletag</full_name>
+        <docblock line="94">
+          <description>checkBattletag
+Checks if the battle tag meets the requirements
+https://us.battle.net/support/en/article/battletag-naming-policy</description>
+          <long-description></long-description>
+          <tag line="94" name="param" description="[description]" type="string" variable="$battlenet_tag">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="94" name="return" description="[description]" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="102">
+          <name>$battlenet_tag</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="114" package="Default">
+        <name>cURLcheckBasics</name>
+        <full_name>cURLcheckBasics</full_name>
+        <docblock line="107">
+          <description>cURLcheckBasics
+Checks to see if required cURL functions are available</description>
+          <long-description>&lt;p&gt;Parameters:
+    (name) - about this param&lt;/p&gt;</long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="132" package="Default">
+        <name>curlSaveImage</name>
+        <full_name>curlSaveImage</full_name>
+        <docblock line="122">
+          <description>curlSaveImage
+Get image with cURL, save it in $item_save_loc and return the image location</description>
+          <long-description>&lt;p&gt;Parameters:
+    (location) - save location (items or skills)
+    (url)      - a valid URL
+    (icon)     - icon name
+    (size)     - image sizes&lt;/p&gt;</long-description>
+        </docblock>
+        <argument line="132">
+          <name>$location</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="132">
+          <name>$url</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="132">
+          <name>$icon</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="132">
+          <name>$size</name>
+          <default>''</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="220" package="Default">
+        <name>curlRequest</name>
+        <full_name>curlRequest</full_name>
+        <docblock line="213">
+          <description>curlRequest
+Basic cURL request</description>
+          <long-description>&lt;p&gt;Parameters:
+    (url) - a valid URL&lt;/p&gt;</long-description>
+        </docblock>
+        <argument line="220">
+          <name>$url</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="295" package="Default">
+        <name>setLastTimeAccessed</name>
+        <full_name>setLastTimeAccessed</full_name>
+        <docblock line="288">
+          <description>setLastTimeAccessed
+Checks to see if required cURL functions are available</description>
+          <long-description>&lt;p&gt;Parameters:
+    (date) - date time&lt;/p&gt;</long-description>
+        </docblock>
+        <argument line="295">
+          <name>$date</name>
+          <default>0</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="308" package="Default">
+        <name>getJsonData</name>
+        <full_name>getJsonData</full_name>
+        <docblock line="301">
+          <description>getJsonData
+Checks to see if required cURL functions are available</description>
+          <long-description>&lt;p&gt;Parameters:
+    (name) - about this param&lt;/p&gt;</long-description>
+        </docblock>
+        <argument line="308">
+          <name>$url</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="331" package="Default">
+        <name>getAllItemImages</name>
+        <full_name>getAllItemImages</full_name>
+        <docblock line="323">
+          <description>getAllItemImages
+Gets all the item images from a hero ID.</description>
+          <long-description>&lt;p&gt;If no size is passed both will be processed&lt;/p&gt;</long-description>
+          <tag line="323" name="param" description="[description]" type="int" variable="$heroeID">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="323" name="param" description="[description]" type="string" variable="$size">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="331">
+          <name>$heroeID</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="331">
+          <name>$size</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="355" package="Default">
+        <name>getItemImage</name>
+        <full_name>getItemImage</full_name>
+        <docblock line="347">
+          <description>getItemImage
+Item image</description>
+          <long-description>&lt;p&gt;Parameters:
+    (icon)      - String of item icon name
+    (imageSize) - Size of image (small or large)&lt;/p&gt;</long-description>
+        </docblock>
+        <argument line="355">
+          <name>$icon</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="355">
+          <name>$imageSize</name>
+          <default>'small'</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="377" package="Default">
+        <name>getAllSkillImages</name>
+        <full_name>getAllSkillImages</full_name>
+        <docblock line="368">
+          <description>getAllSkillImages
+Get all the skill images from a heroe ID</description>
+          <long-description></long-description>
+          <tag line="368" name="param" description="The heroe id" type="int" variable="$heroeID">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="368" name="param" description="The size : 64, 42, 21" type="string" variable="$size">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="368" name="return" description="Error message if no valid size is sent" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="377">
+          <name>$heroeID</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="377">
+          <name>$size</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="428" package="Default">
+        <name>getSkillImage</name>
+        <full_name>getSkillImage</full_name>
+        <docblock line="420">
+          <description>getSkillImage
+Gets skill image</description>
+          <long-description>&lt;p&gt;Parameters:
+    (icon)      - String of skill icon name
+    (imageSize) - Size of image (21, 42 or 64)&lt;/p&gt;</long-description>
+        </docblock>
+        <argument line="428">
+          <name>$icon</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="428">
+          <name>$imageSize</name>
+          <default>'21'</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="448" package="Default">
+        <name>getSkillToolTip</name>
+        <full_name>getSkillToolTip</full_name>
+        <docblock line="440">
+          <description>getSkillToolTip
+Get Skill or Skill Rune Tooltip</description>
+          <long-description>&lt;p&gt;Parameters:
+    (tooltipUrl) - String of tooltipUrl (e.g. rune/barbarian/frenzy/a)
+    (jsonp)      - True to return in jsonp format (boolean)&lt;/p&gt;</long-description>
+        </docblock>
+        <argument line="448">
+          <name>$tooltipUrl</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="448">
+          <name>$jsonp</name>
+          <default>false</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="473" package="Default">
+        <name>getPaperDoll</name>
+        <full_name>getPaperDoll</full_name>
+        <docblock line="465">
+          <description>getPaperDoll
+Get character paperdoll (background image)</description>
+          <long-description>&lt;p&gt;Parameters:
+    (class)  - Class (barbarian, witch-doctor, demon-hunter, monk, wizard)
+    (gender) - Gender (male or female)&lt;/p&gt;</long-description>
+        </docblock>
+        <argument line="473">
+          <name>$class</name>
+          <default>null</default>
+          <type/>
+        </argument>
+        <argument line="473">
+          <name>$gender</name>
+          <default>'male'</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="490" package="Default">
+        <name>getCareer</name>
+        <full_name>getCareer</full_name>
+        <docblock line="485">
+          <description>getCareer
+Gets career data</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="507" package="Default">
+        <name>getHero</name>
+        <full_name>getHero</full_name>
+        <docblock line="500">
+          <description>getHero
+Gets hero data</description>
+          <long-description>&lt;p&gt;Parameters:
+    (hero_id) - Hero ID (integer)&lt;/p&gt;</long-description>
+        </docblock>
+        <argument line="507">
+          <name>$hero_id</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="527" package="Default">
+        <name>getItem</name>
+        <full_name>getItem</full_name>
+        <docblock line="519">
+          <description>getItem
+Gets item data</description>
+          <long-description>&lt;p&gt;Parameters:
+    (item_data) - String of item data without the "item/" in front of it
+                  (e.g. 'COGHsoAIEgcIBBXIGEoRHYQRdRUdnWyzFB2qXu51MA04kwNAAFAKYJMD')&lt;/p&gt;</long-description>
+        </docblock>
+        <argument line="527">
+          <name>$item_data</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="546" package="Default">
+        <name>getFollower</name>
+        <full_name>getFollower</full_name>
+        <docblock line="539">
+          <description>getFollower
+Gets follower data</description>
+          <long-description>&lt;p&gt;Parameters:
+    (follower_type) - String of the type of follower. Options available: 'enchantress', 'templar' &amp;amp; 'scoundrel'&lt;/p&gt;</long-description>
+        </docblock>
+        <argument line="546">
+          <name>$follower_type</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="565" package="Default">
+        <name>getArtisan</name>
+        <full_name>getArtisan</full_name>
+        <docblock line="558">
+          <description>getArtisan
+Gets artisan data</description>
+          <long-description>&lt;p&gt;Parameters:
+    (artisan_type) - String of the type of artisan. Options available: 'blacksmith' &amp;amp; 'jeweler'&lt;/p&gt;</long-description>
+        </docblock>
+        <argument line="565">
+          <name>$artisan_type</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="577" package="Default">
+        <name>__desctruct</name>
+        <full_name>__desctruct</full_name>
+      </method>
+    </class>
+    <markers>
+      <todo line="82">Remove Battle.net Tag dependency if you want to just use this part of the API</todo>
+    </markers>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file libraries/Diablo3.php</error>
+      <error line="13" code="50018">No DocBlock was found for property $battlenet_tag</error>
+      <error line="14" code="50018">No DocBlock was found for property $host</error>
+      <error line="15" code="50018">No DocBlock was found for property $media_host</error>
+      <error line="16" code="50018">No DocBlock was found for property $battlenet_servers</error>
+      <error line="17" code="50018">No DocBlock was found for property $locales</error>
+      <error line="18" code="50018">No DocBlock was found for property $followerTypes</error>
+      <error line="19" code="50018">No DocBlock was found for property $artisanTypes</error>
+      <error line="20" code="50018">No DocBlock was found for property $blizzardErrors</error>
+      <error line="21" code="50018">No DocBlock was found for property $current_locale</error>
+      <error line="22" code="50018">No DocBlock was found for property $current_server</error>
+      <error line="23" code="50018">No DocBlock was found for property $career_url</error>
+      <error line="24" code="50018">No DocBlock was found for property $hero_url</error>
+      <error line="25" code="50018">No DocBlock was found for property $item_url</error>
+      <error line="26" code="50018">No DocBlock was found for property $follower_url</error>
+      <error line="27" code="50018">No DocBlock was found for property $artisan_url</error>
+      <error line="28" code="50018">No DocBlock was found for property $item_img_url</error>
+      <error line="29" code="50018">No DocBlock was found for property $item_img_sizes</error>
+      <error line="30" code="50018">No DocBlock was found for property $skill_img_url</error>
+      <error line="31" code="50018">No DocBlock was found for property $skill_img_sizes</error>
+      <error line="32" code="50018">No DocBlock was found for property $item_save_loc</error>
+      <error line="33" code="50018">No DocBlock was found for property $skills_save_loc</error>
+      <error line="34" code="50018">No DocBlock was found for property $paperdolls_save_loc</error>
+      <error line="35" code="50018">No DocBlock was found for property $skill_url</error>
+      <error line="36" code="50018">No DocBlock was found for property $paperdoll_url</error>
+      <error line="37" code="50018">No DocBlock was found for property $genders</error>
+      <error line="38" code="50018">No DocBlock was found for property $classes</error>
+      <error line="39" code="50018">No DocBlock was found for property $authenticate</error>
+      <error line="40" code="50018">No DocBlock was found for property $API_private_key</error>
+      <error line="41" code="50018">No DocBlock was found for property $API_public_key</error>
+      <error line="42" code="50018">No DocBlock was found for property $last_time_accessed</error>
+      <error line="44" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="122" code="50015">Argument $location is missing from the Docblock of curlSaveImage()</error>
+      <error line="122" code="50015">Argument $url is missing from the Docblock of curlSaveImage()</error>
+      <error line="122" code="50015">Argument $icon is missing from the Docblock of curlSaveImage()</error>
+      <error line="122" code="50015">Argument $size is missing from the Docblock of curlSaveImage()</error>
+      <error line="213" code="50015">Argument $url is missing from the Docblock of curlRequest()</error>
+      <error line="288" code="50015">Argument $date is missing from the Docblock of setLastTimeAccessed()</error>
+      <error line="301" code="50015">Argument $url is missing from the Docblock of getJsonData()</error>
+      <error line="347" code="50015">Argument $icon is missing from the Docblock of getItemImage()</error>
+      <error line="347" code="50015">Argument $imageSize is missing from the Docblock of getItemImage()</error>
+      <error line="420" code="50015">Argument $icon is missing from the Docblock of getSkillImage()</error>
+      <error line="420" code="50015">Argument $imageSize is missing from the Docblock of getSkillImage()</error>
+      <error line="440" code="50015">Argument $tooltipUrl is missing from the Docblock of getSkillToolTip()</error>
+      <error line="440" code="50015">Argument $jsonp is missing from the Docblock of getSkillToolTip()</error>
+      <error line="465" code="50015">Argument $class is missing from the Docblock of getPaperDoll()</error>
+      <error line="465" code="50015">Argument $gender is missing from the Docblock of getPaperDoll()</error>
+      <error line="500" code="50015">Argument $hero_id is missing from the Docblock of getHero()</error>
+      <error line="519" code="50015">Argument $item_data is missing from the Docblock of getItem()</error>
+      <error line="539" code="50015">Argument $follower_type is missing from the Docblock of getFollower()</error>
+      <error line="558" code="50015">Argument $artisan_type is missing from the Docblock of getArtisan()</error>
+      <error line="577" code="50010">No DocBlock was found for method __desctruct()</error>
+    </parse_markers>
+  </file>
+  <file path="libraries/helpers.php" hash="1d7f0012897ebd7ef9b7fa6bfd355656" package="Default">
+    <function namespace="global" line="3" package="Default">
+      <name>getPercent</name>
+      <full_name>\getPercent</full_name>
+      <argument line="3">
+        <name>$num</name>
+        <default></default>
+        <type/>
+      </argument>
+    </function>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file libraries/helpers.php</error>
+      <error line="3" code="50009">No DocBlock was found for function \getPercent()</error>
+    </parse_markers>
+  </file>
+  <file path="models/Character.php" hash="32c5220b5263230c1b2dfd2dfb83f49b" package="Default">
+    <class final="false" abstract="false" namespace="global" line="2" package="Default">
+      <extends>\Eloquent</extends>
+      <name>Character</name>
+      <full_name>\Character</full_name>
+      <property final="false" static="false" visibility="protected" line="8" namespace="global" package="Default">
+        <name>$table</name>
+        <default>'characters'</default>
+        <docblock line="3">
+          <description>The database table used by the model.</description>
+          <long-description></long-description>
+          <tag line="3" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="9" namespace="global" package="Default">
+        <name>$timestamps</name>
+        <default>false</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="11" package="Default">
+        <name>user</name>
+        <full_name>user</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="15" package="Default">
+        <name>items</name>
+        <full_name>items</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file models/Character.php</error>
+      <error line="2" code="50000">No DocBlock was found for \Character</error>
+      <error line="9" code="50018">No DocBlock was found for property $timestamps</error>
+      <error line="11" code="50010">No DocBlock was found for method user()</error>
+      <error line="15" code="50010">No DocBlock was found for method items()</error>
+    </parse_markers>
+  </file>
+  <file path="models/Item.php" hash="d4d266b614f10ea0f7963c3bd0756dd1" package="Default">
+    <class final="false" abstract="false" namespace="global" line="2" package="Default">
+      <extends>\Eloquent</extends>
+      <name>Item</name>
+      <full_name>\Item</full_name>
+      <property final="false" static="false" visibility="protected" line="8" namespace="global" package="Default">
+        <name>$table</name>
+        <default>'items'</default>
+        <docblock line="3">
+          <description>The database table used by the model.</description>
+          <long-description></long-description>
+          <tag line="3" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="9" namespace="global" package="Default">
+        <name>$timestamps</name>
+        <default>false</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="11" package="Default">
+        <name>characters</name>
+        <full_name>characters</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="19" package="Default">
+        <name>attributes</name>
+        <full_name>attributes</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file models/Item.php</error>
+      <error line="2" code="50000">No DocBlock was found for \Item</error>
+      <error line="9" code="50018">No DocBlock was found for property $timestamps</error>
+      <error line="11" code="50010">No DocBlock was found for method characters()</error>
+      <error line="19" code="50010">No DocBlock was found for method attributes()</error>
+    </parse_markers>
+  </file>
+  <file path="models/ItemAttribute.php" hash="87b10bb0ed7da653c91e01f3b514fb93" package="Default">
+    <class final="false" abstract="false" namespace="global" line="2" package="Default">
+      <extends>\Eloquent</extends>
+      <name>ItemAttribute</name>
+      <full_name>\ItemAttribute</full_name>
+      <property final="false" static="false" visibility="protected" line="8" namespace="global" package="Default">
+        <name>$table</name>
+        <default>'ItemAttributes'</default>
+        <docblock line="3">
+          <description>The database table used by the model.</description>
+          <long-description></long-description>
+          <tag line="3" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="9" namespace="global" package="Default">
+        <name>$timestamps</name>
+        <default>false</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="11" package="Default">
+        <name>item</name>
+        <full_name>item</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file models/ItemAttribute.php</error>
+      <error line="2" code="50000">No DocBlock was found for \ItemAttribute</error>
+      <error line="9" code="50018">No DocBlock was found for property $timestamps</error>
+      <error line="11" code="50010">No DocBlock was found for method item()</error>
+    </parse_markers>
+  </file>
+  <file path="models/Modifier.php" hash="4891a118ad761a959ac7d5ec4f025dd6" package="Default">
+    <class final="false" abstract="false" namespace="global" line="2" package="Default">
+      <extends>\Eloquent</extends>
+      <name>Modifier</name>
+      <full_name>\Modifier</full_name>
+      <property final="false" static="false" visibility="protected" line="8" namespace="global" package="Default">
+        <name>$table</name>
+        <default>'modifiers'</default>
+        <docblock line="3">
+          <description>The database table used by the model.</description>
+          <long-description></long-description>
+          <tag line="3" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="9" namespace="global" package="Default">
+        <name>$timestamps</name>
+        <default>false</default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="11" package="Default">
+        <name>item</name>
+        <full_name>item</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file models/Modifier.php</error>
+      <error line="2" code="50000">No DocBlock was found for \Modifier</error>
+      <error line="9" code="50018">No DocBlock was found for property $timestamps</error>
+      <error line="11" code="50010">No DocBlock was found for method item()</error>
+    </parse_markers>
+  </file>
+  <file path="models/User.php" hash="97b0897bf81b74cda265e8ae62e9598b" package="Default">
+    <class final="false" abstract="false" namespace="global" line="4" package="Default">
+      <extends>\Cartalyst\Sentry\Users\Eloquent\User</extends>
+      <name>User</name>
+      <full_name>\User</full_name>
+      <property final="false" static="false" visibility="protected" line="11" namespace="global" package="Default">
+        <name>$table</name>
+        <default>'users'</default>
+        <docblock line="6">
+          <description>The database table used by the model.</description>
+          <long-description></long-description>
+          <tag line="6" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="13" package="Default">
+        <name>fullName</name>
+        <full_name>fullName</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="18" package="Default">
+        <name>characters</name>
+        <full_name>characters</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file models/User.php</error>
+      <error line="4" code="50000">No DocBlock was found for \User</error>
+      <error line="13" code="50010">No DocBlock was found for method fullName()</error>
+      <error line="18" code="50010">No DocBlock was found for method characters()</error>
+    </parse_markers>
+  </file>
+  <file path="routes.php" hash="ba944e4a0757d362ede82fdb32ed0cb8" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file routes.php</error>
+    </parse_markers>
+  </file>
+  <file path="services/validators/Battlenet.php" hash="06cae6a35aaa0eee2ae8775ae39ad947" package="Default">
+    <class final="false" abstract="false" namespace="Services\Validators" line="3" package="Default">
+      <extends>\Services\Validators\Validator</extends>
+      <name>Battlenet</name>
+      <full_name>\Services\Validators\Battlenet</full_name>
+      <property final="false" static="true" visibility="public" line="4" namespace="Services\Validators" package="Default">
+        <name>$rules</name>
+        <default>array('battletag' =&gt; 'required')</default>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file services/validators/Battlenet.php</error>
+      <error line="3" code="50000">No DocBlock was found for \Services\Validators\Battlenet</error>
+      <error line="4" code="50018">No DocBlock was found for property $rules</error>
+    </parse_markers>
+  </file>
+  <file path="services/validators/Character.php" hash="37eaa22aa4445efbf8588418ceab4a92" package="Default">
+    <class final="false" abstract="false" namespace="Services\Validators" line="3" package="Default">
+      <extends>\Services\Validators\Validator</extends>
+      <name>Character</name>
+      <full_name>\Services\Validators\Character</full_name>
+      <property final="false" static="true" visibility="public" line="4" namespace="Services\Validators" package="Default">
+        <name>$rules</name>
+        <default>array('character' =&gt; 'unique:characters,hero_id')</default>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file services/validators/Character.php</error>
+      <error line="3" code="50000">No DocBlock was found for \Services\Validators\Character</error>
+      <error line="4" code="50018">No DocBlock was found for property $rules</error>
+    </parse_markers>
+  </file>
+  <file path="services/validators/CharacterItem.php" hash="f5ef2e55d34233a73206d8c4edd65b6a" package="Default">
+    <class final="false" abstract="false" namespace="Services\Validators" line="3" package="Default">
+      <extends>\Services\Validators\Validator</extends>
+      <name>CharacterItem</name>
+      <full_name>\Services\Validators\CharacterItem</full_name>
+      <property final="false" static="true" visibility="public" line="4" namespace="Services\Validators" package="Default">
+        <name>$rules</name>
+        <default>array('item_id' =&gt; 'unique:character_items')</default>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file services/validators/CharacterItem.php</error>
+      <error line="3" code="50000">No DocBlock was found for \Services\Validators\CharacterItem</error>
+      <error line="4" code="50018">No DocBlock was found for property $rules</error>
+    </parse_markers>
+  </file>
+  <file path="services/validators/Item.php" hash="23e7424fdfe18ba223e8a79489f5d701" package="Default">
+    <class final="false" abstract="false" namespace="Services\Validators" line="3" package="Default">
+      <extends>\Services\Validators\Validator</extends>
+      <name>Item</name>
+      <full_name>\Services\Validators\Item</full_name>
+      <property final="false" static="true" visibility="public" line="4" namespace="Services\Validators" package="Default">
+        <name>$rules</name>
+        <default>array('name' =&gt; 'unique:items')</default>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file services/validators/Item.php</error>
+      <error line="3" code="50000">No DocBlock was found for \Services\Validators\Item</error>
+      <error line="4" code="50018">No DocBlock was found for property $rules</error>
+    </parse_markers>
+  </file>
+  <file path="services/validators/Login.php" hash="42c7089de1ea654374f30a1e52046f45" package="Default">
+    <class final="false" abstract="false" namespace="Services\Validators" line="3" package="Default">
+      <extends>\Services\Validators\Validator</extends>
+      <name>Login</name>
+      <full_name>\Services\Validators\Login</full_name>
+      <property final="false" static="true" visibility="public" line="4" namespace="Services\Validators" package="Default">
+        <name>$rules</name>
+        <default>array('email' =&gt; 'Required|email', 'password' =&gt; 'Required')</default>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file services/validators/Login.php</error>
+      <error line="3" code="50000">No DocBlock was found for \Services\Validators\Login</error>
+      <error line="4" code="50018">No DocBlock was found for property $rules</error>
+    </parse_markers>
+  </file>
+  <file path="services/validators/Post.php" hash="2b024359106d209ba2f54142cbbc7837" package="Default">
+    <class final="false" abstract="false" namespace="Services\Validators" line="3" package="Default">
+      <extends>\Services\Validators\Validator</extends>
+      <name>Post</name>
+      <full_name>\Services\Validators\Post</full_name>
+      <property final="false" static="true" visibility="public" line="4" namespace="Services\Validators" package="Default">
+        <name>$rules</name>
+        <default>array('title' =&gt; 'required', 'body' =&gt; 'required')</default>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file services/validators/Post.php</error>
+      <error line="3" code="50000">No DocBlock was found for \Services\Validators\Post</error>
+      <error line="4" code="50018">No DocBlock was found for property $rules</error>
+    </parse_markers>
+  </file>
+  <file path="services/validators/Register.php" hash="4ed66d44778c14b2fa28ae467bb4e4e4" package="Default">
+    <class final="false" abstract="false" namespace="Services\Validators" line="3" package="Default">
+      <extends>\Services\Validators\Validator</extends>
+      <name>Register</name>
+      <full_name>\Services\Validators\Register</full_name>
+      <property final="false" static="true" visibility="public" line="4" namespace="Services\Validators" package="Default">
+        <name>$rules</name>
+        <default>array('email' =&gt; 'required|email', 'password' =&gt; 'required|confirmed', 'password_confirmation' =&gt; 'required')</default>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file services/validators/Register.php</error>
+      <error line="3" code="50000">No DocBlock was found for \Services\Validators\Register</error>
+      <error line="4" code="50018">No DocBlock was found for property $rules</error>
+    </parse_markers>
+  </file>
+  <file path="services/validators/User.php" hash="ffc6088e13cf7598fdb1beb2c0c766bc" package="Default">
+    <class final="false" abstract="false" namespace="Services\Validators" line="3" package="Default">
+      <extends>\Services\Validators\Validator</extends>
+      <name>User</name>
+      <full_name>\Services\Validators\User</full_name>
+      <property final="false" static="true" visibility="public" line="4" namespace="Services\Validators" package="Default">
+        <name>$rules</name>
+        <default>array('firstName' =&gt; 'required', 'lastName' =&gt; 'required')</default>
+      </property>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file services/validators/User.php</error>
+      <error line="3" code="50000">No DocBlock was found for \Services\Validators\User</error>
+      <error line="4" code="50018">No DocBlock was found for property $rules</error>
+    </parse_markers>
+  </file>
+  <file path="services/validators/Validator.php" hash="f1956bf461f9800d9023df2b337825b6" package="Default">
+    <class final="false" abstract="true" namespace="Services\Validators" line="3" package="Default">
+      <extends/>
+      <name>Validator</name>
+      <full_name>\Services\Validators\Validator</full_name>
+      <property final="false" static="false" visibility="protected" line="8" namespace="Services\Validators" package="Default">
+        <name>$attributes</name>
+        <default></default>
+        <docblock line="4">
+          <description>Attributes object, set on instantiation</description>
+          <long-description></long-description>
+          <tag line="4" name="var" description="" type="object">
+            <type by_reference="false">object</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="14" namespace="Services\Validators" package="Default">
+        <name>$errors</name>
+        <default></default>
+        <docblock line="10">
+          <description>The errors object, set if the validation fails</description>
+          <long-description></long-description>
+          <tag line="10" name="var" description="" type="object">
+            <type by_reference="false">object</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Services\Validators" line="21" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="16">
+          <description>Get the attributes
+Default is Input::all if none provided</description>
+          <long-description></long-description>
+        </docblock>
+        <argument line="21">
+          <name>$attributes</name>
+          <default>null</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Services\Validators" line="31" package="Default">
+        <name>passes</name>
+        <full_name>passes</full_name>
+        <docblock line="26">
+          <description>Validation</description>
+          <long-description></long-description>
+          <tag line="26" name="return" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Services\Validators" line="44" package="Default">
+        <name>getErrors</name>
+        <full_name>getErrors</full_name>
+        <docblock line="39">
+          <description>getter.</description>
+          <long-description>&lt;p&gt;Returns the $errors attribute&lt;/p&gt;</long-description>
+          <tag line="39" name="return" description="Errors object" type="\Services\Validators\obj">
+            <type by_reference="false">\Services\Validators\obj</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file services/validators/Validator.php</error>
+      <error line="3" code="50000">No DocBlock was found for \Services\Validators\Validator</error>
+      <error line="16" code="50015">Argument $attributes is missing from the Docblock of __construct()</error>
+    </parse_markers>
+  </file>
+  <file path="start/artisan.php" hash="9560559116d4efcf7cc96ac54eb69379" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file start/artisan.php</error>
+    </parse_markers>
+  </file>
+  <file path="start/custom.php" hash="10fb5e1318217e508fd2b7ac0dd9f7c7" package="Default">
+    <function namespace="global" line="11" package="Default">
+      <name>dd</name>
+      <full_name>\dd</full_name>
+      <docblock line="5">
+        <description>Dump the given value and kill the script.</description>
+        <long-description></long-description>
+        <tag line="5" name="param" description="" type="mixed" variable="$value">
+          <type by_reference="false">mixed</type>
+        </tag>
+        <tag line="5" name="return" description="" type="void">
+          <type by_reference="false">void</type>
+        </tag>
+      </docblock>
+      <argument line="11">
+        <name>$value</name>
+        <default></default>
+        <type/>
+      </argument>
+    </function>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file start/custom.php</error>
+    </parse_markers>
+  </file>
+  <file path="start/global.php" hash="ed0f6a40f7bf6f22ac0868a974857677" package="Default">
+    <include line="83" type="Require" package="Default">
+      <name/>
+    </include>
+    <include line="85" type="Require" package="Default">
+      <name/>
+    </include>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file start/global.php</error>
+    </parse_markers>
+  </file>
+  <file path="start/local.php" hash="d55c9609203ccc2bbdd58ae2eb8bb3ca" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file start/local.php</error>
+    </parse_markers>
+  </file>
+  <file path="tasks/fetch.php" hash="0bde8c2afbe7ccd028a18587a3b2be48" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends/>
+      <name>FetchTesk</name>
+      <full_name>\FetchTesk</full_name>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file tasks/fetch.php</error>
+      <error line="3" code="50000">No DocBlock was found for \FetchTesk</error>
+    </parse_markers>
+  </file>
+  <file path="tests/controllers/UsersControllerTest.php" hash="f0d25244b10ed67ed754527fc1f05abe" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\TestCase</extends>
+      <name>UsersControllerTest</name>
+      <full_name>\UsersControllerTest</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="4" package="Default">
+        <name>testIndex</name>
+        <full_name>testIndex</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file tests/controllers/UsersControllerTest.php</error>
+      <error line="3" code="50000">No DocBlock was found for \UsersControllerTest</error>
+      <error line="4" code="50010">No DocBlock was found for method testIndex()</error>
+    </parse_markers>
+  </file>
+  <file path="tests/ExampleTest.php" hash="2d36096f5434ecd3a339d8af130934c4" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\TestCase</extends>
+      <name>ExampleTest</name>
+      <full_name>\ExampleTest</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="10" package="Default">
+        <name>testBasicExample</name>
+        <full_name>testBasicExample</full_name>
+        <docblock line="5">
+          <description>A basic functional test example.</description>
+          <long-description></long-description>
+          <tag line="5" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file tests/ExampleTest.php</error>
+      <error line="3" code="50000">No DocBlock was found for \ExampleTest</error>
+    </parse_markers>
+  </file>
+  <file path="tests/TestCase.php" hash="121d05fe7ebb353b0b85c76519c67c46" package="Default">
+    <include line="16" type="Require" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\Illuminate\Foundation\Testing\TestCase</extends>
+      <name>TestCase</name>
+      <full_name>\TestCase</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="10" package="Default">
+        <name>createApplication</name>
+        <full_name>createApplication</full_name>
+        <docblock line="5">
+          <description>Creates the application.</description>
+          <long-description></long-description>
+          <tag line="5" name="return" description="" type="\Symfony\Component\HttpKernel\HttpKernelInterface">
+            <type by_reference="false">\Symfony\Component\HttpKernel\HttpKernelInterface</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file tests/TestCase.php</error>
+      <error line="3" code="50000">No DocBlock was found for \TestCase</error>
+    </parse_markers>
+  </file>
+  <file path="views/account/index.blade.php" hash="944d2d111ceace8a7bdd31e59b5a7cf3" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/account/index.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/account/login.blade.php" hash="05d64c5245082af090832bfc1f069290" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/account/login.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/account/register.blade.php" hash="811548be4020ce34269402a4011b92e4" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/account/register.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/emails/auth/activate.blade.php" hash="272f458126f845a8bb95ac5baa606eec" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/emails/auth/activate.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/emails/auth/reminder.blade.php" hash="60d6d955418fabbdb55b85e3079d5713" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/emails/auth/reminder.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/emails/auth/welcome.blade.php" hash="e63f8031a5e12415b8e45c873a613df9" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/emails/auth/welcome.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/emails/welcome.blade.php" hash="b1e41d4ad5848e50e61e392c40b3dcaf" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/emails/welcome.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/hello.php" hash="a2d1cb24f24b322a7dad520414c523e9" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/hello.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/home.blade.php" hash="16a939162cf766376b00c3753308e301" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/home.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/layouts/default.blade.php" hash="53fe0dbc0c5dcf3087621b5190023083" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/layouts/default.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/layouts/modals/modal_importHeroes.blade.php" hash="64d38e55e17cfc2ec10b343057286b9e" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/layouts/modals/modal_importHeroes.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/layouts/modals.blade.php" hash="5718c792637f5ca91b09792670ca9ee9" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/layouts/modals.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/layouts/navigation.blade.php" hash="1e0f6b799f19a94831bf112d3d7b51e7" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/layouts/navigation.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/layouts/notifications.blade.php" hash="e8db8a71271b2f7a971fb732ce02f739" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/layouts/notifications.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/layouts/tables/baseStatistics.blade.php" hash="33b33c572ddf816c0885726f52c85911" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/layouts/tables/baseStatistics.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/layouts/tables/damageRange.blade.php" hash="fd13c4a9516b4440403527669f28b209" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/layouts/tables/damageRange.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/layouts/tables/defensiveSpecifics.blade.php" hash="73e93404aa63c1a51146751bf7882669" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/layouts/tables/defensiveSpecifics.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/layouts/tables/defensiveStatistics.blade.php" hash="31cf6f6bc4ceb3f090546c0becdb9653" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/layouts/tables/defensiveStatistics.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/layouts/tables/healthStatistics.blade.php" hash="333230fa09b651be4579de9fccfb6841" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/layouts/tables/healthStatistics.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/layouts/tables/offensiveStatistics.blade.php" hash="35afc8fa6fecf260a9ea5a2a7f03df34" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/layouts/tables/offensiveStatistics.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/user/ahprofitcalc.blade.php" hash="9b5e1d62460d40304f612c301cf3aa9c" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/user/ahprofitcalc.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/user/character.blade.php" hash="a09ae792bc759a0e0cc3227833345917" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/user/character.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/user/goldRealMoney.blade.php" hash="9224d04e02ad859f2699db8d5910200c" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/user/goldRealMoney.blade.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/user/index.blade.php" hash="90f05e1b1d58490f1e6e5921db179e7a" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/user/index.blade.php</error>
+    </parse_markers>
+  </file>
+  <package name="ChromePhp" full_name="ChromePhp"/>
+  <package name="Default" full_name="Default"/>
+  <namespace name="Diablo3" full_name="Diablo3">
+    <namespace name="Facades" full_name="Diablo3\Facades"/>
+  </namespace>
+  <namespace name="Services" full_name="Services">
+    <namespace name="Validators" full_name="Services\Validators"/>
+  </namespace>
+  <namespace name="global" full_name="global"/>
+  <marker count="3">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>
