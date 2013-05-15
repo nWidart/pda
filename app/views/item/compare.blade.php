@@ -16,7 +16,7 @@ Comparing Items | PDA
         </div>
     </div>
     <div class="row">
-        <div class="span5">
+        <div class="span5 itemContainer">
             <h2>You're comparing</h2>
             <div class="badge-item">
                 <div class="head">
@@ -37,7 +37,7 @@ Comparing Items | PDA
                 <div class="footer"></div>
             </div> <!-- End .badge Item -->
         </div>
-        <div class="span5">
+        <div class="span5 itemContainer">
             <h2>With</h2>
             <div class="badge-item">
                 <div class="head">
@@ -131,6 +131,95 @@ Comparing Items | PDA
         </div> <!-- End span5 -->
         <div class="span2 results">
             <h2>Results</h2>
+            <div class="spinner"></div>
+            <div class="JsResults">
+                <div class="dpsChange">
+                  <span class="red">-8 478.83</span>
+                  <p>DPS Difference</p>
+                </div>
+                <div class="ehpChange">
+                  <span class="green">+75 961.45</span>
+                  <p>EHP Difference</p>
+                </div>
+                <table class="table table-condensed table-hover">
+                    <thead>
+                        <tr>
+                        </tr>
+                        <tr>
+                            <th>Stat</th>
+                            <th>Diff</th>
+                            <th>%</th>
+                            <th>Old</th>
+                            <th>New</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Str</td>
+                            <td><span class="red">-83</span></td>
+                            <td><span class="red">-4%</span></td>
+                            <td><span class="green">2219</span></td>
+                            <td><span class="red">2136</span></td>
+                        </tr>
+                        <tr>
+                            <td>Int</td>
+                            <td><span class="green">+21</span></td>
+                            <td><span class="green">6%</span></td>
+                            <td><span class="red">340</span></td>
+                            <td><span class="green">361</span></td>
+                        </tr>
+                        <tr>
+                            <td>Dex</td>
+                            <td><span class="green">+21</span></td>
+                            <td><span class="green">6%</span></td>
+                            <td><span class="red">340</span></td>
+                            <td><span class="green">361</span></td>
+                        </tr>
+                        <tr>
+                            <td>Vit</td>
+                            <td><span class="green">+13</span></td>
+                            <td><span class="green">1%</span></td>
+                            <td><span class="red">1138</span></td>
+                            <td><span class="green">2136</span></td>
+                        </tr>
+                        <tr>
+                            <td>+Life</td>
+                            <td><span class="green">+15</span></td>
+                            <td><span class="green">15%</span></td>
+                            <td><span class="red">0</span></td>
+                            <td><span class="green">15</span></td>
+                        </tr>
+                        <tr>
+                            <td>Armor</td>
+                            <td><span class="green">+140</span></td>
+                            <td><span class="green">3%</span></td>
+                            <td><span class="red">5098</span></td>
+                            <td><span class="green">5238</span></td>
+                        </tr>
+                        <tr>
+                            <td>Poison Res</td>
+                            <td><span class="red">-46</span></td>
+                            <td><span class="red">100%</span></td>
+                            <td><span class="green">46</span></td>
+                            <td><span class="red">0</span></td>
+                        </tr>
+                        <tr>
+                            <td>Resist All</td>
+                            <td><span class="green">+2.1</span></td>
+                            <td><span class="green">0%</span></td>
+                            <td><span class="red">544</span></td>
+                            <td><span class="green">546.1</span></td>
+                        </tr>
+                        <tr>
+                            <td>Dodge %</td>
+                            <td><span class="red">-2</span></td>
+                            <td><span class="red">2%</span></td>
+                            <td><span class="green">54</span></td>
+                            <td><span class="red">50</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 @stop
@@ -139,6 +228,22 @@ Comparing Items | PDA
 <script>
 $(function()
 {
+    $('button.calc').on('click', function(e)
+    {
+        $('.spinner').show();
+        setTimeout(function(){
+            $('.JsResults').fadeIn();
+            $('.spinner').hide();
+        }, 1000);
+    });
+    $("table").tablecloth({
+        theme: "stats",
+        bordered: true,
+        condensed: true,
+        sortable: true,
+        striped: true,
+
+    });
     $(".select").select2();
     $('.jsAddAttr').on('click', function(e)
     {

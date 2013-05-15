@@ -831,3 +831,58 @@ label.inline {
   line-height: 52px;
   padding: 0 21px;
 }
+
+.ehpChange,
+.dpsChange {
+  text-align: center;
+  background: #494949;
+  margin-bottom: 20px;
+  padding: 5px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font-family: 'Ubuntu';
+}
+
+.ehpChange span,
+.dpsChange span {
+  font-weight: 500;
+}
+
+.ehpChange p,
+.dpsChange p {
+  color: #c9c9c9;
+  margin: 0;
+  font-size: 11px;
+}
+
+.dpsChange {
+  float: left;
+  width: 50%;
+}
+
+.spinner {
+  background: url("../img/loading.gif");
+  width: 16px;
+  height: 16px;
+  display: none;
+}
+
+.JsResults {
+  display: none;
+}
+
+.itemContainer {
+  width: 426px;
+}
+
+.results {
+  width: 258px;
+}
+
+span.red {
+  color: #c0392b;
+}
+
+span.green {
+  color: #27ae60;
+}
