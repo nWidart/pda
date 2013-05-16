@@ -27,7 +27,8 @@ $app = new Illuminate\Foundation\Application;
 $env = $app->detectEnvironment(array(
 
 	'local' => array('*.dev'),
-    'dev' => array('*diablo-assistant.eu1.frbit.net')
+    'dev' => array('*diablo-assistant.eu1.frbit.net'),
+    'production' => array('http://*.pagodabox.com'),
 
 ));
 
