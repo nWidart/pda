@@ -19,9 +19,6 @@ web1:
         - memcached
         - curl
         - zip
-    before_deploy:
-        - "php artisan migrate:install"
-        - "php artisan migrate"
     after_deploy:
         - "rm -f storage/cache/*"
         - "rm -f storage/views/*"
