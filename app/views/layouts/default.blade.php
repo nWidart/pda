@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <!-- Le styles -->
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
     <link href="{{{ asset('assets/css/bootstrap/bootstrap.css') }}}" rel="stylesheet">
@@ -25,6 +24,7 @@
     <link href="{{{ asset('assets/css/vendor/tablecloth.css') }}}" rel="stylesheet">
     <link href="{{{ asset('assets/css/vendor/jquery.qtip.css') }}}" rel="stylesheet">
     <link href="{{{ asset('assets/css/vendor/select2.css') }}}" rel="stylesheet">
+    <!-- <link href="{{{ asset('assets/css/vendor/superslides.css') }}}" rel="stylesheet"> -->
     <link href="{{{ asset('assets/css/bootstrap/select2-bootstrap.css') }}}" rel="stylesheet">
     <link href="{{{ asset('assets/css/main.css') }}}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="http://us.battle.net/d3/static/css/tooltips.css">
@@ -54,7 +54,7 @@
   <body>
 
     @include('layouts.navigation')
-
+    @yield('slider')
     <div class="container">
         @include('layouts.notifications')
         @yield('content')
@@ -62,6 +62,7 @@
             @include('layouts.modals')
         @endif
     </div> <!-- /container -->
+    @yield('cta')
     <div id="footer">
       <div class="container">
         <p class="muted credit">© Personal Diablo Assistant</p>
@@ -82,6 +83,7 @@
     <script src="{{{ asset('assets/js/bootstrap/jquery.tablesorter.min.js') }}}"></script>
     <script src="{{{ asset('assets/js/bootstrap/bootstrap-editable.min.js') }}}"></script>
     <script src="{{{ asset('assets/js/vendor/alertify.min.js') }}}"></script>
+    <script src="{{{ asset('assets/js/vendor/jquery.superslides.min.js') }}}"></script>
     <script src="{{{ asset('assets/js/vendor/unslider.min.js') }}}"></script>
     <script src="{{{ asset('assets/js/vendor/jquery.qtip.js') }}}"></script>
     <script src="{{{ asset('assets/js/vendor/select2.js') }}}"></script>

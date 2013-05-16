@@ -5,6 +5,7 @@ $dark_red : #9b3b2f;
 $light_red : #eb6d5c;
 $yellow : #f1c40f;
 
+$dark_gray : #272727;
 $gray : #494949;
 $light_gray : #ababab;
 
@@ -265,6 +266,9 @@ i.s30 {
     font-size: 16px;
     margin-right: 10px;
 }
+.navbar .nav li.dropdown a {
+    margin-right: 0;
+}
 
 
 .navbar .nav > .active > a,
@@ -278,10 +282,123 @@ i.s30 {
     Slider
     ======================================================================================
  */
-.banner { position: relative; overflow: auto; }
-    .banner li { list-style: none; }
-        .banner ul li { float: left; }
+.sliderImg {
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 0;
+    max-width: 100%;
+    height: auto;
+}
+.banner {
+    position: relative;
+    width: 101%;
+    overflow: auto;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    color: rgba(255,255,255,.6);
+    text-shadow: 0 0 1px rgba(0,0,0,.05), 0 1px 2px rgba(0,0,0,.3);
+    background: $dark_gray;
+}
+.banner ul {
+    list-style: none;
+    width: 300%;
+    margin-left: -30px;
+}
+.banner ul li {
+    display: block;
+    float: left;
+    width: 33.5%;
+    padding: 160px 0 110px;
+    // min-height: 260px;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    -ms-background-size: 100% 100%;
+    box-shadow: inset 0 -3px 6px rgba(0,0,0,.1);
+}
+.banner h1, .banner h2 {
+    font-size: 40px;
+    line-height: 52px;
+    color: #fff;
+}
+.banner .btn, .banner .dot {
+        -webkit-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+        -moz-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+        -ms-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+        -o-filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+        filter: drop-shadow(0 1px 2px rgba(0,0,0,.3));
+    }
 
+.banner .dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+}
+.banner .dots li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
+    text-indent: -999em;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: .4;
+    -webkit-transition: background .5s, opacity .5s;
+    -moz-transition: background .5s, opacity .5s;
+    transition: background .5s, opacity .5s;
+}
+.banner .dots li.active {
+    background: #fff;
+    opacity: 1;
+}
+
+/*
+    ======================================================================================
+    HOME page
+    ======================================================================================
+*/
+.icon {
+    -moz-border-radius: 40px;
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    background: $red;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    float: left;
+    margin-right: 10px;
+}
+.icon > i {
+    font-size: 20px;
+    color: #fff;
+    margin: 11px;
+}
+.wrapper {
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    background-color: #f3f5f7; // layer fill content
+    @include background-image(linear-gradient(bottom, #eaebed 0%, #f3f5f7 100%)); // gradient overlay
+    margin: 30px 0;
+}
+.wrapper > .inner-wrapper {
+    width: 1170px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+.wrapper > .inner-wrapper span.big {
+    font-size: 30px;
+    font-family: 'Ubuntu';
+    display: block;
+    font-weight: 300;
+    padding: 0;
+}
 /*
     ======================================================================================
     Badges
