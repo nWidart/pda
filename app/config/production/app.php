@@ -26,7 +26,7 @@ return array(
     |
     */
 
-    'url' => 'http://diablo-assistant.eu1.frbit.net',
+    'url' => 'http://pda.pagodabox.com',
 
     /*
     |--------------------------------------------------------------------------
