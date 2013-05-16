@@ -18,6 +18,7 @@ web1:
         - eaccelerator
         - memcached
         - curl
+        - zip
     before_deploy:
         - "php artisan migrate:install"
         - "php artisan migrate"
