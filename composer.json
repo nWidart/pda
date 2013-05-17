@@ -1,10 +1,8 @@
 {
 	"require": {
 		"laravel/framework": "4.0.*",
-		"cartalyst/sentry": "2.0.*",
-		"way/generators": "dev-master",
 		"loic-sharma/profiler": "1.0.*",
-        "barryvdh/laravel-ide-helper": "dev-master"
+		"cartalyst/sentry": "2.0.*"
 	},
 	"autoload": {
 		"classmap": [

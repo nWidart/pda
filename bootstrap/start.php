@@ -13,6 +13,8 @@
 
 $app = new Illuminate\Foundation\Application;
 
+$app->redirectIfTrailingSlash();
+
 /*
 |--------------------------------------------------------------------------
 | Detect The Application Environment
@@ -26,9 +28,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('*.dev'),
-    'dev' => array('*diablo-assistant.eu1.frbit.net'),
-    'production' => array('http://*.pagodabox.com'),
+	'local' => array('your-machine-name'),
 
 ));
 

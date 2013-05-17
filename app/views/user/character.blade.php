@@ -34,7 +34,7 @@ Character View | PDA
         <div class="span6 skillView">
             <ul>
                 @foreach( $skills as $skill)
-                    <li><a href="/d3/en/class/barbarian/passive/ruthless">{{ Html::image("assets/img/d3/skills/64/{$skill['icon']}.png") }}</a></li>
+                    <li><a href="/d3/en/class/barbarian/passive/ruthless">{{ HTML::image("assets/img/d3/skills/64/{$skill['icon']}.png") }}</a></li>
                 @endforeach
             </ul>
         </div>

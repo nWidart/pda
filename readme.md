@@ -1,38 +1,13 @@
-# Personal Diablo Assistant
+## Laravel 4.x
 
-## Info
-The is the sourcecode for the PDA website.
+### A Framework For Web Artisans
 
-## Ressources used
+[Official Documentation](http://four.laravel.com) (Under Active Development)
 
-### Bootstrap
- - [bootstrap-modal](https://github.com/jschr/bootstrap-modal)
- 
-### Packages
- - [Sentry 2](http://cartalyst.com/arsenal)
+### Contributing To Laravel
 
-### Scripts
- - [Alertify](http://fabien-d.github.io/alertify.js)
- - [Select2](http://ivaynberg.github.io/select2/)
- - [x-editable](http://vitalets.github.io/x-editable/)
- - [qTip2](http://craigsworks.com/projects/qtip2/tutorials/advanced/#override) (Tooltips)
+**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
 
-### PHP Libraries
- - [Diablo3 API](https://github.com/Blizzard/d3-api-docs)
- - [Diablo3 PHP Wrapper](https://github.com/XjSv/Diablo-3-API-PHP) (Extendented this a lot)
- 
-### PHP Services
+### License
 
- - [Iron.io](http://iron.io) (push queues)
- - [Redis.io](http://redis.io) (Session & cache DB)
- - [PostMarkApp](https://postmarkapp.com/) (Sending emails)
-
-
-
-*** 
-
-
-
-## More Info
-Everything on [my blog](http://nicolaswidart.com/site/category/heaj/tfe/).
-
+The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)

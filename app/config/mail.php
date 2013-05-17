@@ -40,7 +40,7 @@ return array(
 	| stay compatible with the Postmark e-mail application by default.
 	|
 	*/
-	// 587 for gmail
+
 	'port' => 2525,
 
 	/*

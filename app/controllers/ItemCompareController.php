@@ -8,6 +8,4 @@ class ItemCompareController extends BaseController {
     {
         $this->beforeFilter('auth');
     }
-
-    public function
 }

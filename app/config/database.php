@@ -54,13 +54,13 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'diablo-assistant.mysql.eu1.frbit.com',
-			'database'  => 'diablo-assistant',
-			'username'  => 'diablo-assistant',
-			'password'  => 'Uews1XDgXC77DKwS',
-			'charset'   => 'utf8',
-			'collation' => 'utf8_unicode_ci',
-			'prefix'    => '',
+            'host'      => 'localhost',
+            'database'  => 'pda2',
+            'username'  => 'root',
+            'password'  => 'root',
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
 		),
 
 		'pgsql' => array(

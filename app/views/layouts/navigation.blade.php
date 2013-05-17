@@ -6,7 +6,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="brand" href="#">Personal Diablo Assistant</a>
+            <a class="brand" href="{{URL::to('/')}}">Personal Diablo Assistant</a>
             <div class="nav-collapse collapse">
                 @if( Sentry::check() )
                 <ul class="nav">
