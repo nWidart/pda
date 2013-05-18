@@ -58,24 +58,28 @@ Character View | PDA
                     <?php $uniqueness = ( $item['unique'] ) ? 'unique' : ''; ?>
                     <?php if ( $item['type'] === 'ring' ) : ?>
                         <li class="<?php echo $item['type'] . ' ' . $uniqueness . ' ring-' . $n; ?>" id="<?php echo $n; ?>">
-                            <a href="{{ URL::to('item/compare')}}" data-tooltip="<?php
-                              foreach ($item['item']['attributes'] as $attr) {
-                                    echo $attr['name'] . ' : ' . $attr['max'].'<br>';
-                                }
-                            ?>" class="nwTooltip" data-tooltip-title="{{ $item['item']['name'] }}">
-                            {{ HTML::image("assets/img/d3/items/large/{$item['item']['icon']}.png", $item['item']['name'], ['class' => $item['type'] . ' ' . $uniqueness ] ) }}
-                            </a>
+                            <div class="icon">
+                                <a href="{{ URL::to('item/compare')}}" data-tooltip="<?php
+                                  foreach ($item['item']['attributes'] as $attr) {
+                                        echo $attr['name'] . ' : ' . $attr['max'].'<br>';
+                                    }
+                                ?>" class="nwTooltip" data-tooltip-title="{{ $item['item']['name'] }}">
+                                {{ HTML::image("assets/img/d3/items/large/{$item['item']['icon']}.png", $item['item']['name'], ['class' => $item['type'] . ' ' . $uniqueness ] ) }}
+                                </a>
+                            </div>
                         </li>
                         <?php $n++; ?>
                     <?php else: ?>
                         <li class="<?php echo $item['type'] . ' ' . $uniqueness; ?>">
-                            <a href="{{ URL::to('item/compare/' . $item['item']['id'] ) }}" data-tooltip="<?php
-                              foreach ($item['item']['attributes'] as $attr) {
-                                    echo $attr['name'] . ' : ' . $attr['max'] .'<br>';
-                                }
-                            ?>" data-tooltip-title="{{ $item['item']['name'] }}" class="nwTooltip" data-itemId="{{ $item['item']['id'] }}">
-                            {{ HTML::image("assets/img/d3/items/large/{$item['item']['icon']}.png", $item['item']['name'], ['class' => $item['type'] . ' ' . $uniqueness ] ) }}
-                            </a>
+                            <div class="icon">
+                                <a href="{{ URL::to('item/compare/' . $item['item']['id'] ) }}" data-tooltip="<?php
+                                  foreach ($item['item']['attributes'] as $attr) {
+                                        echo $attr['name'] . ' : ' . $attr['max'] .'<br>';
+                                    }
+                                ?>" data-tooltip-title="{{ $item['item']['name'] }}" class="nwTooltip" data-itemId="{{ $item['item']['id'] }}">
+                                {{ HTML::image("assets/img/d3/items/large/{$item['item']['icon']}.png", $item['item']['name'], ['class' => $item['type'] . ' ' . $uniqueness ] ) }}
+                                </a>
+                            </div>
                         </li>
                     <?php endif; ?>
                 @endforeach

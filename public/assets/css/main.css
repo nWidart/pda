@@ -698,12 +698,7 @@ CHARACTER view
 }
 
 .characterView li {
-  border: 1px solid #f1c40f;
   position: absolute;
-}
-
-.characterView img.unique {
-  border-color: #d35400;
 }
 
 .characterView li.helm {
@@ -937,6 +932,7 @@ label.inline {
   padding: 4px 21px;
 }
 
+.characterView .icon,
 .badge-item > .item-data > .icon {
   border-color: #b1a73c;
   background: url(http://us.battle.net/d3/static/images/item/icon-bgs/yellow.png);
@@ -947,6 +943,10 @@ label.inline {
   border-radius: 5px;
   width: auto;
   height: auto;
+}
+
+.characterView .icon {
+  margin: 0;
 }
 
 .item-data > .attrs {
