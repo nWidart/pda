@@ -140,7 +140,7 @@ i.s30 {
 }
 .modalList li {
     float:left;
-    padding: 12px 15px;
+    padding: 12px 14px;
     border-right: 1px solid white;
 }
 .modalList li:last-child {
@@ -427,16 +427,16 @@ i.s30 {
     position: absolute;
     top: 10px;
     right: 10px;
-    color:white;
+    color:#5d6d81;
     -webkit-transition: all ease-in-out .1s;
        -moz-transition: all ease-in-out .1s;
         -ms-transition: all ease-in-out .1s;
          -o-transition: all ease-in-out .1s;
             transition: all ease-in-out .1s;
 }
-.badge-big:hover > a.hidden-eye {
-    color:#5d6d81;
-}
+// .badge-big:hover > a.hidden-eye {
+//     color:#5d6d81;
+// }
 .badge-body {
     padding: 20px;
     margin-bottom: 20px;

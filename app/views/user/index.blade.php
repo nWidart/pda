@@ -4,7 +4,6 @@
 Your Profile | PDA
 @stop
 @section('styles')
-<link href="{{{ asset('assets/css/multi-select.css') }}}" rel="stylesheet">
 @stop
 
 @section('content')

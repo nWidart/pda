@@ -99,4 +99,27 @@ $(document).ready(function() {
         });
     });
 
+    /**
+     * The Import Characters Tab
+     */
+    $('.badge-small').on('click', function(){
+        if(!$(this).find('input[type="checkbox"]').prop('checked')){
+            $(this).find('input[type="checkbox"]').prop('checked', true).attr('checked','checked');
+            $(this).addClass('badge-small-selected');
+            $(this).find('i.icon-check-1').show();
+        }else{
+            $(this).find('input[type="checkbox"]').prop('checked', false).removeAttr('checked');
+            $(this).removeClass('badge-small-selected');
+            $(this).find('i.icon-check-1').hide();
+        }
+    });
+
+    /**
+     * Force close the modal
+     */
+    $('.jsCloseModal').on('click', function (e)
+    {
+        e.preventDefault();
+        $('#modal').modal('hide');
+    });
 });

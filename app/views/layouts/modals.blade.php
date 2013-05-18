@@ -4,7 +4,7 @@
         <li class="active">
             <a href="#profile" data-toggle="tab">
                 <i class="icon-user-1 s30"></i>
-                Proile</a>
+                Profile</a>
         </li>
         <li>
             <a href="#importHeroes" data-toggle="tab">
@@ -50,8 +50,8 @@
 
                                 <div class="modal-footer">
                                     <div class="m-btn-group">
-                                      <a href="#" data-dismiss="modal" class="m-btn black">Cancel</a>
                                       {{ Form::submit('Update Battle.net information', ['class' => 'm-btn green']) }}
+                                      <a href="#" data-dismiss="modal" class="m-btn black jsCloseModal">Close</a>
                                     </div>
                                 </div>
                                 {{ Form::close() }}
@@ -78,8 +78,8 @@
                                   </div>
                                   <div class="modal-footer">
                                     <div class="m-btn-group">
-                                        <a href="#" data-dismiss="modal" class="m-btn black">Cancel</a>
                                         {{ Form::submit('Update profile', ['class' => 'm-btn green']) }}
+                                        <a href="#" data-dismiss="modal" class="m-btn black jsCloseModal">Close</a>
                                     </div>
                                   </div>
                                 </form>
@@ -107,15 +107,5 @@
   </div>
 </div>
 <script>
-    $('.badge-small').on('click', function(){
-        if(!$(this).find('input[type="checkbox"]').prop('checked')){
-            $(this).find('input[type="checkbox"]').prop('checked', true).attr('checked','checked');
-            $(this).addClass('badge-small-selected');
-            $(this).find('i.icon-check-1').show();
-        }else{
-            $(this).find('input[type="checkbox"]').prop('checked', false).removeAttr('checked');
-            $(this).removeClass('badge-small-selected');
-            $(this).find('i.icon-check-1').hide();
-        }
-    });
+
 </script>

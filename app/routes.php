@@ -34,7 +34,10 @@ Route::get('diablo/sync/{charId}', 'DiabloController@getSync');
  * Registring the RESTful Account Controller
  *
  */
-Route::controller('dashboard', 'AccountController');
+// Route::controller('dashboard', 'AccountController');
+Route::get('dashboard', 'AccountController@getIndex');
+Route::post('dashboard/update-user-btag-info', 'AccountController@postUpdateUserBtagInfo');
+Route::post('dashboard/update-user-info', 'AccountController@postUpdateUserInfo');
 
 /**
  * Registring the RESTful Character Controller

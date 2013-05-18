@@ -114,7 +114,6 @@ return array(
         'Illuminate\View\ViewServiceProvider',
         'Illuminate\Workbench\WorkbenchServiceProvider',
         'Cartalyst\Sentry\SentryServiceProvider',
-        'Way\Generators\GeneratorsServiceProvider',
         'Diablo3\Diablo3ServiceProvider',
         'Profiler\ProfilerServiceProvider'
 

@@ -66,6 +66,7 @@
     <div id="footer">
       <div class="container">
         <p class="muted credit">© Personal Diablo Assistant</p>
+        <p class="muted pull-right">Created by <a href="http://www.nicolaswidart.com" target="_blank" title="Nicolas Widart">Nicolas Widart</a> with <a href="http://www.laravel.com" target="_blank" title="Laravel 4 Framework">Laravel 4</a></p>
       </div>
     </div>
 

@@ -24,8 +24,8 @@
         <br>
         <div class="modal-footer">
             <div class="m-btn-group">
-                <a href="#" data-dismiss="modal" class="m-btn black">Cancel</a>
                 {{ Form::submit('Import', ['class' => 'm-btn green']);}}
+                <a href="#" data-dismiss="modal" class="m-btn black jsCloseModal">Close</a>
             </div>
         </div>
     </form>

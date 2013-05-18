@@ -29,7 +29,7 @@ $app->redirectIfTrailingSlash();
 $env = $app->detectEnvironment(array(
 
 	'local' => array('*.dev'),
-    'nw'=> array('http://www.nicolaswidart.com/tfe/*'),
+    'nw'=> array('nicolaswidart.com/tfe/*'),
 
 ));
 
