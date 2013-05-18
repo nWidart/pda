@@ -624,6 +624,12 @@ CHARACTER view
     skillView
     ======================================================================================
  */
+.select2-choice {
+  text-align: center;
+  font-family: 'Ubuntu';
+  font-size: 16px;
+}
+
 .skillView {
   box-shadow: 0 0 0 1px #dfe9f6;
   background: #272727;
