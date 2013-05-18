@@ -59,7 +59,7 @@ class CharacterController extends BaseController {
             'characters' => $this->characters,
             'items'      => $itemSet,
             'skills'     => $skillSet,
-            'heroStats'  => $heroStats
+            'heroStats'  => $heroStats,
         ];
         return View::make( 'user.character', $data );
     }

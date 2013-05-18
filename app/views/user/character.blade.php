@@ -6,10 +6,21 @@ Character View | PDA
 @section('styles')
 @stop
 
+<?php
+    $options = [];
+    foreach ($characters as $char)
+    {
+        $options[$char->id] = $char->name;
+    }
+?>
 @section('content')
     <div class="row">
-        <div class="span8">
+        <div class="span4">
             <h1>Character</h1>
+        </div>
+        <div class="span4 charTitle">
+            {{ Form::select('character', $options, $character['id'], ['class' => 'm-wrap jsCharSelect']);}}
+            <a href="" data-toggle="tooltip" title="" data-original-title="Change the currently viewed character"><i class="icon-info-circled"></i></a>
         </div>
         <div class="span4 charToolbar">
             <div class="m-btn-strip">
@@ -95,12 +106,24 @@ Character View | PDA
 <script>
 $(document).ready(function()
 {
+    // Making the select dropdown redirect to correct profile page
+    $('.jsCharSelect').change( function ()
+    {
+        var charId = $(this).val();
+        window.location = "/character/profile/" + charId;
+    });
+
+    // Activating the tooltips
     $('a[title]').qtip();
+
+    // Making the table awesome
     $("table").tablecloth({
         theme: "default",
         bordered: false,
         striped: false,
     });
+
+    // Activating the tooltips
     $('.nwTooltip').qtip({
         content: {
             title: {

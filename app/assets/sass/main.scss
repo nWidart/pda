@@ -579,6 +579,17 @@ CHARACTER view
     characterView
     ======================================================================================
  */
+.charTitle {
+    margin-top: 13px;
+    a {
+        text-decoration: none;
+        color: $gray;
+        line-height: 29px;
+        i {
+            font-size: 20px;
+        }
+    }
+}
 .actionBar {
     margin-left: 30px;
 }
