@@ -251,6 +251,9 @@ i.s30 {
 .navbar .nav {
   top: 27px;
 }
+.navbar .nav li {
+  margin-right: 15px;
+}
 
 .navbar .nav li.dropdown.open > .dropdown-toggle,
 .navbar .nav li.dropdown.active > .dropdown-toggle,
