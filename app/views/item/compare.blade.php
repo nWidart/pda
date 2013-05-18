@@ -20,14 +20,13 @@ Comparing Items | PDA
             <h2>You're comparing</h2>
             <div class="badge-item">
                 <div class="head">
-                    <p>{{ $item1->name }}</p>
+                    <p class="qualityRare">{{ $item1->name }}</p>
                 </div>
                 <div class="item-data">
                     <div class="icon">
                         {{ HTML::image("assets/img/d3/items/large/{$item1->icon}.png", $item1->name, ['class' => $item1->type ] ) }}
                     </div>
-                    <p>{{ $item1->name }}</p>
-                    <div class="clearfix"></div>
+                    <p class="qualityRare">{{ $item1->name }}</p>
                     <ul class="attrs">
                         @foreach ($item1->attributes as $attr)
                             <li>{{ $attr-> name }} : <span class="value">{{ $attr->max }} </span></li>
@@ -124,7 +123,7 @@ Comparing Items | PDA
                     </ul>
                 </div>
                 <div class="footer">
-                    <button class="m-btn green mini jsAddAttr">+</button>
+                    <!-- <button class="m-btn green mini jsAddAttr">+</button> -->
                 </div>
             </div> <!-- End .badge Item -->
             <button class="m-btn red big btn-block calc">Calculate</button>
@@ -220,7 +219,8 @@ Comparing Items | PDA
                     </tbody>
                 </table>
                 <div class="m-btn-group">
-                    <a href="#" class="m-btn green"><i class="icon-switch"></i> Equip Item</a>
+                    <a href="#" class="m-btn green"><i class="icon-switch"></i> Equip</a>
+                    <a href="#" class="m-btn red"><i class="icon-list-add"></i> Save</a>
                     <a href="#" class="m-btn black reset"><i class="icon-ccw-1"></i> Reset</a>
                 </div>
             </div>

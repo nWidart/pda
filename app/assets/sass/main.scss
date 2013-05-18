@@ -780,17 +780,25 @@ label.inline {
     ======================================================================================
 */
 .badge-item {
-    color: #fff;
     font-size: 14px;
     font-family: Arial,Helvetica,sans-serif;
-    border: 1px solid #000;
-    box-shadow: 0 0 10px #000;
-    opacity: .95;
+    background: #FFF;
+    border: 1px solid $light_blue;
+    // box-shadow: 0 0 10px #000;
+    // opacity: .95;
     width: 424px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.qualityRare {
+    color: #b1a73c!important;
 }
 .badge-item > .head {
-    background: url("../img/item-top.png") no-repeat scroll left top transparent;
+    // background: url("../img/item-top.png") no-repeat scroll left top transparent;
     height: 64px;
+    background: #EEECEC;
+    border-bottom: 1px solid #E3E3E3;
+    margin-bottom: 5px;
 }
     .badge-item > .head > p {
         margin: 0;
@@ -800,8 +808,14 @@ label.inline {
         text-align: center;
         overflow: hidden;
     }
+.badge-item > .head > p,
+.badge-item > .item-data > p{
+    color: $gray;
+    font-family: 'Ubuntu' ;
+    font-weight: 400;
+}
 .badge-item > .item-data {
-    background: url("../img/item-bg.png") repeat-y scroll left top transparent;
+    // background: url("../img/item-bg.png") repeat-y scroll left top transparent;
     padding: 4px 21px;
 }
     .badge-item > .item-data > .icon {
@@ -809,10 +823,10 @@ label.inline {
         background: url(http://us.battle.net/d3/static/images/item/icon-bgs/yellow.png);
         float: left;
         margin: 0 20px 10px 10px;
-        border: 1px solid #000;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
+        width: auto; height: auto;
     }
     .item-data > .attrs {
         list-style: none;
@@ -836,6 +850,7 @@ label.inline {
     }
     .item-data > .attrs .value {
         color: #a4a4c0;
+        font-weight: bold ;
     }
     .icon.rare {
         border-color: #b1a73c;
@@ -844,10 +859,12 @@ label.inline {
 
 .badge-item > .footer {
     text-align: right;
-    background: url("../img/item-bottom.png") no-repeat scroll left top transparent;
+    background: #EEECEC;
+    // background: url("../img/item-bottom.png") no-repeat scroll left top transparent;
     height: 54px;
     line-height: 52px;
     padding: 0 21px;
+    border-top: 1px solid #E3E3E3;
 }
 // Compare DPS - EHP results
 .ehpChange,
