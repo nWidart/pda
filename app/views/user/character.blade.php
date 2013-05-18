@@ -57,7 +57,7 @@ Character View | PDA
                 @foreach($items as $item)
                     <?php $uniqueness = ( $item['unique'] ) ? 'unique' : ''; ?>
                     <?php if ( $item['type'] === 'ring' ) : ?>
-                        <li class="<?php echo $item['type'] . ' ' . $uniqueness; ?>" id="<?php echo $n; ?>">
+                        <li class="<?php echo $item['type'] . ' ' . $uniqueness . ' ring-' . $n; ?>" id="<?php echo $n; ?>">
                             <a href="{{ URL::to('item/compare')}}" data-tooltip="<?php
                               foreach ($item['item']['attributes'] as $attr) {
                                     echo $attr['name'] . ' : ' . $attr['max'].'<br>';

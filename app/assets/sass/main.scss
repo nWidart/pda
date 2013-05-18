@@ -682,6 +682,9 @@ CHARACTER view
     bottom: 230px;
     left: 325px;
 }
+.characterView li.ring-0 {
+    left: 100px;
+}
 .characterView li.ring:nth-child(1) {
     left: 10px;
 }
