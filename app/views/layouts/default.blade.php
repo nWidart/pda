@@ -92,6 +92,8 @@
     <script type="text/javascript">
     $(document).ready(function()
     {
+        $("select.m-wrap").select2();
+
         $('body').tooltip({
           selector: "a[data-toggle=tooltip]",
           container: 'body'
