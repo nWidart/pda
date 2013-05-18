@@ -20,7 +20,7 @@ Comparing Items | PDA
             <h2>You're comparing</h2>
             <div class="badge-item">
                 <div class="head">
-                    <p class="qualityRare">{{ $item1->name }}</p>
+                    <p class="">{{ $item1->name }}</p>
                 </div>
                 <div class="item-data">
                     <div class="icon">

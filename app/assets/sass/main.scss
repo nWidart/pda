@@ -799,9 +799,12 @@ label.inline {
 .badge-item > .head {
     // background: url("../img/item-top.png") no-repeat scroll left top transparent;
     height: 64px;
-    background: #EEECEC;
-    border-bottom: 1px solid #E3E3E3;
+    // background: #EEECEC;
+    background: $red;
+    border-bottom: 1px solid $dark_red;
     margin-bottom: 5px;
+    -webkit-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
 }
     .badge-item > .head > p {
         margin: 0;
@@ -810,9 +813,9 @@ label.inline {
         line-height: 64px;
         text-align: center;
         overflow: hidden;
+        color: #fff;
     }
-.badge-item > .head > p,
-.badge-item > .item-data > p{
+.badge-item > .item-data > p {
     color: $gray;
     font-family: 'Ubuntu' ;
     font-weight: 400;
@@ -867,12 +870,14 @@ label.inline {
 
 .badge-item > .footer {
     text-align: right;
-    background: #EEECEC;
     // background: url("../img/item-bottom.png") no-repeat scroll left top transparent;
-    height: 54px;
-    line-height: 52px;
-    padding: 0 21px;
-    border-top: 1px solid #E3E3E3;
+    // height: 54px;
+    // line-height: 52px;
+    // padding: 0 21px;
+    // background: $red;
+    // border-top: 1px solid $dark_red;
+    // -webkit-border-radius: 0 0 3px 3px;
+    // border-radius: 0 0 3px 3px;
 }
 // Compare DPS - EHP results
 .ehpChange,

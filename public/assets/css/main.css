@@ -906,9 +906,11 @@ label.inline {
 
 .badge-item > .head {
   height: 64px;
-  background: #EEECEC;
-  border-bottom: 1px solid #e3e3e3;
+  background: #eb5a47;
+  border-bottom: 1px solid #9b3b2f;
   margin-bottom: 5px;
+  -webkit-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
 }
 
 .badge-item > .head > p {
@@ -918,9 +920,9 @@ label.inline {
   line-height: 64px;
   text-align: center;
   overflow: hidden;
+  color: #fff;
 }
 
-.badge-item > .head > p,
 .badge-item > .item-data > p {
   color: #494949;
   font-family: "Ubuntu";
@@ -980,11 +982,6 @@ label.inline {
 
 .badge-item > .footer {
   text-align: right;
-  background: #EEECEC;
-  height: 54px;
-  line-height: 52px;
-  padding: 0 21px;
-  border-top: 1px solid #e3e3e3;
 }
 
 .ehpChange,
