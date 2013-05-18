@@ -850,7 +850,12 @@ label.inline {
     }
     .item-data > .attrs .value {
         color: #a4a4c0;
-        font-weight: bold ;
+        font-weight: bold;
+        a {
+            text-decoration: none;
+            color: #a4a4c0;
+            border-color: #a4a4c0;
+        }
     }
     .icon.rare {
         border-color: #b1a73c;

@@ -63,62 +63,62 @@ Comparing Items | PDA
                         <li>
                             {{ Form::label('strength', 'Strength', ['class' => 'm-wrap inline']) }} :
                             <!-- {{ Form::input('text', 'strength', '0', ['class' => 'm-wrap m-ctrl-mini' ]) }} -->
-                            <a href="#" class="itemEdit itemStr" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Strength">0</a>
+                            <span class="value"><a href="#" class="itemEdit itemStr" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Strength">0</span></a>
                         </li>
                         <li>
                             {{ Form::label('dexterity', 'Dexterity', ['class' => 'm-wrap inline']) }} :
                             <!-- {{ Form::input('text', 'dexterity', '0', ['class' => 'm-wrap m-ctrl-mini' ]) }} -->
-                            <a href="#" class="itemEdit itemDex" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Dexterity">0</a>
+                            <span class="value"><a href="#" class="itemEdit itemDex" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Dexterity">0</a></span>
                         </li>
                         <li>
                             {{ Form::label('intelligence', 'Intelligence', ['class' => 'm-wrap inline']) }} :
                             <!-- {{ Form::input('text', 'intelligence', '0', ['class' => 'm-wrap m-ctrl-mini' ]) }} -->
-                            <a href="#" class="itemEdit itemInt" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Intelligence">0</a>
+                            <span class="value"><a href="#" class="itemEdit itemInt" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Intelligence">0</a></span>
                         </li>
                         <li>
                             {{ Form::label('vitality', 'Vitality', ['class' => 'm-wrap inline']) }} :
                             <!-- {{ Form::input('text', 'vitality', '0', ['class' => 'm-wrap m-ctrl-mini' ]) }} -->
-                            <a href="#" class="itemEdit itemVit" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Vitality">0</a>
+                            <span class="value"><a href="#" class="itemEdit itemVit" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Vitality">0</a></span>
                         </li>
                         <li>
                             {{ Form::label('armor', 'Armor', ['class' => 'm-wrap inline']) }} :
                             <!-- {{ Form::input('text', 'armor', '0', ['class' => 'm-wrap m-ctrl-mini' ]) }} -->
-                            <a href="#" class="itemEdit itemArmor" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Armor">0</a>
+                            <span class="value"><a href="#" class="itemEdit itemArmor" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Armor">0</a></span>
                         </li>
                         <li>
                             {{ Form::label('allResi', 'All Resist', ['class' => 'm-wrap inline']) }} :
                             <!-- {{ Form::input('text', 'allResi', '0', ['class' => 'm-wrap m-ctrl-mini' ]) }} -->
-                            <a href="#" class="itemEdit itemAllRes" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item All Resist">0</a>
+                            <span class="value"><a href="#" class="itemEdit itemAllRes" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item All Resist">0</a></span>
                         </li>
                         <li>
                             {{ Form::label('dodgePercent', 'Dodge %', ['class' => 'm-wrap inline']) }} :
                             <!-- {{ Form::input('text', 'dodgePercent', '0', ['class' => 'm-wrap m-ctrl-mini' ]) }} -->
-                            <a href="#" class="itemEdit itemDodgePercent" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Dodge %">0</a>
+                            <span class="value"><a href="#" class="itemEdit itemDodgePercent" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Dodge %">0</a></span>
                         </li>
                         <li>
                             {{ Form::label('bonusLifePercent', 'Extra Life %', ['class' => 'm-wrap inline']) }} :
                             <!-- {{ Form::input('text', 'bonusLifePercent', '0', ['class' => 'm-wrap m-ctrl-mini' ]) }} -->
-                            <a href="#" class="itemEdit itemBonusLifePercent" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Extra Life %">0</a>
+                            <span class="value"><a href="#" class="itemEdit itemBonusLifePercent" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Extra Life %">0</a></span>
                         </li>
                         <li>
                             {{ Form::label('meleeReduction', 'Melee Reduction', ['class' => 'm-wrap inline']) }} :
                             <!-- {{ Form::input('text', 'meleeReduction', '0', ['class' => 'm-wrap m-ctrl-mini' ]) }} -->
-                            <a href="#" class="itemEdit itemMeleeReduction" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Melee Reduction">0</a>
+                            <span class="value"><a href="#" class="itemEdit itemMeleeReduction" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Melee Reduction">0</a></span>
                         </li>
                         <li>
                             {{ Form::label('rangedReduction', 'Ranged Reduction', ['class' => 'm-wrap inline']) }} :
                             <!-- {{ Form::input('text', 'rangedReduction', '0', ['class' => 'm-wrap m-ctrl-mini' ]) }} -->
-                            <a href="#" class="itemEdit itemRangedReduction" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Ranged Reduction">0</a>
+                            <span class="value"><a href="#" class="itemEdit itemRangedReduction" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Ranged Reduction">0</a></span>
                         </li>
                         <li>
                             {{ Form::label('eliteReduction', 'Elite Reduction', ['class' => 'm-wrap inline']) }} :
                             <!-- {{ Form::input('text', 'eliteReduction', '0', ['class' => 'm-wrap m-ctrl-mini' ]) }} -->
-                            <a href="#" class="itemEdit itemEliteReduction" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Elite Reduction">0</a>
+                            <span class="value"><a href="#" class="itemEdit itemEliteReduction" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Elite Reduction">0</a></span>
                         </li>
                         <li>
                             {{ Form::label('blockChance', 'Block Chance', ['class' => 'm-wrap inline']) }} :
                             <!-- {{ Form::input('text', 'blockChance', '0', ['class' => 'm-wrap m-ctrl-mini' ]) }} -->
-                            <a href="#" class="itemEdit itemBlockChance" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Block Chance">0</a>
+                            <span class="value"><a href="#" class="itemEdit itemBlockChance" data-type="text" data-pk="1" data-url="{{ URL::to('items/update') }}" data-original-title="Enter Item Block Chance">0</a></span>
                         </li>
                     </ul>
                 </div>
