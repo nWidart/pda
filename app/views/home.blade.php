@@ -27,8 +27,7 @@
         <h2>Character View</h2>
         <span class="icon"><i class="icon-user-1"></i></span>
         <p>
-            You'll be able to easily import all your desired characters to your PDA. Once your characters imported
-            you'll be presented with a <strong>clean dashboard view of all your characters</strong> with their current levels. From here you can select to go to single character view for more detailed information.
+            You'll be able to easily import all your desired characters to your PDA. You'll be presented with a <strong>clean dashboard view of all your characters</strong> with their current levels. From here you can select to go to single character view for more detailed information.
         </p>
 
     </div>
@@ -36,7 +35,7 @@
         <h2>Item Compare</h2>
         <span class="icon"><i class="icon-tools"></i></span>
         <p>
-            <strong>Comparing items have never been easier!</strong> When your characters are imported you can go to single character view mode. From here you can select which item to compare, and which item to compare it to. Items can be created and stored for future reference in case you want to compare multiple items.
+            <strong>Comparing items have never been easier!</strong> When in single mode view you can select which item to compare, and which item to compare it to. Items can be <strong>created and stored</strong> for future reference in case you want to compare multiple items.
         </p>
 
     </div>
@@ -44,7 +43,7 @@
         <h2>Auction House Calculators</h2>
         <span class="icon"><i class="icon-tools"></i></span>
         <p>
-            <strong>Don't want to lose money buying items & commidities on the Auction House?</strong> The Auction House Tools are here to help you with this difficult task! Find out if an item is worth selling for gold and selling the gold for real money or directly selling that item for real money first.
+            <strong>Don't want to lose money buying items & commidities on the Auction House?</strong> Find out if an item is worth selling for gold and selling the gold for real money or directly selling that item for real money first.
         </p>
     </div>
 
