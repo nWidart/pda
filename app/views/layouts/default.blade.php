@@ -61,8 +61,8 @@
             @if( Sentry::check() )
                 @include('layouts.modals')
             @endif
-        @yield('cta')
         </div> <!-- /container -->
+        @yield('cta')
         <div id="push"></div>
     </div><!-- wrap -->
 
