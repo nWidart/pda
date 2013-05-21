@@ -32,7 +32,7 @@
                 @else
                     <ul class="nav">
                         <li {{{ (Request::is('/') ? 'class=active' : '') }}}><a href="{{{ URL::to('') }}}">Home</a></li>
-                        <li><a href="#about">Features</a></li>
+                        <!-- <li><a href="#about">Features</a></li> -->
                     </ul>
                 @endif
             </div><!--/.nav-collapse -->
