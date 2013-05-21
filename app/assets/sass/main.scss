@@ -656,6 +656,7 @@ CHARACTER view
     top: 20px;
     left: 220px;
 }
+.characterView li.cloak,
 .characterView li.chest {
     top: 155px;
     left: 211px;
@@ -689,15 +690,16 @@ CHARACTER view
     left: 325px;
 }
 
+// Main hands
+.characterView li.xbow,
 .characterView li.mace {
     bottom: 20px;
     left: 100px;
 }
-.characterView li.sword {
-    bottom: 20px;
-    left: 325px;
-}
 // Offhands
+.characterView li.sword,
+.characterView li.quiver,
+.characterView li.spear,
 .characterView li.shield {
     bottom: 20px;
     left: 325px;

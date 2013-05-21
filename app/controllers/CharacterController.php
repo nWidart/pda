@@ -29,10 +29,11 @@ class CharacterController extends BaseController {
         Session::put( 'charId', $id );
 
         // TODO Change to 1day+?
-        $heroStats = Cache::remember('heroStats', 10, function()
-        {
-            return Diablo3Util::saveCharacterStatistics( Session::get('charId') );
-        });
+        // $heroStats = Cache::remember('heroStats', 10, function()
+        // {
+        //     return Diablo3Util::saveCharacterStatistics( Session::get('charId') );
+        // });
+        $heroStats = Diablo3Util::saveCharacterStatistics( Session::get('charId') );
 
         // Gets all the items + adds the type & uniqueness to it
         // TODO Better cache system

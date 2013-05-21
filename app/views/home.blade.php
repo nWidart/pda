@@ -58,7 +58,6 @@
             <a href="{{ URL::to('auth/register') }}" class="m-btn red big">Sign up for free</a>
         </div>
     </div>
-
 @stop
 
 @section('scripts')

@@ -193,6 +193,7 @@ class Diablo3Util {
                     $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
                     break;
 
+                case Str::contains($item['icon'], 'shoulder'):
                 case Str::contains($item['icon'], 'shoulders'):
                     $itemSet[$n]['type'] = 'shoulders';
                     $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
@@ -238,6 +239,22 @@ class Diablo3Util {
                     $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
                     break;
 
+                case Str::contains($item['icon'], 'spear'):
+                    $itemSet[$n]['type'] = 'spear';
+                    $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
+                    break;
+                case Str::contains($item['icon'], 'cloak'):
+                    $itemSet[$n]['type'] = 'cloak';
+                    $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
+                    break;
+                case Str::contains($item['icon'], 'quiver'):
+                    $itemSet[$n]['type'] = 'quiver';
+                    $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
+                    break;
+                case Str::contains($item['icon'], 'xbow'):
+                    $itemSet[$n]['type'] = 'xbow';
+                    $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
+                    break;
                 default:
                     $itemSet[$n]['type'] = 'nothingYet';
                     $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
