@@ -821,7 +821,7 @@ CHARACTER view
 }
 
 table.statistics {
-  background: #FFF;
+  background: #f1f1f1;
   -webkit-box-shadow: 0 0 0 1px #dfe9f6;
   box-shadow: 0 0 0 1px #dfe9f6;
   -webkit-border-radius: 3px 3px 0 0;
@@ -893,7 +893,7 @@ table.statistics td {
 }
 
 table.statistics tr:hover td {
-  background: #f1f1f1;
+  background: #fff;
 }
 
 /*
