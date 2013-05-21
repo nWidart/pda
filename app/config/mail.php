@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'i.need@nicolaswidart.com', 'name' => 'Nicolas Widart'),
+	'from' => array('address' => 'i.need@nicolaswidart.com', 'name' => 'Your Personal Diablo Assistant'),
 
 	/*
 	|--------------------------------------------------------------------------

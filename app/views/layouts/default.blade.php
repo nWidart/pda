@@ -32,8 +32,8 @@
     @section('styles')
     @show
     <script src="http://us.battle.net/d3/static/js/tooltips.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="{{ asset( 'assets/js/jquery-1.9.1.min.js' )}}"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 
     <!--[if IE 7]>
@@ -52,24 +52,26 @@
   </head>
 
   <body>
+    <div id="wrap">
+        @include('layouts.navigation')
+        @yield('slider')
+        <div class="container">
+            @include('layouts.notifications')
+            @yield('content')
+            @if( Sentry::check() )
+                @include('layouts.modals')
+            @endif
+        </div> <!-- /container -->
+        @yield('cta')
+        <div id="push"></div>
+    </div><!-- wrap -->
 
-    @include('layouts.navigation')
-    @yield('slider')
-    <div class="container">
-        @include('layouts.notifications')
-        @yield('content')
-        @if( Sentry::check() )
-            @include('layouts.modals')
-        @endif
-    </div> <!-- /container -->
-    @yield('cta')
-    <div id="footer">
-      <div class="container">
-        <p class="muted credit">© Personal Diablo Assistant</p>
-        <p class="muted pull-right">Created by <a href="http://www.nicolaswidart.com" target="_blank" title="Nicolas Widart">Nicolas Widart</a> with <a href="http://www.laravel.com" target="_blank" title="Laravel 4 Framework">Laravel 4</a></p>
-      </div>
-    </div>
-
+        <div id="footer">
+          <div class="container">
+            <p class="muted credit">© Personal Diablo Assistant</p>
+            <p class="muted pull-right">Created by <a href="http://www.nicolaswidart.com" target="_blank" title="Nicolas Widart">Nicolas Widart</a> with <a href="http://www.laravel.com" target="_blank" title="Laravel 4 Framework">Laravel 4</a></p>
+          </div>
+        </div>
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

@@ -1,4 +1,3 @@
-@codekit-prepend "/bootstrap/bootstrap.min.js", "/bootstrap/bootstrap-ajax.js", "/bootstrap/bootstrap-editable-min.js", "/bootstrap/bootstrap-modal.js", "/bootstrap/bootstrap-modalmanager.js", "/bootstrap/jquery.tablecloth.min.js", "/bootstrap/jquery.metadata.js", "/bootstrap/twitter-bootstrap-hover-dropdown.min.js";
 $(document).ready(function() {
     /**
      * Table Toggles on character page

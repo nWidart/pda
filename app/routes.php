@@ -43,7 +43,8 @@ Route::post('dashboard/update-user-info', 'AccountController@postUpdateUserInfo'
  * Registring the RESTful Character Controller
  *
  */
-Route::get('character/profile/{id}', 'CharacterController@getProfile');
+Route::get('character/profile/{id}', 'CharacterController@getProfile')->where('id', '\d+');
+
 
 /**
  * Registring the Auction House tools

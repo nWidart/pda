@@ -8,6 +8,11 @@ Event::listen('hero.import', function()
     Cache::forget('heroes');
 });
 
+Event::listen('404', function()
+{
+    return "404!";
+});
+
 /*
 |--------------------------------------------------------------------------
 | Application & Route Filters
