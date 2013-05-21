@@ -25,9 +25,8 @@ web1:
     - eaccelerator
     - zip
     - redis
-  after_build: uncomment this you need composer
+  after_build:
     - "if [ ! -f composer.phar ]; then curl -s http://getcomposer.org/installer | php; fi; php composer.phar install"
-
   after_deploy:
     - "rm -f storage/cache/*"
     - "rm -f storage/views/*"
