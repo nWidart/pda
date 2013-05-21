@@ -499,7 +499,7 @@ i.s30 {
 .badge-big > a.hidden-eye {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 15px;
   color: #5d6d81;
   -webkit-transition: all ease-in-out 0.1s;
   -moz-transition: all ease-in-out 0.1s;
