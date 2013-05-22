@@ -31,6 +31,8 @@ The is the sourcecode for the PDA website.
 
 *** 
 
+## Installation
+See install.md
 
 
 ## More Info

@@ -69,7 +69,7 @@
         <div id="footer">
           <div class="container">
             <p class="muted credit">© Personal Diablo Assistant</p>
-            <p class="muted pull-right">Created by <a href="http://www.nicolaswidart.com" target="_blank" title="Nicolas Widart">Nicolas Widart</a> with <a href="http://www.laravel.com" target="_blank" title="Laravel 4 Framework">Laravel 4</a></p>
+            <p class="muted pull-right">Created by <a href="http://www.nicolaswidart.com" target="_blank" title="Nicolas Widart">Nicolas Widart</a> with <a href="http://www.laravel.com" target="_blank" title="Laravel 4 Framework">Laravel 4</a> | <a href="https://github.com/nWidart/pda/blob/master/readme.md" alt="Credits" title="Credits" target="_blank">Credits</a></p>
           </div>
         </div>
     <!-- Le javascript
