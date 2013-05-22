@@ -19,14 +19,14 @@ class AccountController extends BaseController {
      */
     public function getIndex()
     {
-        Event::fire('test');
         // Look for characters for logged in user
         $user = User::find( (int)Sentry::getUser()->id )->characters->first();
         // Cache::forget('heroes');
-        $heroes = Cache::remember('heroes', 10, function ()
-        {
-           return  ( $this->_getHeroes() ) ? $this->_getHeroes() : '';
-        });
+        // $heroes = Cache::remember('heroes', 10, function ()
+        // {
+        //    return  ( $this->_getHeroes() ) ? $this->_getHeroes() : '';
+        // });
+        $heroes = ( $this->_getHeroes() ) ? $this->_getHeroes() : '';
 
         // If the user has characters
         if ( $user )

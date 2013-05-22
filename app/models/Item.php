@@ -10,7 +10,7 @@ class Item extends Eloquent {
 
     public function characters()
     {
-        return $this->belongsToMany('character', 'character_items', 'character_id', 'item_id');
+        return $this->belongsToMany('Character', 'character_items', 'character_id', 'item_id');
     }
     // public function modifiers()
     // {

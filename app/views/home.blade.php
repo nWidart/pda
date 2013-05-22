@@ -11,7 +11,7 @@
             <h1>Compare items</h1>
             <a class="m-btn red" href="{{ URL::to('auth/register') }}"><i class="icon-play-1"></i> Get Started</a>
         </li>
-        <li style="background-image: url({{ asset('assets/img/featured/slide4.jpg') }});  ">
+        <li style="background-image: url({{ asset('assets/img/featured/slide3.jpg') }});  ">
             <h1>Check detailed character statistics.</h1>
             <a class="m-btn red" href="{{ URL::to('auth/register') }}"><i class="icon-play-1"></i> Get Started</a>
         </li>

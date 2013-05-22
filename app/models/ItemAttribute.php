@@ -5,7 +5,7 @@ class ItemAttribute extends Eloquent {
      *
      * @var string
      */
-    protected $table = 'ItemAttributes';
+    protected $table = 'itemAttributes';
     public $timestamps = false;
 
     public function item()
