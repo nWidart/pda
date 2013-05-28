@@ -609,6 +609,10 @@ CHARACTER view
  */
 .charTitle {
     margin-top: 13px;
+    margin-bottom: 20px;
+    h1 {
+        display: inline;
+    }
     a {
         text-decoration: none;
         color: $gray;
@@ -864,6 +868,9 @@ label.inline {
         -moz-border-radius: 5px;
         border-radius: 5px;
         width: auto; height: auto;
+    }
+    .characterView .unique > .icon {
+        background: url(http://us.battle.net/d3/static/images/item/icon-bgs/orange.png);
     }
     .characterView .icon {
         margin: 0;

@@ -10,18 +10,17 @@ Character View | PDA
     $options = [];
     foreach ($characters as $char)
     {
-        $options[$char->id] = $char->name;
+        $options[$char->id] = $char->name . ' (' . $char->level . ')';
     }
 ?>
 @section('content')
     <div class="row">
-        <div class="span4">
+        <div class="span8 charTitle">
             <h1>Character</h1>
-        </div>
-        <div class="span4 charTitle">
             {{ Form::select('character', $options, $character['id'], ['class' => 'm-wrap jsCharSelect']);}}
             <a href="" data-toggle="tooltip" title="" data-original-title="Change the currently viewed character"><i class="icon-info-circled"></i></a>
         </div>
+
         <div class="span4 charToolbar">
             <div class="m-btn-strip">
                 <div class="m-btn-group">

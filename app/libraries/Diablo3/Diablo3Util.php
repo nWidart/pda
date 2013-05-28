@@ -596,7 +596,7 @@ class Diablo3Util {
         $heroStats['offensiveStatistics']['criticalHitChance'] = $this->_getPercent( $heroStats['offensiveStatistics']['criticalHitChance'] );
         $heroStats['offensiveStatistics']['criticalHitDamage'] = round( $heroStats['offensiveStatistics']['criticalHitDamage'] * 1000, 2);
 
-        \ChromePhp::log($heroStats);
+        // \ChromePhp::log($heroStats);
         return $heroStats;
     }
 
@@ -609,7 +609,7 @@ class Diablo3Util {
     {
         if ( isset( $item->name ) )
         {
-            \ChromePhp::log($item->name);
+            // \ChromePhp::log($item->name);
             $attr = $item->attributes()->where('name', '=', $attribute )->first();
         }
 
