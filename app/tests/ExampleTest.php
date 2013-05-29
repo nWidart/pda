@@ -7,13 +7,13 @@ class ExampleTest extends TestCase {
 	 *
 	 * @return void
 	 */
-	public function testBasicExample()
+	public function testHomePage()
 	{
 		$crawler = $this->client->request('GET', '/');
 
 		$this->assertTrue($this->client->getResponse()->isOk());
 
-		$this->assertCount(1, $crawler->filter('h1:contains("Hello World!")'));
+		$this->assertCount(1, $crawler->filter('h2:contains("Character View")'));
 	}
 
 }

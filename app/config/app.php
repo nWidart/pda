@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => true,
+	'debug' => false,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -116,6 +116,7 @@ return array(
 
 		'Cartalyst\Sentry\SentryServiceProvider', // Auth & Perms
 		'Profiler\ProfilerServiceProvider', // Dev
+		'Prologue\Phpconsole\PhpconsoleServiceProvider', // Dev
 
 		'Diablo3\Diablo3ServiceProvider'
 
@@ -185,7 +186,10 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 
 		'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
+
+		# Dev
         'Profiler'        => 'Profiler\Facades\Profiler',
+        'Phpconsole' 	  => 'Prologue\Phpconsole\Facades\Phpconsole',
 
 	),
 
