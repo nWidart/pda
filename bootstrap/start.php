@@ -28,9 +28,7 @@ $app->redirectIfTrailingSlash();
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('*.dev'),
-    'nw'=> array('nicolaswidart.com/tfe/*'),
-    'production' => array('http://*.pagodabox.com','*.pagodabox.com'),
+	'local' => array('*.dev', '*pda*'),
 
 ));
 

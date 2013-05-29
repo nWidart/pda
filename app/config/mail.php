@@ -11,7 +11,7 @@ return array(
 	| sending of e-mail. You may specify which one you're using throughout
 	| your application here. By default, Laravel is setup for SMTP mail.
 	|
-	| Supported: "smtp", "mail"
+	| Supported: "smtp", "mail", "sendmail"
 	|
 	*/
 
@@ -28,7 +28,7 @@ return array(
 	|
 	*/
 
-	'host' => 'smtp.postmarkapp.com',
+	'host' => 'smtp.postmarkapp.org',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -94,5 +94,18 @@ return array(
 	*/
 
 	'password' => '9fdda09d-d1b0-4031-8cde-0a01c0f7c530',
+
+	/*
+	|--------------------------------------------------------------------------
+	| Sendmail System Path
+	|--------------------------------------------------------------------------
+	|
+	| When using the "sendmail" driver to send e-mails, we will need to know
+	| the path to where Sendmail lives on this server. A default path has
+	| been provided here, which will work well on most of your systems.
+	|
+	*/
+
+	'sendmail' => '/usr/sbin/sendmail -bs',
 
 );

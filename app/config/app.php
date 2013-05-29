@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => 'http://pda2.dev:8888',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -114,9 +114,10 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
-		'Cartalyst\Sentry\SentryServiceProvider',
-		'Profiler\ProfilerServiceProvider',
-		'Diablo3\Diablo3ServiceProvider',
+		'Cartalyst\Sentry\SentryServiceProvider', // Auth & Perms
+		'Profiler\ProfilerServiceProvider', // Dev
+
+		'Diablo3\Diablo3ServiceProvider'
 
 	),
 
@@ -182,8 +183,9 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+
 		'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
-		'Profiler'		  => 'Profiler\Facades\Profiler',
+        'Profiler'        => 'Profiler\Facades\Profiler',
 
 	),
 
