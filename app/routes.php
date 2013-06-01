@@ -1,8 +1,7 @@
 <?php
 # Homepage
-Route::get('/', [ 'as' => 'home', function()
-{
-	return View::make('home');
+Route::get('/', [ 'as' => 'home', function() {
+    return View::make('home');
 }]);
 
 /**
@@ -45,7 +44,6 @@ Route::post('dashboard/update-user-info', 'AccountController@postUpdateUserInfo'
  */
 Route::get('character/profile/{id}', 'CharacterController@getProfile')->where('id', '\d+');
 
-
 /**
  * Registring the Auction House tools
  */
@@ -54,8 +52,7 @@ Route::get('ah/gold-or-realmoney', 'AuctionHouseController@getGoldOrRealMoney');
 
 Route::get('item/compare/{itemId}', 'DiabloController@getCompareItem');
 
-Route::post('items/update', function()
-{
+Route::post('items/update', function() {
     $name = Input::get('value');
     ChromePhp::log($name);
 });

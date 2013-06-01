@@ -255,6 +255,18 @@ class Diablo3Util {
                     $itemSet[$n]['type'] = 'xbow';
                     $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
                     break;
+                case Str::contains($item['icon'], 'axe'):
+                    $itemSet[$n]['type'] = 'axe';
+                    $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
+                    break;
+                case Str::contains($item['icon'], 'source'):
+                    $itemSet[$n]['type'] = 'source';
+                    $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
+                    break;
+                case Str::contains($item['icon'], 'orb'):
+                    $itemSet[$n]['type'] = 'orb';
+                    $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );
+                    break;
                 default:
                     $itemSet[$n]['type'] = 'nothingYet';
                     $itemSet[$n]['unique'] = $this->isUniqueItem( $item['icon'] );

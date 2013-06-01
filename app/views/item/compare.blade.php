@@ -278,7 +278,7 @@ $(function()
         $('ul.attrs').append( html );
     });
 
-    $.fn.editable.defaults.mode = 'popup';
+    $.fn.editable.defaults.mode = 'inline';
     $('.itemEdit').editable();
 
     $('.itemType').editable({

@@ -58,7 +58,7 @@ Character View | PDA
                     <?php if ( $item['type'] === 'ring' ) : ?>
                         <li class="<?php echo $item['type'] . ' ' . $uniqueness . ' ring-' . $n; ?>" id="<?php echo $n; ?>">
                             <div class="icon">
-                                <a href="{{ URL::to('item/compare')}}" data-tooltip="<?php
+                                <a href="{{ URL::to('item/compare/' . $item['item']['id'] )}}" data-tooltip="<?php
                                   foreach ($item['item']['attributes'] as $attr) {
                                         echo $attr['name'] . ' : ' . $attr['max'].'<br>';
                                     }

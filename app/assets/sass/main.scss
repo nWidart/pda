@@ -75,6 +75,7 @@ h2 {
     font-size: 18px;
     color: $gray;
     font-weight: 300;
+    margin-bottom: 15px;
 }
 h3 {
     font-weight: 400;
@@ -319,6 +320,7 @@ i.s30 {
 .banner {
     position: relative;
     width: 101%;
+    margin-bottom: 30px;
     overflow: auto;
     font-size: 18px;
     line-height: 24px;
@@ -407,7 +409,6 @@ i.s30 {
 }
 .wrapper {
     border-top: 1px solid #dedede;
-    border-bottom: 1px solid #dedede;
     background-color: #f3f5f7; // layer fill content
     @include background-image(linear-gradient(bottom, #eaebed 0%, #f3f5f7 100%)); // gradient overlay
     margin: 30px 0;
@@ -695,6 +696,7 @@ CHARACTER view
 }
 
 // Main hands
+.characterView li.axe,
 .characterView li.xbow,
 .characterView li.mace {
     bottom: 20px;
@@ -703,6 +705,8 @@ CHARACTER view
 // Offhands
 .characterView li.sword,
 .characterView li.quiver,
+.characterView li.source,
+.characterView li.orb,
 .characterView li.spear,
 .characterView li.shield {
     bottom: 20px;
