@@ -29,7 +29,7 @@ class CharacterController extends BaseController {
         // $heroStats = Diablo3Util::saveCharacterStatistics( $id );
         $skillSet = Diablo3Util::getSkillset( $character->hero_id );
 
-        ChromePhp::log( Config::get('heroStats.heroStats'));
+        // ChromePhp::log( Config::get('heroStats.heroStats'));
         $data = [
             'user'       => Sentry::getUser(),
             'character' => $character,
