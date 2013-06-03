@@ -4,11 +4,22 @@ use Cartalyst\Sentry\Users\Eloquent\User as SentryUserModel;
 class User extends SentryUserModel {
 
 	/**
-	 * The database table used by the model.
+	 * Indicates if the model should soft delete.
 	 *
-	 * @var string
+	 * @var bool
 	 */
-	protected $table = 'users';
+	protected $softDelete = true;
+
+	/**
+	 * The date fields for the model.
+	 *
+	 * @var array
+	 */
+	protected $dates = array(
+		'created_at',
+		'updated_at',
+		'deleted_at',
+	);
 
 	public function fullName()
 	{
