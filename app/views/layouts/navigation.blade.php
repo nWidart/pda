@@ -39,6 +39,9 @@
             <div class="pull-right">
                 <ul class="nav pull-right">
                     @if( Sentry::check() )
+                        @if(Sentry::getUser()->hasAccess('admin'))
+                            <li><a href="{{ URL::to('admin') }}">Admin Dashboard</a></li>
+                        @endif
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
                             <span class="username">
                             <?php echo ( empty( Sentry::getUser()->first_name ) ) ? '{John Doe}' : Sentry::getUser()->first_name; ?></span>

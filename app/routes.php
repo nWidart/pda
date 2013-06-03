@@ -8,19 +8,22 @@ Route::get('/', [ 'as' => 'home', function() {
  * Registring the Authentication Routes
  *
  */
-# Login
-Route::get('auth/login', 'AuthController@getLogin');
-Route::post('auth/login', 'AuthController@postLogin');
+Route::group(array('prefix' => 'auth'), function()
+{
+    # Login
+    Route::get('login', 'AuthController@getLogin');
+    Route::post('login', 'AuthController@postLogin');
 
-# Register
-Route::get('auth/register', 'AuthController@getRegister');
-Route::post('auth/register', 'AuthController@postRegister');
+    # Register
+    Route::get('register', 'AuthController@getRegister');
+    Route::post('register', 'AuthController@postRegister');
 
-# Account Activation
-Route::get('auth/activate/{userId}/{activationCode}', 'AuthController@getActivate');
+    # Account Activation
+    Route::get('activate/{userId}/{activationCode}', 'AuthController@getActivate');
 
-# Logout
-Route::get('auth/logout', 'AuthController@getLogout');
+    # Logout
+    Route::get('logout', 'AuthController@getLogout');
+});
 
 /**
  * Registring the RESTful Diablo Controller
@@ -33,10 +36,12 @@ Route::get('diablo/sync/{charId}', 'DiabloController@getSync');
  * Registring the RESTful Account Controller
  *
  */
-// Route::controller('dashboard', 'AccountController');
-Route::get('dashboard', 'AccountController@getIndex');
-Route::post('dashboard/update-user-btag-info', 'AccountController@postUpdateUserBtagInfo');
-Route::post('dashboard/update-user-info', 'AccountController@postUpdateUserInfo');
+Route::group(array('prefix' => 'dashboard'), function()
+{
+    Route::get('/', 'AccountController@getIndex');
+    Route::post('update-user-btag-info', 'AccountController@postUpdateUserBtagInfo');
+    Route::post('update-user-info', 'AccountController@postUpdateUserInfo');
+});
 
 /**
  * Registring the RESTful Character Controller
@@ -55,4 +60,15 @@ Route::get('item/compare/{itemId}', 'DiabloController@getCompareItem');
 Route::post('items/update', function() {
     $name = Input::get('value');
     ChromePhp::log($name);
+});
+
+
+/**
+ * Registring Admin routes
+ *
+ */
+Route::group(array('prefix' => 'admin'), function()
+{
+    # Dashboard
+    Route::get('/', array('as' => 'admin', 'uses' => 'Controllers\Admin\DashboardController@getIndex'));
 });
