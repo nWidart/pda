@@ -69,6 +69,17 @@ Route::post('items/update', function() {
  */
 Route::group(array('prefix' => 'admin'), function()
 {
+    # User Management
+    Route::group(array('prefix' => 'users'), function()
+    {
+        Route::get('/', array('as' => 'users', 'uses' => 'Controllers\Admin\UsersController@getIndex'));
+        Route::get('create', array('as' => 'create/user', 'uses' => 'Controllers\Admin\UsersController@getCreate'));
+        Route::post('create', 'Controllers\Admin\UsersController@postCreate');
+        Route::get('{userId}/edit', array('as' => 'update/user', 'uses' => 'Controllers\Admin\UsersController@getEdit'));
+        Route::post('{userId}/edit', 'Controllers\Admin\UsersController@postEdit');
+        Route::get('{userId}/delete', array('as' => 'delete/user', 'uses' => 'Controllers\Admin\UsersController@getDelete'));
+        Route::get('{userId}/restore', array('as' => 'restore/user', 'uses' => 'Controllers\Admin\UsersController@getRestore'));
+    });
     # Dashboard
     Route::get('/', array('as' => 'admin', 'uses' => 'Controllers\Admin\DashboardController@getIndex'));
 });
