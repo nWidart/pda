@@ -25,22 +25,18 @@ class CharacterController extends BaseController {
         // Get a character with all its items (& item modifiers)
         // $items = Character::whereId($id)->with('items.attributes')->first()->toArray();
         $character = Character::whereId($id)->first();
-        // ChromePhp::log($character->hero_id);
-        // Session::put( 'items', $items );
 
-        // Diablo3Util::getSkillImages( $character->hero_id );
-
-        $heroStats = Diablo3Util::saveCharacterStatistics( $id );
-        // $itemSet = Diablo3Util::getItemSet( Session::get('items') );
+        // $heroStats = Diablo3Util::saveCharacterStatistics( $id );
         $skillSet = Diablo3Util::getSkillset( $character->hero_id );
 
+        ChromePhp::log( Config::get('heroStats.heroStats'));
         $data = [
             'user'       => Sentry::getUser(),
             'character' => $character,
             'characters' => $this->characters,
             // 'items'      => $itemSet,
             'skills'     => $skillSet,
-            'heroStats'  => $heroStats,
+            'heroStats'  => Config::get('heroStats.heroStats'),
         ];
         return View::make( 'user.character', $data );
     }

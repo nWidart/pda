@@ -608,7 +608,8 @@ class Diablo3Util {
         $heroStats['offensiveStatistics']['criticalHitChance'] = $this->_getPercent( $heroStats['offensiveStatistics']['criticalHitChance'] );
         $heroStats['offensiveStatistics']['criticalHitDamage'] = round( $heroStats['offensiveStatistics']['criticalHitDamage'] * 1000, 2);
 
-        // \ChromePhp::log($heroStats);
+        \ChromePhp::log($heroStats);
+        \Phpconsole::send($heroStats);
         return $heroStats;
     }
 
