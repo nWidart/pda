@@ -23,42 +23,22 @@ class CharacterController extends BaseController {
     public function getProfile( $id )
     {
         // Get a character with all its items (& item modifiers)
-        $items = Character::whereId($id)->with('items.attributes')->first()->toArray();
-        Session::put( 'items', $items );
-        Session::put( 'heroId', $items['hero_id'] );
-        Session::put( 'charId', $id );
+        // $items = Character::whereId($id)->with('items.attributes')->first()->toArray();
+        $character = Character::whereId($id)->first();
+        // ChromePhp::log($character->hero_id);
+        // Session::put( 'items', $items );
 
-        // TODO Change to 1day+?
-        // $heroStats = Cache::remember('heroStats', 10, function()
-        // {
-        //     return Diablo3Util::saveCharacterStatistics( Session::get('charId') );
-        // });
-        $heroStats = Diablo3Util::saveCharacterStatistics( Session::get('charId') );
+        // Diablo3Util::getSkillImages( $character->hero_id );
 
-        // Gets all the items + adds the type & uniqueness to it
-        // TODO Better cache system
-        // $itemSet = Cache::remember('itemSet', 10, function ()
-        // {
-        //     return Diablo3Util::getItemSet( Session::get('items') );
-        // });
-        $itemSet = Diablo3Util::getItemSet( Session::get('items') );
-
-        // Get skillSet for current user
-        // $skillSet = Cache::remember('skillSet', 10, function ()
-        // {
-        //     return Diablo3Util::getSkillset( Session::get('heroId') );
-        // });
-        // Diablo3Util::saveCharacterItems( Session::get('heroId'), $id );
-        // Diablo3Util::getItemImages( Session::get('heroId') );
-        Diablo3Util::getSkillImages(Session::get('heroId'));
-
-        $skillSet = Diablo3Util::getSkillset( Session::get('heroId') );
+        $heroStats = Diablo3Util::saveCharacterStatistics( $id );
+        // $itemSet = Diablo3Util::getItemSet( Session::get('items') );
+        $skillSet = Diablo3Util::getSkillset( $character->hero_id );
 
         $data = [
             'user'       => Sentry::getUser(),
-            'character' => $items,
+            'character' => $character,
             'characters' => $this->characters,
-            'items'      => $itemSet,
+            // 'items'      => $itemSet,
             'skills'     => $skillSet,
             'heroStats'  => $heroStats,
         ];
