@@ -5,6 +5,10 @@
 		"cartalyst/sentry": "2.0.*",
 		"prologue/phpconsole": "dev-master"
 	},
+	"require-dev": {
+	    "mockery/mockery": "dev-master",
+	    "way/laravel-test-helpers": "dev-master"
+	},
 	"autoload": {
 		"classmap": [
 			"app/commands",
