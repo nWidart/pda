@@ -9,12 +9,12 @@ User Management ::
 {{-- Page content --}}
 @section('content')
 <div class="page-header">
-    <h3>
+    <h1>
         User Management
         <div class="pull-right">
             <a href="{{ route('create/user') }}" class="btn btn-small btn-info"><i class="icon-plus-sign icon-white"></i> Create</a>
         </div>
-    </h3>
+    </h1>
 </div>
 
 <a class="btn btn-medium" href="{{ URL::to('admin/users?withTrashed=true') }}">Include Deleted Users</a>
