@@ -155,6 +155,52 @@ class AccountController extends BaseController {
         }
     }
 
+    public function postChangeUserPassword()
+    {
+        // Declare the rules for the form validation
+        $rules = array(
+            'oldPassword'     => 'required|between:3,32',
+            'password'         => 'required|between:3,32',
+            'passwordConfirm' => 'required|same:password',
+        );
+
+        // Create a new validator instance from our validation rules
+        $validator = Validator::make(Input::all(), $rules);
+
+        // If validation fails, we'll exit the operation now.
+        if ($validator->fails())
+        {
+            // Ooops.. something went wrong
+            $errors = $validator->messages();
+            $data = [
+                'error' => 'Something went wrong',
+                'errors' => $errors->all(),
+            ];
+            return Response::json( $data );
+        }
+
+        // Grab the user
+        $user = Sentry::getUser();
+
+        // Check the user current password
+        if ( ! $user->checkPassword(Input::get('oldPassword')))
+        {
+            // Set the error message
+            $data = [ 'error' => 'Your current password is incorrect.' ];
+
+            // Redirect to the change password page
+            return Response::json( $data );
+        }
+
+        // Update the user password
+        $user->password = Input::get('password');
+        $user->save();
+
+        // Redirect to the change-password page
+        $data = [ 'success' => 'Password changed.' ];
+        return Response::json( $data );
+    }
+
     /**
      * Get the heroes takes battletag from db
      *

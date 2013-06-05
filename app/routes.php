@@ -38,9 +38,17 @@ Route::get('diablo/sync/{charId}', 'DiabloController@getSync');
  */
 Route::group(array('prefix' => 'dashboard'), function()
 {
+    # Displaying the dashboard
     Route::get('/', 'AccountController@getIndex');
+
+    # Updating the battle tag & server info
     Route::post('update-user-btag-info', 'AccountController@postUpdateUserBtagInfo');
+
+    # Updating First & Last name
     Route::post('update-user-info', 'AccountController@postUpdateUserInfo');
+
+    # Change Password
+    Route::post('change-password', 'AccountController@postChangeUserPassword');
 });
 
 /**

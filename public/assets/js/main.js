@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    // Opening select dropdowns via hover
+    $('select').hover(function(){ $(this).click(); });
     /**
      * Table Toggles on character page
      *
@@ -113,6 +115,44 @@ $(document).ready(function() {
             $(this).find('i.icon-check-1').hide();
         }
     });
+
+    /**
+     * Change Password tab
+     */
+    var $updateUserPassword = $('.updateUserPassword');
+    $updateUserPassword.on('submit', function(e){
+        e.preventDefault();
+        $updateUserPassword.modal('loading');
+
+        var oldPassword = $('input#oldPassword').val(),
+            password = $('input#password').val(),
+            passwordConfirm = $('input#password_confirm').val();
+            data = {
+                'oldPassword' : oldPassword,
+                'password' : password,
+                'passwordConfirm' : passwordConfirm
+            },
+            posting = $.post( "/dashboard/change-password", data );
+        posting.done( function(data) {
+            $updateUserPassword.modal('loading');
+            if (data.success)
+                alertify.success( data.success );
+            else if (data.error)
+            {
+                alertify.error( data.error );
+                var html = '<div class="alert alert-error fade-in">';
+                html += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
+                html += '<ul>';
+                for (var i = 0; i < data.errors.length; i++) {
+                    html += '<li>' + data.errors[i] + '</li>';
+                }
+                html += '</ul>';
+                html += '</div>';
+                $updateUserPassword.prepend(html);
+            }
+        });
+    });
+
 
     /**
      * Force close the modal

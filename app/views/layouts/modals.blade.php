@@ -26,7 +26,7 @@
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#profileBattleNet" data-toggle="tab">Battle.net</a></li>
                             <li><a href="#profileInfo" data-toggle="tab">Info</a></li>
-                            <li><a href="#profileSecurity" data-toggle="tab">Security</a></li>
+                            <li><a href="#changePassword" data-toggle="tab">Change password</a></li>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="profileBattleNet">
@@ -86,10 +86,47 @@
                             </div>
                             <!-- end #profileInfo -->
 
-                            <div class="tab-pane fade" id="profileSecurity">
-                                profileSecurity
+                            <div class="tab-pane fade" id="changePassword">
+                                {{ Form::open( ['url' => '/account/changeUserPassword', 'method' => 'post', 'class' => 'form-horizontal updateUserPassword'] ) }}
+                                    {{ Form::hidden('userID', Sentry::getUser()->id) }}
+                                    {{ Form::token() }}
+
+                                    <!-- Old Password -->
+                                    <div class="control-group{{ $errors->first('oldPassword', ' error') }}">
+                                        {{ Form::label('oldPassword', 'Old Password', ['class' => 'control-label' ])}}
+                                        <div class="controls">
+                                            <input type="password" name="oldPassword" id="oldPassword" class="m-wrap" value="" />
+                                            {{ $errors->first('oldPassword', '<span class="help-block">:message</span>') }}
+                                        </div>
+                                    </div>
+
+                                    <!-- New Password -->
+                                    <div class="control-group{{ $errors->first('password', ' error') }}">
+                                        <label class="control-label" for="password">New Password</label>
+                                        <div class="controls">
+                                            <input type="password" name="password" id="password" class="m-wrap"  value="" />
+                                            {{ $errors->first('password', '<span class="help-block">:message</span>') }}
+                                        </div>
+                                    </div>
+
+                                    <!-- Confirm New Password  -->
+                                    <div class="control-group{{ $errors->first('password_confirm', ' error') }}">
+                                        <label class="control-label" for="password_confirm">Confirm New Password</label>
+                                        <div class="controls">
+                                            <input type="password" name="password_confirm" id="password_confirm" class="m-wrap"  value="" />
+                                            {{ $errors->first('password_confirm', '<span class="help-block">:message</span>') }}
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <div class="m-btn-group">
+                                            {{ Form::submit('Change password', ['class' => 'm-btn green']) }}
+                                            <a href="#" data-dismiss="modal" class="m-btn black jsCloseModal">Close</a>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                            <!-- end #profileSecurity -->
+                            <!-- end #changePassword -->
 
                         </div>
                     </div>
