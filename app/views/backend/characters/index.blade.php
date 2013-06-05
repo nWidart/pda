@@ -12,7 +12,7 @@ Character Management ::
     <h1>
         Character Management
         <div class="pull-right">
-            <a href="{{ route('create/user') }}" class="btn btn-small btn-info"><i class="icon-plus-sign icon-white"></i> Create</a>
+            <!-- <a href="{{ route('create/character') }}" class="btn btn-small btn-info"><i class="icon-plus-sign icon-white"></i> Create</a> -->
         </div>
     </h1>
 </div>
@@ -22,7 +22,7 @@ Character Management ::
 <table class="table table-bordered table-striped table-hover">
     <thead>
         <tr>
-            <th class="span1">@lang('admin/users/table.id')</th>
+            <th class="span1">@lang('table.id')</th>
             <th class="span1">User</th>
             <th class="span1">Name</th>
             <th class="span1">Level</th>
