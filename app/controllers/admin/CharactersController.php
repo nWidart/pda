@@ -28,6 +28,23 @@ class CharactersController extends AdminController
     }
 
     /**
+     * Character update
+     * @param  int $characterId
+     * @return View
+     */
+    public function getEdit($characterId)
+    {
+        // Check if the character exists
+        if ( is_null( $character = Character::whereId( $characterId ) ) )
+        {
+            return Redirect::to('backend.characters')->with('error', Lang::get('admin/characters/message.does_not_exist'));
+        }
+
+        // Show the page
+        return View::make('backend.characters.edit', compact('character'));
+    }
+
+    /**
      * Delete the given character.
      *
      * @param  int  $characterId

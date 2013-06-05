@@ -11,7 +11,7 @@
                 <ul class="nav">
                     <li{{ (Request::is('admin') ? ' class="active"' : '') }}><a href="{{ URL::to('admin') }}"><i class="icon-home icon-white"></i> Home</a></li>
                     <li{{ (Request::is('admin/characters') ? ' class="active"' : '') }}><a href="{{ URL::to('admin/characters') }}"><i class="icon-user icon-white"></i> Characters</a></li>
-                    <li class="dropdown{{ (Request::is('admin/users*') ? ' active' : '') }}">
+                    <li class="dropdown{{ (Request::is('admin/users*')||Request::is('admin/groups*') ? ' active' : '') }}">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="{{ URL::to('admin/users') }}" data-hover="dropdown">
                             <i class="icon-user icon-white"></i> Users <span class="caret"></span>
                         </a>
