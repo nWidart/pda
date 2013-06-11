@@ -6,7 +6,7 @@
                 @foreach( $heroes as $hero )
                     <div class="badge-small">
                         <input type="checkbox" name="{{$hero['name']}}" value="{{$hero['id']}}" />
-                        <img src="/assets/img/d3/portraits/64/{{$hero['class']}}_{{$hero['gender']}}.png" alt="" class="avatar">
+                        <img src="./assets/img/d3/portraits/64/{{$hero['class']}}_{{$hero['gender']}}.png" alt="" class="avatar">
 
                         <h3>{{$hero['name']}}</h3>
                         <h4>{{$hero['class']}}</h4>
