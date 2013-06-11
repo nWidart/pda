@@ -21,19 +21,13 @@ class AccountController extends BaseController {
     {
         // Look for characters for logged in user
         $user = User::find( (int)Sentry::getUser()->id )->characters->first();
-        // Cache::forget('heroes');
-        // $heroes = Cache::remember('heroes', 10, function ()
-        // {
-        //    return  ( $this->_getHeroes() ) ? $this->_getHeroes() : '';
-        // });
-        $heroes = ( $this->_getHeroes() ) ? $this->_getHeroes() : '';
 
         // If the user has characters
         if ( $user )
         {
             $data = [
                 'characters' => User::find( (int)Sentry::getUser()->id )->characters,
-                'heroes' => $heroes,
+                'heroes' => User::getCharactersToImport(),
                 'user' => Sentry::getUser()
             ];
             return View::make('user.index', $data);
@@ -42,7 +36,7 @@ class AccountController extends BaseController {
         {
             $data = [
                 'notice' => "You havent imported any characters yet. <a data-toggle='modal' href='#modal' >Do it now!</a>",
-                'heroes' => ( $this->_getHeroes() ) ? $this->_getHeroes() : '',
+                'heroes' => User::getCharactersToImport(),
                 'user' => Sentry::getUser(),
             ];
             return View::make('user.index', $data);
@@ -200,46 +194,4 @@ class AccountController extends BaseController {
         $data = [ 'success' => 'Password changed.' ];
         return Response::json( $data );
     }
-
-    /**
-     * Get the heroes takes battletag from db
-     *
-     * @return arary    hero list
-     */
-    private function _getHeroes()
-    {
-        if ( isset( Sentry::getUser()->battletag ) && isset( Sentry::getUser()->server ) )
-        {
-            $battletag = Sentry::getUser()->battletag;
-            $server = Sentry::getUser()->server;
-        }
-        else
-            return false;
-        // Instantiate a new d3 instance
-        $Diablo3 = new Diablo3( $battletag, $server, 'en_US' );
-
-        // Get the info about that battle tag
-        $career = $Diablo3->getCareer();
-        $heroes = [];
-
-        if ( !isset($career['heroes']) ) return false;
-        $n = 0;
-        foreach ( $career['heroes'] as $key )
-        {
-            // Make a array for the validator
-            $input = [ 'character' => $key['id'] ];
-            // Check if character already is in database
-            $validator = new Services\Validators\Character($input);
-            if ( $validator->passes() )
-            {
-                $heroes[$n]['name'] = $key['name'];
-                $heroes[$n]['id'] = $key['id'];
-                $heroes[$n]['class'] = $key['class'];
-                $heroes[$n]['gender'] = $key['gender'];
-                $n++;
-            }
-        }
-        return $heroes;
-    }
-
 }

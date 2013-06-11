@@ -17,7 +17,8 @@ class AuctionHouseController extends BaseController {
     {
         $data = [
             'user'       => Sentry::getUser(),
-            'characters' => $this->characters
+            'characters' => $this->characters,
+            'heroes' => User::getCharactersToImport(),
         ];
         return View::make('user.ahprofitcalc', $data);
     }
@@ -26,7 +27,8 @@ class AuctionHouseController extends BaseController {
     {
         $data = [
             'user'       => Sentry::getUser(),
-            'characters' => $this->characters
+            'characters' => $this->characters,
+            'heroes' => User::getCharactersToImport(),
         ];
         return View::make('user.goldRealMoney', $data);
     }
