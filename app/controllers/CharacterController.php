@@ -61,6 +61,7 @@ class CharacterController extends BaseController {
             'items'      => $itemSet,
             'skills'     => $skillSet,
             'heroStats'  => $heroStats,
+            'heroes' => User::getCharactersToImport(),
         ];
         return View::make( 'user.character', $data );
     }
