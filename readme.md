@@ -32,9 +32,8 @@ The is the sourcecode for the PDA website.
 *** 
 
 ## Installation
-See install.md
+See [install.md](https://github.com/nWidart/pda/blob/master/install.md)
 
 
 ## More Info
 Everything on [my blog](http://nicolaswidart.com/site/category/heaj/tfe/).
-

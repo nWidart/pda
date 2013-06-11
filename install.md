@@ -4,7 +4,7 @@
 
 ### Etape 1: Récupérér le code
 
-#### Option 1: Git Clone
+#### Option 1: Git
 
 
 	git clone https://github.com/nWidart/pda.git folder-name
@@ -18,7 +18,7 @@ Soit depuis Github
 
 Soit via le FTP HEAJ
 
-### Etape 2: Utilisez Composer pour installer les dépendences
+### Etape 2: Utilisez Composer pour installer les dépendencies
 
 #### Option 1: Composer n'est pas installer globalement
 
@@ -35,7 +35,7 @@ Soit via le FTP HEAJ
 
 ### Etape 3: Créer la base de données
 
-Il ne reste plus qu'à créer une BDD et de configurer Laravel. Après la création de la BDD, ouvrez le fichier `app/config/database.php` Et Mettez à jour les informations mysql.
+Il ne reste plus qu'à créer une BDD et de configurer Laravel. Après la création de la BDD, ouvrez le fichier `app/config/database.php` Et Mettez à jour les informations **mysql**.
 
 ### Etape 4: Importer dump SQL
 
@@ -46,3 +46,5 @@ Vous pouvez vous loggez avec:
 
 	Login: n.widart@gmail.com
 	PW: test
+	
+Ce compte contient déjà des personnages.
