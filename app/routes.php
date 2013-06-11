@@ -1,9 +1,4 @@
 <?php
-# Homepage
-Route::get('/', [ 'as' => 'home', function() {
-    return View::make('home');
-}]);
-
 /**
  * Registring the Authentication Routes
  *
@@ -38,9 +33,6 @@ Route::get('diablo/sync/{charId}', 'DiabloController@getSync');
  */
 Route::group(array('prefix' => 'dashboard'), function()
 {
-    # Displaying the dashboard
-    Route::get('/', 'AccountController@getIndex');
-
     # Updating the battle tag & server info
     Route::post('update-user-btag-info', 'AccountController@postUpdateUserBtagInfo');
 
@@ -49,6 +41,9 @@ Route::group(array('prefix' => 'dashboard'), function()
 
     # Change Password
     Route::post('change-password', 'AccountController@postChangeUserPassword');
+
+    # Displaying the dashboard
+    Route::get('/', 'AccountController@getIndex');
 });
 
 /**
@@ -116,3 +111,8 @@ Route::group(array('prefix' => 'admin'), function()
     # Dashboard
     Route::get('/', array('as' => 'admin', 'uses' => 'Controllers\Admin\DashboardController@getIndex'));
 });
+
+# Homepage
+Route::get('/', [ 'as' => 'home', function() {
+    return View::make('home');
+}]);

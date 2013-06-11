@@ -52,10 +52,8 @@
 @section('cta')
     <div class="wrapper cta">
         <div class="inner-wrapper">
-            <!-- <span class="big">
-
-            </span> -->
             <a href="{{ URL::to('auth/register') }}" class="m-btn red big">Get started today, it's free.</a>
+            <a href="{{ URL::to('auth/login')}}" style="display: block">Already have an account? Sign in.</a>
         </div>
     </div>
 @stop
