@@ -41,7 +41,7 @@
     </div>
     <div class="span4">
         <h2>Auction House Calculators</h2>
-        <span class="icon"><i class="icon-tools"></i></span>
+        <span class="icon"><i class="icon-paypal"></i></span>
         <p>
             <strong>Don't want to lose money buying items & commidities on the Auction House?</strong> Find out if an item is worth selling for gold and selling the gold for real money or directly selling that item for real money first.
         </p>

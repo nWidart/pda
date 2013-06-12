@@ -2,11 +2,11 @@
 
  @font-face {
   font-family: 'entypo16';
-  src: url('../font/entypo16.eot?70233253');
-  src: url('../font/entypo16.eot?70233253#iefix') format('embedded-opentype'),
-       url('../font/entypo16.woff?70233253') format('woff'),
-       url('../font/entypo16.ttf?70233253') format('truetype'),
-       url('../font/entypo16.svg?70233253#entypo16') format('svg');
+  src: url('../font/entypo16.eot?93438824');
+  src: url('../font/entypo16.eot?93438824#iefix') format('embedded-opentype'),
+       url('../font/entypo16.woff?93438824') format('woff'),
+       url('../font/entypo16.ttf?93438824') format('truetype'),
+       url('../font/entypo16.svg?93438824#entypo16') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -16,7 +16,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'entypo16';
-    src: url('../font/entypo16.svg?70233253#entypo16') format('svg');
+    src: url('../font/entypo16.svg?93438824#entypo16') format('svg');
   }
 }
 */
@@ -41,7 +41,7 @@
   /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
  
-  /* Animation center compensation - magrins should be symmetric */
+  /* Animation center compensation - margins should be symmetric */
   /* remove if not needed */
   margin-left: .2em;
  
@@ -222,6 +222,7 @@
 .icon-cc-zero:before { content: '\e7ad'; } /* '' */
 .icon-cc-share:before { content: '\e7ae'; } /* '' */
 .icon-cc-remix:before { content: '\e7af'; } /* '' */
+.icon-money:before { content: '\e872'; } /* '' */
 .icon-github-1:before { content: '\e851'; } /* '' */
 .icon-github-circled-1:before { content: '\f301'; } /* '' */
 .icon-flickr:before { content: '\f303'; } /* '' */
